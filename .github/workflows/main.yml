@@ -1,38 +1,49 @@
-name: Build
+name: Deploy
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
-        with:
-          version: 8
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
       - name: Install dependencies
-        run: pnpm install
-      - name: Build webpack
-        env:
-          PROJECT_ACCESS_KEY: true
-        run: pnpm run build
-      - name: Setup Pages
-        uses: actions/setup-node@v2
+        uses: bahmutov/npm-install@v1
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
         with:
-          branch: master
-          folder: dist
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+          name: production-files
+          path: ./dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
         with:
-          path: "./dist"
+          name: production-files
+          path: ./dist
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          PROJECT_ACCESS_KEY: ${{ secrets.PROJECT_ACCESS_KEY }}
+          publish_dir: ./dist
