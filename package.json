@@ -1,7 +1,7 @@
 {
   "name": "demo-lootbox",
   "private": true,
-  "homepage": "/demo-lootbox",
+  "homepage": "/demo-lootbox/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
