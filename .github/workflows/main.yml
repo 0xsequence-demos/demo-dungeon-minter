@@ -11,39 +11,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
         with:
           version: 8
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build project
-        run: pnpm run build
-
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: production-files
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
+      - name: Build webpack
+        env:
           PROJECT_ACCESS_KEY: ${{ secrets.PROJECT_ACCESS_KEY }}
-          publish_dir: ./dist
+        run: pnpm run build
+      - name: Setup Pages
+        uses: actions/setup-node@v2
+        with:
+          branch: master
+          folder: dist
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "./dist"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
