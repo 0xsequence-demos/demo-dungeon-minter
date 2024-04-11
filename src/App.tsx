@@ -1,6 +1,6 @@
 import './App.css'
 
-const PROJECT_ACCESS_KEY = import.meta.env.PROJECT_ACCESS_KEY!
+const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 function App() {
   return (
     <>
