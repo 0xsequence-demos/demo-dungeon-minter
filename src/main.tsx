@@ -20,7 +20,7 @@ function Dapp() {
 	const chains = [arbitrumNova] as any
   
 	const projectAccessKey = PROJECT_ACCESS_KEY
-	console.log(projectAccessKey)
+
 	const connectors = getDefaultConnectors({
 		walletConnectProjectId: WALLET_CONNECT_ID,
 		defaultChainId: 42170,
@@ -37,7 +37,7 @@ function Dapp() {
 		connectors,
 		chains
 	  })
-  const kitConfig: any = {
+  	const kitConfig: any = {
 		projectAccessKey: PROJECT_ACCESS_KEY,
 		position: 'center',
 		defaultTheme: 'dark',
