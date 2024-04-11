@@ -1,0 +1,41 @@
+name: Build
+
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build webpack
+        env:
+          PROJECT_ACCESS_KEY: true
+        run: pnpm run build
+      - name: Setup Pages
+        uses: actions/setup-node@v2
+        with:
+          branch: master
+          folder: build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "./build"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
