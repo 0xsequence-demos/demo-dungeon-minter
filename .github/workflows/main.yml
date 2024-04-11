@@ -1,17 +1,17 @@
 name: Build
 
-permissions:
-  contents: read
-  issues: read
-  checks: write
-  pull-requests: write
-
 on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
-     steps:
+    environment:
+      name: github-pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
