@@ -7,9 +7,13 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
-
+    environment:
+      name: github-pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
