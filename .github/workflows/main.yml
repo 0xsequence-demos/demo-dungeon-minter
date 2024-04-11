@@ -1,4 +1,4 @@
-name: Deploy
+name: build dapp
 
 on:
   push:
@@ -8,37 +8,27 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    name: Build and Push
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v3
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
         with:
           version: 8
+          run_install: true
 
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build webpack
+      - name: Build
         env:
           PROJECT_ACCESS_KEY: ${{ secrets.PROJECT_ACCESS_KEY }}
-        run: pnpm run build
-      - name: Setup Pages
-        uses: actions/setup-node@v2
-        with:
-          branch: master
-          folder: dist
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: "./dist"
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        run: pnpm build
+
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: build
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
