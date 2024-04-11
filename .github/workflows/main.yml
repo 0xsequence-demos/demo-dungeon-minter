@@ -29,6 +29,7 @@ jobs:
       - name: Build webpack
         env:
           VITE_PROJECT_ACCESS_KEY: ${{ secrets.PROJECT_ACCESS_KEY }}
+          VITE_WALLET_CONNECT_ID: ${{secrets.WALLET_CONNECT_ID}}
         run: pnpm run build
       - name: Setup Pages
         uses: actions/setup-node@v2
