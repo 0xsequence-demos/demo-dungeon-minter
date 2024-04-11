@@ -1,7 +1,6 @@
 {
   "name": "demo-lootbox",
-  "private": true,
-  "homepage": "/demo-lootbox/",
+  "homepage": "https://0xsequence-demos.github.io/demo-lootbox/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
