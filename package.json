@@ -1,6 +1,6 @@
 {
-  "name": "demo-lootbox",
-  "homepage": "https://0xsequence-demos.github.io/demo-lootbox/",
+  "name": "client",
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,19 +10,39 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "0xsequence": "1.4.9",
+    "@0xsequence/design-system": "^1.1.2",
+    "@0xsequence/indexer": "^1.4.9",
+    "@0xsequence/kit": "^2.0.8",
+    "@0xsequence/kit-connectors": "^2.0.8",
+    "@0xsequence/kit-wallet": "^2.0.8",
+    "@0xsequence/metadata": "^1.4.9",
+    "@react-three/drei": "^9.88.17",
+    "@react-three/fiber": "^8.15.11",
+    "@tanstack/react-query": "^5.29.2",
+    "@types/three": "^0.158.3",
+    "@wagmi/core": "^1.4.8",
+    "ethers": "5.7.2",
+    "express": "^4.18.2",
+    "framer-motion": "^10.16.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "socket.io-client": "^4.7.2",
+    "three": "^0.158.0",
+    "three-stdlib": "^2.28.7",
+    "viem": "^2.9.16",
+    "wagmi": "^2.5.19"
   },
   "devDependencies": {
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.57.0",
+    "@types/react": "18.2.76",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
   }
 }

@@ -1,0 +1,199 @@
+/* FONTS */
+@font-face {
+	font-family: diabloFont;
+	src: url(fonts/diablo_h.ttf);
+}
+
+@font-face {
+	font-family: weitalic-semi-bold;
+	src: url(fonts/Weitalic-Regular.ttf);
+}
+
+/* BODY */
+body {
+
+	font-family: weitalic-semi-bold;
+	color: #cfcfc5;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* MAIN FRAME */
+div.frame {
+	display: inline-block;
+	width: 330px;
+	margin: 1px;
+	padding: 1px;
+	border: 16px solid;
+	border-image: url(images/frame.png) 16 repeat;
+}
+
+/* CARD FRAME */
+div.view {
+	display: inline-block;
+	width: 296px;
+	height: 296px;
+	border: 16px solid;
+	border-image: url(images/frame.png) 16 repeat;
+}
+
+.frame[tier="Common"] {
+	background-image: linear-gradient(to bottom, rgb(35,35,35), rgb(9,9,9));
+}
+
+.frame[tier="Magic"] {
+	background-image: linear-gradient(to bottom, rgb(24,33,62), rgb(9,9,9));
+}
+
+.frame[tier="Rare"] {
+	background-image: linear-gradient(to bottom, rgb(152,125,8), rgb(9,9,9));
+}
+
+.frame[tier="Legendary"] {
+	background-image: linear-gradient(to bottom, rgb(104,33,15), rgb(9,9,9));
+}
+
+/* HR LINES */
+hr.half {
+	border: 0;
+	margin: initial;
+	content: url(images/halfline.png);
+}
+
+hr.full {
+	border: 0;
+	margin: auto;
+	content: url(images/fullline.png);
+}
+
+/* ITEM NAME AND TIER */
+h1 {
+	font-family: diabloFont;
+	font-size: 18px;
+	max-width: 205px;
+}
+
+.network-powered-by {
+	color: orange;
+	font-family: diabloFont;
+	font-size: 15px;
+	max-width: 300px !important
+}
+.click-instructions {
+	font-family: diabloFont;
+	font-size: 15px;
+	max-width: 220px !important
+}
+
+.fyvr11mu.fyvr11e4.fyvr11gg.fyvr11fg.fyvr11ew._1qxj1ib9 {
+	font-family: diabloFont;
+
+}
+
+h2 {
+	font-size: 16px;
+}
+
+h3 {
+	font-size: 16px;
+	text-align: right;
+	margin: 0px;
+}
+
+h6 {
+	font-family: diabloFont;
+}
+
+.name_common {
+	color: #e9e9e9;
+}
+
+.name_magic {
+	color: #7c7cf6;
+}
+
+.name_rare {
+	color: #eaed0a;
+}
+
+.name_legendary {
+	color: #f97f00;
+}
+
+
+/* LIST OF AFFIXES */
+ul {
+	list-style-image: url(images/bullet.png);
+	margin-left: 30px;
+	color: #cfcfc5;
+}
+
+li.offensive {
+	list-style-image: url(images/sword.png);
+}
+
+li.defensive {
+	list-style-image: url(images/shield.png);
+}
+
+li.socket {
+	list-style-image: url(images/socket.png);
+	color: #696969;
+}
+
+li.legendary {
+	list-style-image: url(images/star.png);
+	color: #f18606;
+}
+
+/* SELL VALUE AND DURABILITY*/
+.value:before {
+	color: #b69e7a;
+	content: "Sell Value: ";
+}
+
+.value:after {
+	content: url(images/coins.png);;
+}
+
+.durability:before {
+	color: #b69e7a;
+	content: "Durability: "
+}
+
+.durability:after {
+	content: "/100"
+}
+
+.items-container {
+	background-image: url(https://static.vecteezy.com/system/resources/thumbnails/011/083/949/original/blue-retrowave-animation-glowing-luminance-laser-background-abstract-technology-horizontal-line-purple-light-glow-galaxy-geometric-internet-80s-style-poster-free-video.jpg);
+	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-attachment: fixed;
+	display: flex;
+	justify-content: center; /* Horizontally center the items */
+	align-items: center; /* Vertically center the items */
+	height: 100vh; /* Optional: Set the height to viewport height for full vertical centering */
+	flex-wrap: wrap; /* Optional: If you have multiple items and you want them to wrap */
+  }
+
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
+  }
+  
+  .fade-in {
+	animation: fadeIn ease 1s;
+	animation-fill-mode: forwards;
+  }
+  
+  .homepage-description {
+	font-size: 15px !important;
+	width: 220px; /* Set the width of the paragraph */
+	text-align: justify; /* Justify text for even alignment on both sides */
+	text-justify: inter-word; /* Improve spacing between words */
+	margin: 0 auto;
+  }
