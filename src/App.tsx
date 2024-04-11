@@ -1,10 +1,11 @@
 import './App.css'
 
+const PROJECT_ACCESS_KEY = import.meta.env.PROJECT_ACCESS_KEY
 function App() {
   return (
     <>
       <p>demo lootbox</p>
-      <p>{import.meta.env.PROJECT_ACCESS_KEY}</p>
+      <p>{PROJECT_ACCESS_KEY.toString()}</p>
     </>
   )
 }
