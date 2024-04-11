@@ -192,7 +192,7 @@ function App() {
               <Box justifyContent={'center'}>
               <h1>d u n g e o n<br/> c r a w l e r</h1>
             </Box>
-            <Box justifyContent={'center'} marginTop={'2'}>
+            <Box justifyContent={'center'}>
               <h1>l o o t b o x</h1>
             </Box>
             <Box justifyContent={'center'} marginTop={'2'}>
