@@ -258,7 +258,7 @@ function App() {
             { 
             !loadingTreasure
             // true 
-            ? <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '30px'}} onClick={() => {txHash = '';live=true;setInDungeon(true);count=0;setItems([])}}>
+            ? <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '30px'}} onClick={() => {setProgressValue(0);setProgressDescription('Scenario.gg AI Generation');setProgressStep(1);txHash = '';live=true;setInDungeon(true);count=0;setItems([])}}>
               <Button label='back to maze?'/>
             </div> : null}
             <br/>
@@ -274,8 +274,8 @@ function App() {
                 }}
                 >
                   {/* @ts-ignore */}
-                  <div className="frame" tier={'Rare'} style={{textAlign: 'center'}}>
-                    <h1 className="name_Rare devils-note">
+                  <div className="frame" tier={'Note'} style={{textAlign: 'center'}}>
+                    <h1 className="name_Devils_Note devils-note">
                     <br/>
                       loot that combines elements from diablo
                       <br/>
@@ -326,7 +326,12 @@ function App() {
                 </div> : txHash != '' ? <div style={{
                   zIndex: 1000,
                 }}
-                ><p style={{color: 'orange'}}><a style={{color: 'orange'}} href={`https://nova.arbiscan.io/tx/${txHash}`} target='_blank'>&nbsp;Minted Tx Hash: {txHash.slice(0, 4)}...</a></p></div>: <div style={{margin: 'auto', textAlign: 'center'}}><Box marginBottom={'2'} justifyContent={'center'}> <p>would you like to mint this item?</p></Box><Button label='mint' onClick={() => mint()}/></div> }
+                >
+                  <Button onClick={() => window.open(`https://nova.arbiscan.io/tx/${txHash}`)} label={`see minted hash: ${txHash.slice(0, 4)}... on explorer`} style={{color: 'orange'}}>
+                  </Button>
+                    {/* <a style={{color: 'orange'}} href={`https://nova.arbiscan.io/tx/${txHash}`} target='_blank'>&nbsp;Minted Tx Hash: {txHash.slice(0, 4)}...</a> */}
+                  </div>
+                  : <div style={{margin: 'auto', textAlign: 'center'}}><Box marginBottom={'2'} justifyContent={'center'}> <p>would you like to mint this item?</p></Box><Button label='mint' onClick={() => mint()}/></div> }
                 {/* ><p style={{color: 'orange'}}><a style={{color: 'orange'}} href={`https://nova.arbiscan.io/tx/${txHash}`} target='_blank'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tx Hash: {txHash.slice(0, 4)}...</a></p></div>: <Button label='mint' onClick={() => mint()}/> } */}
                 </div> : null }
                 <br/>
@@ -339,7 +344,7 @@ function App() {
                     {/*@ts-ignore*/}
                     <div className="view" tier={item.tier}>
                       <img
-                        style={{ width: '296px' }}
+                        style={{ width: '298px' }}
                         src={item.url}
                         onLoad={handleImageLoaded}
                       />
