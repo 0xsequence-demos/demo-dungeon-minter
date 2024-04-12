@@ -37,7 +37,7 @@ function App() {
 
   useEffect(() =>{
 
-  }, [progressStep, progressValue, progressDescription, items, loaded, inDungeon, loadingTreasure, mintLoading, txHash])
+  }, [address, progressStep, progressValue, progressDescription, items, loaded, inDungeon, loadingTreasure, mintLoading, txHash])
 
   const [loadCount, setLoadCount] = useState(0);
 
