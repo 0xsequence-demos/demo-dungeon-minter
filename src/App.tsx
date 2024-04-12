@@ -259,7 +259,16 @@ function App() {
             :
             <>
             <br/>
-            <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '30px', right: '30px'}} onClick={() => disconnect()}>
+            <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '30px', right: '30px'}} onClick={() => {setInDungeon(false)
+                setLoaded(false)
+                setMintLoading(false)
+                setLoadingTreasure(false)
+                count = 0
+                setItems([]);
+                txHash = '';
+                live= false
+                setDailyMax(false)
+                disconnect()}}>
               <h1>sign out</h1>
             </div>
             { 
