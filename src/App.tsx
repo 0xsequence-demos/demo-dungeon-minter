@@ -190,12 +190,12 @@ function App() {
               }}
             >
               <Box justifyContent={'center'}>
-              <h1>d u n g e o n<br/> c r a w l e r</h1>
+              <h1 style={{margin: '-4px'}}>d u n g e o n<br/> c r a w l e r</h1>
             </Box>
             <Box justifyContent={'center'}>
               <h1>l o o t b o x</h1>
             </Box>
-            <Box justifyContent={'center'} marginTop={'2'}>
+            <Box justifyContent={'center'}>
               <img src={maze} width={225}/>
             </Box>
             <br/>
@@ -210,7 +210,7 @@ function App() {
               minted to your wallet ...
             </p>
             </Box>
-            <Box justifyContent={'center'} marginTop={'2'}>
+            <Box justifyContent={'center'} marginTop={'4'}>
               <Button label="connect" onClick={() => onClick()}/>
             </Box>
             <div style={{zIndex: 10, width: '300px',color: 'grey', position:'fixed', bottom: '15px', left: '30px'}}>
@@ -224,7 +224,7 @@ function App() {
             inDungeon 
             ? 
             <div>
-            <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '30px', right: '30px'}} onClick={() => {setInDungeon(true);
+            <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '15px', right: '30px'}} onClick={() => {setInDungeon(true);
                 setInDungeon(false)
                 setLoaded(false)
                 setMintLoading(false)
@@ -245,7 +245,7 @@ function App() {
               <div style={{zIndex: 10, width: '220px',color: 'grey', position:'fixed', bottom: '15px', left: '30px'}}>
                 <h2 className='click-instructions'>click on a lootbox to generate an item</h2>
               </div> 
-              <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '15px', right: '30px'}}>
+              <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '30px', right: '30px'}}>
                 <Button label='open wallet' onClick={() => setOpenWalletModal(true)}/>
               </div> 
             </div>
