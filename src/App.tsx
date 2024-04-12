@@ -308,6 +308,8 @@ function App() {
                       <p>{progressStep}/2 steps</p>
                     </Box>
                   </div> :
+                  <>
+                  {/* @ts-ignore */}
                   <div className="frame" tier={'Max'} style={{textAlign: 'center'}}>
                     <h1 className="name_Devils_Note devils-note">
                     <br/>
@@ -322,6 +324,7 @@ function App() {
                     </h1>
                     <br/>
                   </div>
+                  </>
                   }
                   </div>
               : 
