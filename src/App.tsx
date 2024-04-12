@@ -64,10 +64,10 @@ function App() {
   useEffect(() => {
     window.addEventListener('message', (event) => {
 
-      // if (event.origin !== 'https://maze-inky.vercel.app') {
-      //     // Security check: Ensure that the message is from a trusted source
-      //     return;
-      // }
+      if (event.origin !== 'https://maze-inky.vercel.app') {
+          // Security check: Ensure that the message is from a trusted source
+          return;
+      }
     
       if(event.data.portal == 'loot' && count == 0 && isConnected){
         setInDungeon(false)
@@ -239,8 +239,8 @@ function App() {
               <div className="black-bar"></div>
 
               <div className='container'>
-                {/* <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth} height={window.innerHeight*.76} ></iframe> */}
-                <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth} height={window.innerHeight*.76} ></iframe>
+                <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth} height={window.innerHeight*.76} ></iframe>
+                {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth} height={window.innerHeight*.76} ></iframe> */}
               </div>
               <div style={{zIndex: 10, width: '220px',color: 'grey', position:'fixed', bottom: '15px', left: '30px'}}>
                 <h2 className='click-instructions'>click on a lootbox to generate an item</h2>
