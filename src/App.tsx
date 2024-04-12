@@ -326,7 +326,7 @@ function App() {
                 </div> : txHash != '' ? <div style={{
                   zIndex: 1000,
                 }}
-                ><p style={{color: 'orange'}}><a style={{color: 'orange'}} href={`https://nova.arbiscan.io/tx/${txHash}`} target='_blank'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minted Tx Hash: {txHash.slice(0, 4)}...</a></p></div>: <div style={{margin: 'auto', textAlign: 'center'}}><Box justifyContent={'center'}> <p>would you like to mint this item?</p></Box><br/><Button label='mint' onClick={() => mint()}/></div> }
+                ><p style={{color: 'orange'}}><a style={{color: 'orange'}} href={`https://nova.arbiscan.io/tx/${txHash}`} target='_blank'>&nbsp;Minted Tx Hash: {txHash.slice(0, 4)}...</a></p></div>: <div style={{margin: 'auto', textAlign: 'center'}}><Box justifyContent={'center'}> <p>would you like to mint this item?</p></Box><br/><Button label='mint' onClick={() => mint()}/></div> }
                 {/* ><p style={{color: 'orange'}}><a style={{color: 'orange'}} href={`https://nova.arbiscan.io/tx/${txHash}`} target='_blank'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tx Hash: {txHash.slice(0, 4)}...</a></p></div>: <Button label='mint' onClick={() => mint()}/> } */}
                 </div> : null }
                 <br/>
