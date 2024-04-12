@@ -48,6 +48,10 @@ div.view {
 	background-image: linear-gradient(to bottom, rgb(45, 24, 62), rgb(9,9,9));
 }
 
+.frame[tier="Max"] {
+	background-image: linear-gradient(to bottom, rgb(62, 24, 24), rgb(9,9,9));
+}
+
 .frame[tier="Rare"] {
 	background-image: linear-gradient(to bottom, rgb(152,125,8), rgb(9,9,9));
 }

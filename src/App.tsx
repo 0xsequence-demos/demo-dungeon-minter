@@ -27,7 +27,8 @@ function App() {
   const [progressStep, setProgressStep] = useState(1);
   const [progressValue, setProgressValue] = useState(0);
   const [progressDescription, setProgressDescription] = useState('Secenario.gg AI Generation');
-  
+  const [dailyMax, setDailyMax] = useState(false)
+
   setTheme('dark')
 
   const [items, setItems] = useState<any>([])
@@ -168,13 +169,18 @@ function App() {
       },
       body: JSON.stringify(data),
     })
-    const json = await res.json()
-    setLoaded(true)
-    setLoadingTreasure(false)
-    json.loot.loot.url = json.image
-    json.loot.loot.tokenID = json.tokenID
-    setItems([json.loot.loot])
-    txHash=''
+    if(res.status == 400){
+      console.log('reached daily max')
+      setDailyMax(true)
+    } else {
+      const json = await res.json()
+      setLoaded(true)
+      setLoadingTreasure(false)
+      json.loot.loot.url = json.image
+      json.loot.loot.tokenID = json.tokenID
+      setItems([json.loot.loot])
+      txHash=''
+    }
   }
 
   return (
@@ -233,6 +239,7 @@ function App() {
                 setItems([]);
                 txHash = '';
                 live= false
+                setDailyMax(false)
                 disconnect()}}>
               <h1>sign out</h1>
               </div>
@@ -270,11 +277,11 @@ function App() {
                   top: '40%',       
                   left: '47%',   
                   transform: 'translate(-40%, -40%)',
-                  zIndex: 1000,
+                  zIndex: 1,
                 }}
                 >
                   {/* @ts-ignore */}
-                  <div className="frame" tier={'Note'} style={{textAlign: 'center'}}>
+                  {!dailyMax ? <div className="frame" tier={'Note'} style={{textAlign: 'center'}}>
                     <h1 className="name_Devils_Note devils-note">
                     <br/>
                       loot that combines elements from diablo
@@ -300,8 +307,23 @@ function App() {
                     <Box paddingBottom={'8'}>
                       <p>{progressStep}/2 steps</p>
                     </Box>
+                  </div> :
+                  <div className="frame" tier={'Max'} style={{textAlign: 'center'}}>
+                    <h1 className="name_Devils_Note devils-note">
+                    <br/>
+                      you've reached your daily max
+                      <br/>
+                      <br/>
+                      please allow some time to cool down
+                      <br/>
+                      <br/>
+                      <br/>
+                      <Button label="open wallet" onClick={() => setOpenWalletModal(true)}></Button>
+                    </h1>
+                    <br/>
                   </div>
-                </div>
+                  }
+                  </div>
               : 
                 null
             }
