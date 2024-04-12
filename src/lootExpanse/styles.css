@@ -77,12 +77,6 @@ h1 {
 	max-width: 255px;
 }
 
-.network-powered-by {
-	color: orange;
-	font-family: diabloFont;
-	font-size: 15px;
-	max-width: 300px !important
-}
 .click-instructions {
 	font-family: diabloFont;
 	font-size: 15px;
