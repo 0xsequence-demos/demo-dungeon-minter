@@ -207,7 +207,7 @@ function App() {
               <br/>
               <br/>
               search for lootboxes & unlock AI generation via <span><a href='https://www.scenario.com/' target='_blank'>Scenario.gg </a></span>
-              minted to your wallet ...
+              minted free to your wallet ...
             </p>
             </Box>
             <Box justifyContent={'center'} marginTop={'4'}>
