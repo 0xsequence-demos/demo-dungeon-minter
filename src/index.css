@@ -74,9 +74,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.frame {
+  scale: 0.8;
+}
 
 .devils-note {
-  margin-left: 58px !important
+  margin-left: 65px !important
 }
 
 ._1acm19y1 {
