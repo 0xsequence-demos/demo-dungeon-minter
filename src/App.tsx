@@ -265,7 +265,7 @@ function App() {
             :
             <>
             <br/>
-            {isMobile && !inDungeon ? <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '30px', right: '30px'}} onClick={() => {setInDungeon(false)
+            {!isMobile && !inDungeon ? <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '30px', right: '30px'}} onClick={() => {setInDungeon(false)
                 setLoaded(false)
                 setMintLoading(false)
                 setLoadingTreasure(false)
