@@ -28,6 +28,7 @@ function App() {
   const [progressValue, setProgressValue] = useState(0);
   const [progressDescription, setProgressDescription] = useState('Secenario.gg AI Generation');
   const [dailyMax, setDailyMax] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
   setTheme('dark')
 
@@ -45,7 +46,12 @@ function App() {
     setLoadCount(prevCount => prevCount + 1);
   };
 
+  function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
   useEffect(() => {
+    setIsMobile(isMobileDevice());
     setInDungeon(true)
   }, [isConnected])
 
@@ -230,7 +236,7 @@ function App() {
             inDungeon 
             ? 
             <div>
-            <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '15px', right: '30px'}} onClick={() => {setInDungeon(true);
+             <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '15px', right: '30px'}} onClick={() => {setInDungeon(true);
                 setInDungeon(false)
                 setLoaded(false)
                 setMintLoading(false)
@@ -259,7 +265,7 @@ function App() {
             :
             <>
             <br/>
-            <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '30px', right: '30px'}} onClick={() => {setInDungeon(false)
+            {isMobile && !inDungeon ? <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '30px', right: '30px'}} onClick={() => {setInDungeon(false)
                 setLoaded(false)
                 setMintLoading(false)
                 setLoadingTreasure(false)
@@ -270,7 +276,7 @@ function App() {
                 setDailyMax(false)
                 disconnect()}}>
               <h1>sign out</h1>
-            </div>
+            </div> : null }
             { 
             !loadingTreasure
             // true 

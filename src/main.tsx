@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
+import App from './App.tsx'
 
 import { ThemeProvider } from '@0xsequence/design-system'
 import { KitProvider } from '@0xsequence/kit'
@@ -11,6 +11,7 @@ import { KitWalletProvider } from '@0xsequence/kit-wallet'
 import { createConfig, WagmiConfig} from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { arbitrumNova} from 'wagmi/chains'
+
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const WALLET_CONNECT_ID = import.meta.env.VITE_WALLET_CONNECT_ID!
 
@@ -37,6 +38,7 @@ function Dapp() {
 		connectors,
 		chains
 	  })
+	  
   	const kitConfig: any = {
 		projectAccessKey: PROJECT_ACCESS_KEY,
 		position: 'center',
@@ -59,7 +61,6 @@ function Dapp() {
     <WagmiConfig config={config}>
 	  <QueryClientProvider client={queryClient}> 
 		<KitProvider config={kitConfig}>
-			
 			<KitWalletProvider>
 				<ThemeProvider>
 					<App />
