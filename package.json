@@ -17,6 +17,8 @@
     "@0xsequence/kit-connectors": "^2.0.8",
     "@0xsequence/kit-wallet": "^2.0.8",
     "@0xsequence/metadata": "^1.4.9",
+    "@0xsequence/waas": "^1.9.26",
+    "@react-oauth/google": "^0.12.1",
     "@react-three/drei": "^9.88.17",
     "@react-three/fiber": "^8.15.11",
     "@tanstack/react-query": "^5.29.2",

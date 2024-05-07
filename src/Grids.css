@@ -1,0 +1,28 @@
+.square {
+position: absolute;
+width: 50px;
+height: 50px;
+background-color: gray;
+opacity: 0;
+}
+
+.square.visible {
+opacity: 1;
+transition: opacity linear 1s; /* Adjust the transition duration as needed */
+}
+
+.square.hidden {
+opacity: 0;
+transition: opacity linear 2s; /* Adjust the transition duration as needed */
+}
+
+.grid-app {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+  }

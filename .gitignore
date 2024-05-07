@@ -10,6 +10,8 @@ dist
 
 .env
 
+/src/SequenceEmbeddedWallet.ts
+
 node_modules
 dist-ssr
 *.local

@@ -11,6 +11,7 @@ import { KitWalletProvider } from '@0xsequence/kit-wallet'
 import { createConfig, WagmiConfig} from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { arbitrumNova} from 'wagmi/chains'
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const WALLET_CONNECT_ID = import.meta.env.VITE_WALLET_CONNECT_ID!
@@ -63,7 +64,9 @@ function Dapp() {
 		<KitProvider config={kitConfig}>
 			<KitWalletProvider>
 				<ThemeProvider>
-					<App />
+					<GoogleOAuthProvider clientId="976261990624-00hh7e04rulj5hpp90df6obe9stgvdcj.apps.googleusercontent.com">
+						<App />
+					</GoogleOAuthProvider>
 				</ThemeProvider>
 			</KitWalletProvider>
 		</KitProvider>

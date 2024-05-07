@@ -1,81 +1,222 @@
-
-body {
-  background: black !important
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-
-@keyframes fadeImage {
-  to {
-      -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-      mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  }
-}
-
-.overlay {
-  display: 'flex';
-  justify-content: 'center';
-  align-items: 'center';
-  height: '100vh';
-  width: '100vw';
-}
-
-.spinner-container {
+/* .spinner-container {
   position: 'fixed';
   top: '50%';
   left: '50%';
   transform: 'translate(-50%, -50%)';
   z-index: 1000;
-}
+} */
 
-.container {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* Adjust the width as needed */
-  height: 100%; /* Adjust the height as needed */
-  border: 1px solid #ccc; /* Optional: for better visibility */
-}
-
+/* 
 iframe {
   width: 100%;
   height: 100%;
   border: none;
+} */
+
+
+p.content {
+  color: white;
+  font-family: 'ChiKareGo2';
+  font-size: 20px;
+  line-height: 1.1;
+}
+.play-image {
+  margin-top: 10px;
+  margin-left: -105px;
+  display: none; /* Initially hide the image */
+  position: absolute; /* Position the image absolutely */
+  transform: translateY(-50%); /* Adjust vertical centering */
+}
+
+.play-image-gmail {
+  margin-top: 10px;
+  margin-left: -70px;
+  display: none; /* Initially hide the image */
+  position: absolute; /* Position the image absolutely */
+  transform: translateY(-50%); /* Adjust vertical centering */
+}
+
+.play-image-apple {
+  margin-top: 10px;
+  margin-left: -70px;
+  display: none; /* Initially hide the image */
+  position: absolute; /* Position the image absolutely */
+  transform: translateY(-50%); /* Adjust vertical centering */
+}
+
+.play-image-read-build-guide {
+  margin-top: 10px;
+  margin-left: -157px;
+  display: none; /* Initially hide the image */
+  position: absolute; /* Position the image absolutely */
+  transform: translateY(-50%); /* Adjust vertical centering */
+}
+
+span.play-demo,
+span.read-build-guide {
+  cursor: pointer;
+  position: relative; /* Ensure the parent container is positioned */
+}
+
+span.play-demo:hover + .play-image,
+span.read-build-guide:hover + .play-image-read-build-guide {
+  display: inline-block; /* Show the image on hover */
+}
+
+.gmail-login,
+.apple-login {
+  cursor: pointer;
+  display: inline-block; /* Show the image on hover */
+  /* position: relative; Ensure the parent container is positioned */
+}
+
+.play-image-gmail,
+.play-image-apple {
+  display: inline-block; /* Show the image on hover */
+}
+
+.no-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
+}
+
+.login-container {
+  width: 100vw;
+  display: flex; /* Use flexbox to center align the box */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: 'ChiKareGo2', monospace;
+  text-align: center;
+}
+
+.box-generation{
+  position: fixed; /* Fix position relative to the viewport */
+  top: 0; /* Start from the top edge of the viewport */
+  left: 0; /* Start from the left edge of the viewport */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Use flexbox to center align the box */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Overlay background */
+  z-index: 1000; /* High z-index to ensure it's on top of other content */
+  color: white;
+  font-family: 'ChiKareGo2', monospace;
+}
+
+.title {
+  position: absolute;
+  margin-top: -135px;
+  font-size: 24px; /* Adjust based on actual size needed */
+}
+
+.email-login input, .email-login button, .social-login button {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.email-login input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.email-login button, .social-login button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.or-section {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.social-login button {
+  display: block;
+  margin: 5px auto;
+  width: 90%;
+}
+
+/* Hover effects */
+.email-login button:hover, .social-login button:hover {
+  background-color: grey;
+}
+
+.dashed-box-login-box {
+  width: 340px;
+  height: 210px;
+  background-color: black;
+  display: flex; /* Use flexbox to align children side by side */
+  justify-content: space-around; /* Space between the child elements */
+  align-items: center; /* Center items vertically */
+  flex-direction: row; /* Align children horizontally */
+  border: 2px dashed grey; /* Adjust border width and color as needed */
+  padding: 10px; /* Adjust border width and color as needed */
+}
+
+.dashed-greeting {
+  width: 670px;
+  height: 70px;
+  background-color: #1a1a1a;
+  display: flex; /* Use flexbox to align children side by side */
+  justify-content: space-around; /* Space between the child elements */
+  align-items: center; /* Center items vertically */
+  flex-direction: row; /* Align children horizontally */
+  border: 2px dashed grey; /* Adjust border width and color as needed */
+  padding: 10px; /* Adjust border width and color as needed */
+}
+
+.dashed-box-google, .dashed-box-apple {
+  margin: 10px;
+  margin-top: 70px;
+  width: 140px;
+  height: 75px;
+  display: flex; /* Makes it easier to center text and image inside */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  border: 2px dashed grey; /* Adjust border width and color as needed */
+  cursor: pointer; /* Makes it clear these are clickable */
+}
+
+.logout-button {
+  font-family: 'ChiKareGo2';
+  font-size: 20px;
+  height: 40px;
+  border: 1px white solid;
+  border-radius: 0px;
+  padding-top: -20px;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+}
+
+.open-wallet-button {
+  font-family: 'ChiKareGo2';
+  font-size: 20px;
+  height: 90px;
+  border: 1px white solid;
+  border-radius: 0px;
+  padding-top: -20px;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+}
+
+.dashed-box-generation-box{
+  width: 340px;
+  height: 210px;
+  background-color: black;
+  display: flex; /* Use flexbox to align children side by side */
+  justify-content: center; /* Align items to the center */
+  align-items: center; /* Center items vertically */
+  flex-direction: column; /* Align children vertically for better control */
+  border: 2px dashed grey; /* Styled border */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
