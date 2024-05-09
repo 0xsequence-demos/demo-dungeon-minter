@@ -19,18 +19,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3 # docs https://pnpm.io/continuous-integration#github-actions
+        uses: pnpm/action-setup@v3 
         with:
           version: 8
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build webpack
-        env:
-          VITE_PROJECT_ACCESS_KEY: ${{ secrets.PROJECT_ACCESS_KEY }}
-          VITE_WALLET_CONNECT_ID: ${{secrets.WALLET_CONNECT_ID}}
-        run: pnpm run build
       - name: Setup Pages
         uses: actions/setup-node@v2
         with:
