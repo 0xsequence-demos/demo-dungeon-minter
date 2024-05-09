@@ -74,12 +74,12 @@ hr.full {
 	content: url(images/fullline.png);
 }
 
-/* ITEM NAME AND TIER */
+/* ITEM NAME AND TIER
 h1 {
 	font-family: diabloFont;
 	font-size: 18px;
 	max-width: 255px;
-}
+} */
 
 .click-instructions {
 	font-family: diabloFont;
@@ -192,16 +192,18 @@ li.legendary {
 }
 
 .items-container {
+	background-repeat: repeat; /* or repeat-y for vertical repeat only */
+    background-size: cover;
+    background-attachment: scroll;
 	background-image: url(https://static.vecteezy.com/system/resources/thumbnails/011/083/949/original/blue-retrowave-animation-glowing-luminance-laser-background-abstract-technology-horizontal-line-purple-light-glow-galaxy-geometric-internet-80s-style-poster-free-video.jpg);
-	background-repeat: no-repeat;
   	background-size: cover;
-  	background-attachment: fixed;
 	display: flex;
 	justify-content: center; /* Horizontally center the items */
 	align-items: center; /* Vertically center the items */
 	height: 100vh; /* Optional: Set the height to viewport height for full vertical centering */
 	flex-wrap: wrap; /* Optional: If you have multiple items and you want them to wrap */
-  }
+	padding-bottom: 100px;  
+}
 
   @keyframes fadeIn {
 	from {
