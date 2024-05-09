@@ -173,7 +173,7 @@ function App() {
   // const { isConnected, address } = useAccount()
   const [color, setColor] = useState<any>(null)
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
-  const [isConnected, setIsConnected] = useState<boolean>(true)
+  const [isConnected, setIsConnected] = useState<boolean>(false)
   // const [address, setAddress] = useState<any>(null)
   const {setTheme} = useTheme()
   // const [loadingTreasure, setLoadingTreasure] = useState(false)
@@ -343,13 +343,18 @@ function App() {
 
   useEffect(() => {
     setTimeout(async () => {
-      console.log(exploring)
+      console.log(await sequence.isSignedIn())
       if(await sequence.isSignedIn()){
         address = await sequence.getAddress()
-        if(!loadingTreasure && !loaded) setExploring(true)
+        setExploring(true)
+        setIsConnected(true)
       }
     }, 0)
-  }, [exploring, isLoggingIn, loaded])
+  }, [ isLoggingIn, setIsConnected, loaded])
+
+  useEffect(()=> {
+
+  },[exploring])
 
   const [openWallet, setOpenWallet] = useState(false)
   const [collectibles, setCollectibles] = useState([])
@@ -455,13 +460,12 @@ function App() {
               justifyContent: 'center',
               width: '100vw',
               }}
-            >
-            <Box justifyContent={'center'}>
+            > 
+            <div style={{textAlign: 'center', width: '100%', margin: 'auto'}}>
               <h1 style={{margin: '-4px'}}>Dungeon Minter</h1>
-            </Box>
-            <Box justifyContent={'center'}>
               <p className='content'>DISCOVER LOOT BOXES TO MINT A UNIQUE COLLECTIBLE</p>
-            </Box>
+            </div>
+            
             <br/>
             <div style={{textAlign:'center'}}>
 
