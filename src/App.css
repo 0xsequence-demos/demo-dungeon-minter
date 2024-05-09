@@ -36,9 +36,25 @@ p.content {
   transform: translateY(-50%); /* Adjust vertical centering */
 }
 
+
+.play-image-cancel {
+  margin-top: 10px;
+  margin-left: -70px;
+  display: none; /* Initially hide the image */
+  position: absolute; /* Position the image absolutely */
+  transform: translateY(-50%); /* Adjust vertical centering */
+}
+
 .play-image-apple {
   margin-top: 10px;
   margin-left: -70px;
+  display: none; /* Initially hide the image */
+  position: absolute; /* Position the image absolutely */
+  transform: translateY(-50%); /* Adjust vertical centering */
+}
+.play-image-mint {
+  margin-top: 10px;
+  margin-left: -140px;
   display: none; /* Initially hide the image */
   position: absolute; /* Position the image absolutely */
   transform: translateY(-50%); /* Adjust vertical centering */
@@ -53,25 +69,29 @@ p.content {
 }
 
 span.play-demo,
+span.cancel-generation,
+span.mint-generation,
 span.read-build-guide {
   cursor: pointer;
   position: relative; /* Ensure the parent container is positioned */
 }
 
 span.play-demo:hover + .play-image,
-span.read-build-guide:hover + .play-image-read-build-guide {
+span.read-build-guide:hover + .play-image-read-build-guide,
+span.cancel-generation:hover + .play-image-cancel,
+span.mint-generation:hover + .play-image-mint {
   display: inline-block; /* Show the image on hover */
 }
 
 .gmail-login,
-.apple-login {
+.apple-login{ 
   cursor: pointer;
   display: inline-block; /* Show the image on hover */
   /* position: relative; Ensure the parent container is positioned */
 }
 
 .play-image-gmail,
-.play-image-apple {
+.play-image-apple{
   display: inline-block; /* Show the image on hover */
 }
 
@@ -196,6 +216,17 @@ span.read-build-guide:hover + .play-image-read-build-guide {
   width: 100px;
 }
 
+.send-collectible-button {
+  font-family: 'ChiKareGo2';
+  font-size: 20px;
+  height: 40px;
+  border: 1px white solid;
+  border-radius: 0px;
+  padding: 5px;
+  margin: 10px;
+  width: 155px;
+}
+
 .open-wallet-button {
   font-family: 'ChiKareGo2';
   font-size: 20px;
@@ -210,13 +241,67 @@ span.read-build-guide:hover + .play-image-read-build-guide {
 
 .dashed-box-generation-box{
   width: 340px;
-  height: 210px;
+  height: 340px;
   background-color: black;
   display: flex; /* Use flexbox to align children side by side */
   justify-content: center; /* Align items to the center */
   align-items: center; /* Center items vertically */
   flex-direction: column; /* Align children vertically for better control */
-  border: 2px dashed grey; /* Styled border */
+  /* border: 2px dashed grey; Styled border */
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.progress-container {
+  margin: auto;
+  width: 80%;
+  background-color: #e0e0de;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  height: 17px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease-in-out;
+}
+
+.scrollable-list {
+  max-height: 40px;
+  overflow-y: auto; /* This makes the list scrollable when the content exceeds 150px */
+}
+
+.scrollable-wallet{
+  width: 500px;
+  max-height: 200px;
+  overflow-y: auto; /* This makes the list scrollable when the content exceeds 150px */
+}
+
+.scrollable-item{
+  padding: 40px;
+  padding-left: 30px;
+  padding-right: 0px;
+  width: 230px;
+  height: 100px !important;
+  max-height: 300px;
+  overflow-y: auto; /* This makes the list scrollable when the content exceeds 150px */
+}
+
+.transfer-to-address-input {
+  height: 20px;
+  margin-top: -40px;
+  width: 150px;
+}
+
+hr {
+  width: 100px;
+  height: 40px;
+  margin-left: 0px !important;
+}
+
+.hover-area:hover .hover-content {
+  display: block; /* Show the content when hovering over the hover-area */
 }
