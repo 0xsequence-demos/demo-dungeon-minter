@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Box, Spinner, useTheme } from '@0xsequence/design-system'
-import { useOpenConnectModal } from '@0xsequence/kit'
-import { useDisconnect, useAccount } from 'wagmi'
-import maze from './assets/maze.png'
-import { useOpenWalletModal } from '@0xsequence/kit-wallet'
+import { Box, useTheme } from '@0xsequence/design-system'
 import Grids from './Grids.tsx'
 import './App.css'
 import './lootExpanse/styles.css'
@@ -109,66 +105,6 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
   );
 }
 
-const MiniMap = ({x,y, map, steps, playerPosition, coloredCells, size = 9, isTopLeft }: any) => {
-  const miniMapStyle = isTopLeft ? { top: '10px', left: '10px' } : { top: '10px', right: '10px' };
-
-  const halfSize = Math.floor(size / 2);
-  const maxX = map[0].length - 1;
-  const maxY = map.length - 1;
-
-  // Calculate start and end coordinates ensuring they stay within the map bounds
-  const startX = Math.max(0, Math.min(playerPosition.x - halfSize, maxX - size + 1));
-  const startY = Math.max(0, Math.min(playerPosition.y - halfSize, maxY - size + 1));
-  const endX = startX + size;
-  const endY = startY + size;
-
-  // Extract the portion of the map to display based on player position
-  const getMiniMap = () => {
-      const miniMap = [];
-      for (let y = startY; y < endY; y++) {
-          const row = [];
-          for (let x = startX; x < endX; x++) {
-              // Check bounds to avoid undefined access
-              const isInsideMap = x >= 0 && x < map[0].length && y >= 0 && y < map.length;
-              const cellValue = isInsideMap ? map[y][x] : 0;  // Default to 0 if out-of-bounds
-              const coloredCell = isInsideMap ? coloredCells.find((cell: any) => cell.x === x && cell.y === y) : null;
-              row.push({ value: cellValue, color: coloredCell ? coloredCell.color : null });
-          }
-          miniMap.push(row);
-      }
-      return miniMap;
-  };
-
-  const miniMap = getMiniMap();
-  useEffect(() => {
-
-  }, [playerPosition, steps,x,y])
-
-  return (
-      <div className="mini-map" style={miniMapStyle}>
-          {miniMap.map((row, i) => (
-              <div key={i} className="row">
-                  {row.map((cell, j) => (
-                      <div
-                          key={`${i}-${j}`}
-                          className={`cell ${cell.value === 1 ? 'obstacle' : ''}`}
-                      >
-                          {cell.color && (
-                              <div 
-                                  className="color-marker" 
-                                  style={{ backgroundColor: cell.color }}
-                              />
-                          )}
-                          {i === halfSize && j === halfSize ? <div className="player-marker" style={{transform: `translate(-50%, -50%) rotate(${playerPosition.rotation}deg)`}}/> : null}
-                      </div>
-                  ))}
-              </div>
-          ))}
-      </div>
-  );
-};
-
-
 function ImageGallery({ items, setCollectibleViewable }: any) {
   return (
     <div style={{
@@ -247,8 +183,8 @@ function App() {
   const [progressStep, setProgressStep] = useState(1);
   const [progressValue, setProgressValue] = useState(0);
   const [progressDescription, setProgressDescription] = useState('SCENARIO.GG AI GENERATION...');
-  const [dailyMax, setDailyMax] = useState(false)
-  const [isMobile, setIsMobile] = useState(false);
+  const [__, setDailyMax] = useState(false)
+  const [___, setIsMobile] = useState(false);
   const [collectibleViewable, setCollectibleViewable] = useState<any>(null)
 
   setTheme('dark')
@@ -259,12 +195,6 @@ function App() {
   useEffect(() =>{
 
   }, [isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
-
-  const [loadCount, setLoadCount] = useState(0);
-
-  const handleImageLoaded = () => {
-    setLoadCount(prevCount => prevCount + 1);
-  };
 
   function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -567,7 +497,6 @@ function App() {
                 txHash = '';
                 live= false
                 setDailyMax(false)
-                disconnect()
                 setIsConnected(false)
                 setIsLoggingIn(false)
                 try {
@@ -644,7 +573,7 @@ function App() {
                       <div style={{marginTop: '-50px'}}></div>
                       {collectibleViewable && <><hr className="half" />
                       <ul className="scrollable-item">
-                        {collectibleViewable.attributes.map((item_attributes: any, index: any) => {
+                        {collectibleViewable.attributes.map((item_attributes: any) => {
                           // <React.Fragment key={index}>
                           if(item_attributes.display_type != 'tier' && item_attributes.display_type !='type')
                           if(item_attributes.display_type == 'category'){
@@ -749,7 +678,6 @@ function App() {
                     <img
                       style={{ width: '298px' }}
                       src={item.url}
-                      onLoad={handleImageLoaded}
                     />
                   </div>
                   <p className={`content`} style={{marginLeft: '40px', marginTop: '-50px'}}>
