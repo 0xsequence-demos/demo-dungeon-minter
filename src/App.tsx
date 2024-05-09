@@ -208,10 +208,10 @@ function App() {
   useEffect(() => {
     window.addEventListener('message', (event) => {
 
-      // if (event.origin !== 'https://maze-inky.vercel.app') {
+      if (event.origin !== 'https://maze-inky.vercel.app') {
           // Security check: Ensure that the message is from a trusted source
-          // return;
-      // 
+          return;
+      }
 
       if(event.data.portal == 'loot' && count == 0 && isConnected){
         console.log(event.data.color)
@@ -512,8 +512,8 @@ function App() {
               </button>
               </div>
               <div style={{height: '100vh'}}>
-                {/* <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth} height={window.innerHeight*.76} ></iframe> */}
-                <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
+                <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
+                {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
               </div>
 
               <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '30px', left: '50%', transform: 'translateX(-50%)'}}>
