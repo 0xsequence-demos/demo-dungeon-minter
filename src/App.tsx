@@ -18,7 +18,7 @@ let live = false;
 let txHash: any = ''
 let cancelled = false
 let address: any = null
-let loadingTreasure: boolean = false
+let loadingTreasure: boolean = true
 import sequence from './SequenceEmbeddedWallet.ts'
 
 export function useSessionHash() {
@@ -182,7 +182,7 @@ function App() {
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
   const [isConnected, setIsConnected] = useState<boolean>(true)
   const {setTheme} = useTheme()
-  const [exploring, setExploring] = useState(true)
+  const [exploring, setExploring] = useState(false)
   const [_, setShowElement] = useState(true);
   const [mintLoading, setMintLoading] = useState(false);
   const [progressStep, setProgressStep] = useState(1);
@@ -554,7 +554,8 @@ function App() {
                       alignItems: 'center', /* Center items vertically */
                       flexDirection: 'column', /* Align children vertically for better control */
                       padding: '60px',
-                      boxShadow: `0px 0px 450px 450px ${color}70`,
+                      backgroundImage: `radial-gradient(circle, ${'#C0FFEE'}B3 0%, transparent 70%)`,
+                      // boxShadow: `0px 0px 450px 450px red`,
                       borderWidth: `3px`,
                       borderStyle: `dashed`,
                       borderColor: `${color}`}}>
@@ -612,7 +613,13 @@ function App() {
                 </>
               }
             {!exploring && loadingTreasure && <> 
-            <div className="box-generation">
+            <div className="box-generation"
+              style={{
+                backgroundSize: '150%',
+                backgroundPosition: 'center',
+                backgroundImage: `radial-gradient(circle at 50% 50%, ${color}B3 0%, transparent 70%)`,
+              }}
+            >
               <div style={{
                 width: '340px',
                 marginTop: '-155px',
@@ -623,7 +630,6 @@ function App() {
                 alignItems: 'center', /* Center items vertically */
                 flexDirection: 'column', /* Align children vertically for better control */
                 padding: '10px',
-                boxShadow: `0px 0px 450px 450px ${color}70`,
                 borderWidth: `3px`,
                 borderStyle: `dashed`,
                 borderColor: `${color}`}}>
@@ -657,7 +663,13 @@ function App() {
             </>}
             {
               loaded && 
-              <div className="box-generation">
+              <div className="box-generation"
+              style={{
+                backgroundSize: '150%',
+                backgroundPosition: 'center',
+                backgroundImage: `radial-gradient(circle, ${color}B3 0%, transparent 70%)`,
+              }}
+              >
               <div style={{
                 width: '340px',
                 height: '515px',
