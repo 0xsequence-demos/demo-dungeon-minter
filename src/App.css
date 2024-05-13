@@ -38,7 +38,7 @@ p.content {
 
 
 .play-image-cancel {
-  margin-top: 13px;
+  margin-top: 0px;
   margin-left: -90px;
   display: none; /* Initially hide the image */
   position: absolute; /* Position the image absolutely */
@@ -53,8 +53,8 @@ p.content {
   transform: translateY(-50%); /* Adjust vertical centering */
 }
 .play-image-mint {
-  margin-top: 10px;
-  margin-left: -140px;
+  margin-top: 13px;
+  margin-left: -170px;
   display: none; /* Initially hide the image */
   position: absolute; /* Position the image absolutely */
   transform: translateY(-50%); /* Adjust vertical centering */
@@ -318,7 +318,7 @@ span.mint-generation:hover + .play-image-mint {
 hr {
   /* width: 100px; */
   /* height: 40px; */
-  margin-left: 0px !important;
+  margin-left: 40px !important;
 }
 
 .hover-area:hover .hover-content {

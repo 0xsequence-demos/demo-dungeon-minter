@@ -252,7 +252,7 @@ function App() {
 
   const triggerProgressBar = async () => {
     const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
-    const times = [10000, 8000, 2000, 5000];
+    const times = [10000, 14000, 2000, 5000];
     const steps = [1, 1, 2, 2];
     const totalDuration = times.reduce((prev, val) => prev + val, 0); // Calculate total duration once
 
@@ -449,11 +449,11 @@ function App() {
             >
 
           <LoginScreen setIsLoggingIn={setIsLoggingIn} setIsConnected={setIsConnected}/>
-          <div style={{position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', width: '62%'}}>
+          <div style={{position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', width: '63%'}}>
              {
               !isMobileDevice() ? 
               <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWORK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
-              : <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWORK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> <br/>/ EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> <br/>/ ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
+              : <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWORK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> /<br/> EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> /<br/> ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
              }
               </div>
           </div>
@@ -486,11 +486,11 @@ function App() {
             </div>
 
             </div>
-            <div style={{position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', width: '62%'}}>
+            <div style={{position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', width: '63%'}}>
             {
               !isMobileDevice() ? 
               <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWORK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
-              : <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWORK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> <br/>/ EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> <br/>/ ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
+              : <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWORK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / <br/>EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / <br/> ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
              }
             </div>
           </>
@@ -637,10 +637,10 @@ function App() {
                   {/* <ProgressBar value={progressValue*100} maxValue={100} color={color} /> */}
                 {/* </Box> */}
                 <Box>
-                  <p style={{color: color+'80'}}>{progressDescription}</p>
+                  <p style={{color: color}}>{progressDescription}</p>
                 </Box>
                 <Box>
-                  <p style={{color: color+'80'}}>{progressStep}/2 steps</p>
+                  <p style={{color: color}}>{progressStep}/2 steps</p>
                 </Box>
                 <p className='content' style={{position:'relative'}} onClick={() => {
                   setProgressValue(0)
@@ -716,7 +716,7 @@ function App() {
                 {
                   txHash && <p onClick={() => window.open(`https://nova.arbiscan.io/tx/${txHash}`)} style={{color: 'orange', cursor: 'pointer'}}>{`see minted hash: ${txHash.slice(0, 4)}... on explorer`}</p>
                 }
-                <p className='content' style={{position:'relative'}} onClick={() => {
+                <p className='content' style={{position:'relative', marginTop: '-17px'}} onClick={() => {
                   setProgressValue(0)
                   setProgressDescription('SCENARIO.GG AI GENERATION...')
                   setProgressStep(1)
