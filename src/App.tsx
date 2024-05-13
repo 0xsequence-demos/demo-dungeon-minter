@@ -180,7 +180,7 @@ function Collectible({ collectibleViewable }: any) {
 function App() {
   const [color, setColor] = useState<any>(null)
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
-  const [isConnected, setIsConnected] = useState<boolean>(falsr)
+  const [isConnected, setIsConnected] = useState<boolean>(false)
   const {setTheme} = useTheme()
   const [exploring, setExploring] = useState(false)
   const [_, setShowElement] = useState(true);
