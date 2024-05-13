@@ -18,7 +18,7 @@ let live = false;
 let txHash: any = ''
 let cancelled = false
 let address: any = null
-let loadingTreasure: boolean = true
+let loadingTreasure: boolean = false
 import sequence from './SequenceEmbeddedWallet.ts'
 
 export function useSessionHash() {
@@ -180,7 +180,7 @@ function Collectible({ collectibleViewable }: any) {
 function App() {
   const [color, setColor] = useState<any>(null)
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
-  const [isConnected, setIsConnected] = useState<boolean>(true)
+  const [isConnected, setIsConnected] = useState<boolean>(falsr)
   const {setTheme} = useTheme()
   const [exploring, setExploring] = useState(false)
   const [_, setShowElement] = useState(true);
