@@ -47,7 +47,7 @@ export function useSessionHash() {
 
 const ProgressBar = ({ completed, bgcolor }: any) => {
   return (
-    <div className="progress-container">
+    <div className="progress-container" style={{backgroundColor: bgcolor+'80'}}>
       <div className="progress-bar" style={{ width: `${completed}%`, backgroundColor: bgcolor }}>
       </div>
     </div>
@@ -73,35 +73,43 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
 
   }, [googleHover])
   return (
+    <>
     <div className="login-container">
-      <div className="dashed-box-login-box">
-        <h1 className="title">Dungeon Minter</h1>
-        <span style={{color: 'grey', position: 'absolute', marginTop: '-80px'}}>SIGN IN VIA</span>
-        <br/>
-        <div className='dashed-box-google'>
-            <p className='content' style={{position:'relative'}}>
-              <div className='gmail-login' onMouseLeave={() => setGoogleHover(false)} onMouseEnter={() => {setGoogleHover(true)}} style={{overflow: 'hidden', opacity: '0',width: '90px', position: 'absolute', zIndex: 1, height: '100px'}}>
-
-                {googleHover&&<GoogleLogin 
-                nonce={sessionHash}
-                key={sessionHash}
-                onSuccess={handleGoogleLogin} shape="circle" width={230} /> }
-              </div>
-
-                <span className='gmail-login'>Gmail</span>
-                {googleHover&&<img src={playImage} alt="Play" className="play-image-gmail" />}
-            </p>
-        </div>
-        <div className='dashed-box-apple'>
-          <p className='content' style={{position:'relative'}}>
-              <span className='apple-login'>Apple</span>
-              <img src={playImage} alt="Play" className="play-image-apple" />
-          </p>
-        </div>
-      <span style={{color: 'grey', position: 'absolute', marginTop: '180px', marginLeft: '5px'}}>(email login coming soon)</span>
+      <div style={{textAlign: 'center', width: '100%', margin: 'auto'}}>
+        <h1 style={{marginTop: '-67px'}}>Dungeon Minter</h1>
+        <p className='content' style={{opacity: 0}}>DISCOVER LOOT BOXES TO MINT A UNIQUE COLLECTIBLE</p>
       </div>
+      <br/>
+      <span style={{color: 'grey', position: 'absolute', marginTop: '-30px'}}>SIGN IN VIA</span>
+      <br/>
+      <span style={{color: 'grey', position: 'absolute', marginTop: '365px', marginLeft: '5px'}}>(email login coming soon)</span>
+      <br/>
+      <br/>
+      </div>
+      <div className="login-container" style={{marginTop: '-100px'}}>
 
-    </div>
+       <div className='dashed-box-google'>
+       <p className='content' style={{position:'relative'}}>
+         <div className='gmail-login' onMouseLeave={() => setGoogleHover(false)} onMouseEnter={() => {setGoogleHover(true)}} style={{overflow: 'hidden', opacity: '0',width: '90px', position: 'absolute', zIndex: 1, height: '100px'}}>
+
+           {googleHover&&<GoogleLogin 
+           nonce={sessionHash}
+           key={sessionHash}
+           onSuccess={handleGoogleLogin} shape="circle" width={230} /> }
+         </div>
+
+           <span className='gmail-login'>Gmail</span>
+           {googleHover&&<img src={playImage} alt="Play" className="play-image-gmail" />}
+       </p>
+   </div>
+   <div className='dashed-box-apple'>
+     <p className='content' style={{position:'relative'}}>
+         <span className='apple-login'>Apple</span>
+         <img src={playImage} alt="Play" className="play-image-apple" />
+     </p>
+     </div>
+   </div>
+      </>
   );
 }
 
@@ -170,13 +178,10 @@ function Collectible({ collectibleViewable }: any) {
 }
 
 function App() {
-  // const { isConnected, address } = useAccount()
   const [color, setColor] = useState<any>(null)
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
   const [isConnected, setIsConnected] = useState<boolean>(false)
-  // const [address, setAddress] = useState<any>(null)
   const {setTheme} = useTheme()
-  // const [loadingTreasure, setLoadingTreasure] = useState(false)
   const [exploring, setExploring] = useState(false)
   const [_, setShowElement] = useState(true);
   const [mintLoading, setMintLoading] = useState(false);
@@ -444,11 +449,8 @@ function App() {
             >
 
           <LoginScreen setIsLoggingIn={setIsLoggingIn} setIsConnected={setIsConnected}/>
-          <div style={{zIndex: 10, width: '300px',color: 'grey', position:'fixed', bottom: '15px', left: '30px'}}>
-              <h2 className='network-powered-by'><a href='https://arbitrum.io/anytrust' target='_blank'><img width="200px" src="https://nova.arbiscan.io/images/logo-Arbiscan.svg?v=0.0.5"/></a></h2>
-            </div> 
-          <div style={{position: 'fixed', bottom: '22px', left: '51.1%', transform: 'translateX(-50%)', width: '45%'}}>
-              <p style={{fontSize: '15px', color: 'grey'}} className="content">EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
+          <div style={{position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', width: '62%'}}>
+            <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWOK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
             </div>
           </div>
 
@@ -479,19 +481,16 @@ function App() {
             </p>
             </div>
 
-            <div style={{zIndex: 10, width: '300px',color: 'grey', position:'fixed', bottom: '15px', left: '30px'}}>
-                <h2 className='network-powered-by'><a href='https://arbitrum.io/anytrust' target='_blank'><img width="200px" src="https://nova.arbiscan.io/images/logo-Arbiscan.svg?v=0.0.5"/></a></h2>
-              </div> 
             </div>
-            <div style={{position: 'fixed', bottom: '22px', left: '51.1%', transform: 'translateX(-50%)', width: '45%'}}>
-              <p style={{fontSize: '15px', color: 'grey'}} className="content">EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
+            <div style={{position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', width: '62%'}}>
+            <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWOK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / EMBEDDED WALLET POWERED BY <span style={{color: 'white',opacity: 0.7}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white',opacity: 0.7}}>SCENARIO.GG</span></p>
             </div>
           </>
         :
           <>
           {
             <div>
-             <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '15px', right: '30px'}} onClick={async () => {
+             <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '15px', left: '30px'}} onClick={async () => {
                 setExploring(false)
                 setLoaded(false)
                 setMintLoading(false)
@@ -504,6 +503,7 @@ function App() {
                 setIsConnected(false)
                 setIsLoggingIn(false)
                 try {
+                  console.log('signing out')
                   const sessions = await sequence.listSessions()
                   console.log(sessions)
                   await sequence.dropSession({ sessionId: sessions[0].id })
@@ -516,18 +516,16 @@ function App() {
               </button>
               </div>
               <div style={{height: '100vh'}}>
-                <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
-                {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                {/* <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
               </div>
-
-              <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '30px', left: '50%', transform: 'translateX(-50%)'}}>
-                <div className='dashed-greeting'>
-                  <p className='content'>Welcome to Dungeon Minter!
+              <div style={{zIndex: 10, width: '79vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
+                <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
+                  <p className='content' style={{fontSize: isMobileDevice() &&'15px' as any}}>Welcome to Dungeon Minter!
                     Walk around to discover loot boxes and click on a loot box to generate a unique collectible to mint to your Embedded Wallet.</p>
                 </div>
               </div> 
-
-              <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '30px', right: '30px'}}>
+              <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '25px', right: isMobileDevice() ? '30px' : '30px'}}>
               <button className='open-wallet-button' onClick={() => setOpenWallet(true)}>
                 open wallet
               </button>
@@ -549,7 +547,7 @@ function App() {
                       flexDirection: 'column', /* Align children vertically for better control */
                       padding: '50px',
                       boxShadow: `0px 0px 450px 450px ${color}70`,
-                      borderWidth: `2px`,
+                      borderWidth: `3px`,
                       borderStyle: `dashed`,
                       borderColor: `${color}`}}>
                         <br/>
@@ -609,7 +607,7 @@ function App() {
             <div className="box-generation">
               <div style={{
                 width: '340px',
-                height: '540px',
+                marginTop: '-155px',
                 paddingTop: '20px',
                 backgroundColor: 'black',
                 display: 'flex', /* Use flexbox to align children side by side */
@@ -618,19 +616,12 @@ function App() {
                 flexDirection: 'column', /* Align children vertically for better control */
                 padding: '10px',
                 boxShadow: `0px 0px 450px 450px ${color}70`,
-                borderWidth: `2px`,
+                borderWidth: `3px`,
                 borderStyle: `dashed`,
                 borderColor: `${color}`}}>
                   <br/>
-                <p style={{textAlign: 'center', fontSize: '40px', margin: '0px'}}>Lootbox </p><p style={{textAlign: 'center', fontSize: '40px', marginTop: '-10px',marginBottom: '0px'}}>discovered!</p>
+                <p style={{textAlign: 'center', fontSize: '40px', margin: '0px'}}>Loot box </p><p style={{textAlign: 'center', fontSize: '40px', marginTop: '-10px',marginBottom: '0px'}}>discovered!</p>
                 <br/>
-                <p style={{textAlign: 'center', margin: '0px'}}>loot that combines elements from diablo<br/>
-                it might tell you about your past and what you might need for the future
-                <br/>
-                take a pass on items
-                <br/>
-                or unlock what you want in this world
-                </p>
                 <br/>
                 {/* <Box justifyContent={'center'} paddingRight={'16'} paddingLeft={'16'}> */}
                 <ProgressBar completed={progressValue*100} bgcolor={color} />
@@ -638,10 +629,10 @@ function App() {
                   {/* <ProgressBar value={progressValue*100} maxValue={100} color={color} /> */}
                 {/* </Box> */}
                 <Box>
-                  <p>{progressDescription}</p>
+                  <p style={{color: color+'80'}}>{progressDescription}</p>
                 </Box>
                 <Box>
-                  <p>{progressStep}/2 steps</p>
+                  <p style={{color: color+'80'}}>{progressStep}/2 steps</p>
                 </Box>
                 <p className='content' style={{position:'relative'}} onClick={() => {
                   setProgressValue(0)
@@ -670,7 +661,7 @@ function App() {
                 flexDirection: 'column', /* Align children vertically for better control */
                 padding: '10px',
                 boxShadow: `0px 0px 450px 450px ${color}70`,
-                borderWidth: `2px`,
+                borderWidth: `3px`,
                 borderStyle: `dashed`,
                 borderColor: `${color}`}}>
                  {items.map((item: any, index: any) => {

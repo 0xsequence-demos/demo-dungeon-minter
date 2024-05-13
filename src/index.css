@@ -1,5 +1,5 @@
 @font-face {
-	font-family: Extant;
+	font-family: PixelFraktur;
 	src: url(fonts/PixelFraktur.ttf);
 }
 
@@ -37,8 +37,8 @@ body {
 
 h1 {
   color: white;
-  font-family: 'Extant';
-  font-size: 61px;
+  font-family: 'PixelFraktur';
+  font-size: 72px;
   line-height: 1.1;
 }
 

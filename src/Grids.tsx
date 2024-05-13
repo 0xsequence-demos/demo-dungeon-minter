@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Grids.css';
 
-const GRID_SIZE = 25; // Number of rows and columns in the grid
+const GRID_SIZE = 40; // Number of rows and columns in the grid
 
 const Square = ({ x, y }: any) => {
   const [visible, setVisible] = useState(false);
