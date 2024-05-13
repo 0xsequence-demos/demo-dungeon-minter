@@ -553,7 +553,7 @@ function App() {
                       justifyContent: 'center', /* Align items to the center */
                       alignItems: 'center', /* Center items vertically */
                       flexDirection: 'column', /* Align children vertically for better control */
-                      padding: '50px',
+                      padding: '60px',
                       boxShadow: `0px 0px 450px 450px ${color}70`,
                       borderWidth: `3px`,
                       borderStyle: `dashed`,
