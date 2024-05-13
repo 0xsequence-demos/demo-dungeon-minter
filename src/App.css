@@ -38,7 +38,7 @@ p.content {
 
 
 .play-image-cancel {
-  margin-top: 0px;
+  margin-top: 13px;
   margin-left: -90px;
   display: none; /* Initially hide the image */
   position: absolute; /* Position the image absolutely */
@@ -66,6 +66,10 @@ p.content {
   display: none; /* Initially hide the image */
   position: absolute; /* Position the image absolutely */
   transform: translateY(-50%); /* Adjust vertical centering */
+}
+
+.cancel-generation {
+  margin-top: -20px;
 }
 
 span.play-demo,
