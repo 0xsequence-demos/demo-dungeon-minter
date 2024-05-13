@@ -10,8 +10,3 @@ login with a universal wallet using sequence kit, browse a maze to find lootboxe
 
 ## evm network
 - arbitrum nova
-
-todo
-- open wallet
-- send transfer
-- navigation
