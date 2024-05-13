@@ -180,9 +180,9 @@ function Collectible({ collectibleViewable }: any) {
 function App() {
   const [color, setColor] = useState<any>(null)
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
-  const [isConnected, setIsConnected] = useState<boolean>(false)
+  const [isConnected, setIsConnected] = useState<boolean>(true)
   const {setTheme} = useTheme()
-  const [exploring, setExploring] = useState(false)
+  const [exploring, setExploring] = useState(true)
   const [_, setShowElement] = useState(true);
   const [mintLoading, setMintLoading] = useState(false);
   const [progressStep, setProgressStep] = useState(1);
@@ -450,8 +450,12 @@ function App() {
 
           <LoginScreen setIsLoggingIn={setIsLoggingIn} setIsConnected={setIsConnected}/>
           <div style={{position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', width: '62%'}}>
-            <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWOK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
-            </div>
+             {
+              !isMobileDevice() ? 
+              <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWOK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
+              : <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWOK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> <br/>/ EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> <br/>/ ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
+             }
+              </div>
           </div>
 
           </>
@@ -483,7 +487,11 @@ function App() {
 
             </div>
             <div style={{position: 'fixed', bottom: '22px', left: '50%', transform: 'translateX(-50%)', width: '62%'}}>
-            <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWOK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / EMBEDDED WALLET POWERED BY <span style={{color: 'white',opacity: 0.7}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white',opacity: 0.7}}>SCENARIO.GG</span></p>
+            {
+              !isMobileDevice() ? 
+              <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWOK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> / EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> / ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
+              : <p style={{fontSize: '15px', color: '#555555ba'}} className="content">NETWOK POWERED BY <span style={{color: 'white',opacity: 0.7}}>ARBITRUM NOVA</span> <br/>/ EMBEDDED WALLET POWERED BY <span style={{color: 'white'}}>SEQUENCE</span> <br/>/ ARTWORK GENERATION WITH <span style={{color: 'white'}}>SCENARIO.GG</span></p>
+             }
             </div>
           </>
         :
@@ -516,8 +524,8 @@ function App() {
               </button>
               </div>
               <div style={{height: '100vh'}}>
-                <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
-                {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                {/* <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
               </div>
               <div style={{zIndex: 10, width: '79vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
