@@ -559,8 +559,6 @@ function App() {
                       alignItems: 'center', /* Center items vertically */
                       flexDirection: 'column', /* Align children vertically for better control */
                       padding: '60px',
-                      backgroundImage: `radial-gradient(circle, ${'#C0FFEE'}B3 0%, transparent 70%)`,
-                      // boxShadow: `0px 0px 450px 450px red`,
                       borderWidth: `3px`,
                       borderStyle: `dashed`,
                       borderColor: `${color}`}}>
