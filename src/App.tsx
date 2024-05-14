@@ -191,6 +191,7 @@ function App() {
   const [__, setDailyMax] = useState(false)
   const [___, setIsMobile] = useState(false);
   const [collectibleViewable, setCollectibleViewable] = useState<any>(null)
+  const [controller, setController] = useState<any>(null);
 
   setTheme('dark')
 
@@ -199,7 +200,7 @@ function App() {
 
   useEffect(() =>{
 
-  }, [isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
+  }, [controller, isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
 
   function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -310,6 +311,9 @@ function App() {
     // alert(loadingTreasure)
     console.log(address)
 
+    const newController = new AbortController();
+    setController(newController);
+
     const data = {
       address: address,
       mint: false
@@ -321,12 +325,13 @@ function App() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
+      signal: newController.signal,
     })
 
     if(res.status == 400){
       console.log('reached daily max')
       setDailyMax(true)
-    } else {
+    } else if(res.status == 200){
       const json = await res.json()
       console.log(json)
       setLoaded(true)
@@ -654,6 +659,7 @@ function App() {
                   setProgressStep(1)
                   count = 0
                   cancelled= true;
+                  controller?.abort()
                   setExploring(true)}}>
                     <span className='cancel-generation'>Cancel</span>
                     <img src={playImage} alt="Play" className="play-image-cancel" />
