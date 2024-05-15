@@ -185,7 +185,6 @@ function App() {
   const [isConnected, setIsConnected] = useState<boolean>(false)
   const {setTheme} = useTheme()
   // const [exploring, setExploring] = useState(false)
-  const [_, setShowElement] = useState(true);
   const [mintLoading, setMintLoading] = useState(false);
   const [progressStep, setProgressStep] = useState(1);
   const [progressValue, setProgressValue] = useState(0);
