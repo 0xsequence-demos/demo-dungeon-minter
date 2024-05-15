@@ -8,6 +8,7 @@ import playImage from './assets/play.svg'
 import { SequenceIndexer } from '@0xsequence/indexer'
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 
+// const ENDPOINT = "http://localhost:36839"; 
 const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
 
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
@@ -18,7 +19,7 @@ let live = false;
 let txHash: any = ''
 let cancelled = false
 let address: any = null
-let loadingTreasure: boolean = false
+// let loadingTreasure: boolean = false
 import sequence from './SequenceEmbeddedWallet.ts'
 
 export function useSessionHash() {
@@ -176,13 +177,14 @@ function Collectible({ collectibleViewable }: any) {
     </div>
   );
 }
+let exploring: boolean = false
 
 function App() {
   const [color, setColor] = useState<any>(null)
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
   const [isConnected, setIsConnected] = useState<boolean>(false)
   const {setTheme} = useTheme()
-  const [exploring, setExploring] = useState(false)
+  // const [exploring, setExploring] = useState(false)
   const [_, setShowElement] = useState(true);
   const [mintLoading, setMintLoading] = useState(false);
   const [progressStep, setProgressStep] = useState(1);
@@ -192,11 +194,12 @@ function App() {
   const [___, setIsMobile] = useState(false);
   const [collectibleViewable, setCollectibleViewable] = useState<any>(null)
   const [controller, setController] = useState<any>(null);
-
+  const [increment, setIncrement] = useState(0)
   setTheme('dark')
 
   const [items, setItems] = useState<any>([])
   const [loaded, setLoaded] = useState(false);
+  const [loadingTreasure, setLoadingTreasure] = useState(false);
 
   useEffect(() =>{
 
@@ -214,46 +217,47 @@ function App() {
   useEffect(() => {
     window.addEventListener('message', (event) => {
 
-      if (event.origin !== 'https://maze-inky.vercel.app') {
-          // Security check: Ensure that the message is from a trusted source
-          return;
-      }
+      // if (event.origin !== 'https://maze-inky.vercel.app') {
+      //     // Security check: Ensure that the message is from a trusted source
+      //     return;
+      // }
 
       if(event.data.portal == 'loot' && count == 0 && isConnected){
         console.log(event.data.color)
         setColor(event.data.color)
-        setExploring(false)
+        // setExploring(false)
+        exploring = false;
         generate()
         count++
       }
     });
   }, [isConnected])
 
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
+  // const handleScroll = () => {
+  //   const scrollPosition = window.scrollY;
+  //   const windowHeight = window.innerHeight;
+  //   const documentHeight = document.documentElement.scrollHeight;
     
-    // Calculate if the scroll is below 90% of the page
-    if ((scrollPosition + windowHeight) / documentHeight > 0.9) {
-      setShowElement(false);
-    } else {
-      setShowElement(true);
-    }
-  };
+  //   // Calculate if the scroll is below 90% of the page
+  //   if ((scrollPosition + windowHeight) / documentHeight > 0.9) {
+  //     setShowElement(false);
+  //   } else {
+  //     setShowElement(true);
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll);
 
-    // Clean up the event listener
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   // Clean up the event listener
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   const triggerProgressBar = async () => {
     const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
-    const times = [10000, 14000, 2000, 5000];
+    const times = [17000, 18000, 2000, 5000];
     const steps = [1, 1, 2, 2];
     const totalDuration = times.reduce((prev, val) => prev + val, 0); // Calculate total duration once
 
@@ -302,12 +306,16 @@ function App() {
   }
 
   const generate = async () => {
+    console.log('generating')
     cancelled = false
+    setIncrement(increment+1)
     triggerProgressBar()
 
     // setLoadingTreasure(true)
 
-    loadingTreasure = true
+    // loadingTreasure = true
+    setLoadingTreasure(true)
+    console.log(loadingTreasure)
     // alert(loadingTreasure)
     console.log(address)
 
@@ -335,7 +343,9 @@ function App() {
       const json = await res.json()
       console.log(json)
       setLoaded(true)
-      loadingTreasure = false
+      // loadingTreasure = false
+    setLoadingTreasure(false)
+
       json.loot.loot.url = json.image
       json.loot.loot.tokenID = json.tokenID
       setItems([json.loot.loot])
@@ -356,7 +366,8 @@ function App() {
       console.log(await sequence.isSignedIn())
       if(await sequence.isSignedIn()){
         address = await sequence.getAddress()
-        setExploring(true)
+        // setExploring(true)
+        exploring = true
         setIsConnected(true)
       }
     }, 0)
@@ -436,7 +447,7 @@ function App() {
 
   useEffect(() => {
 
-  }, [transferLoading])
+  }, [increment, transferLoading, loadingTreasure, exploring, count, progressValue])
 
   return (
     <>
@@ -504,10 +515,13 @@ function App() {
           {
             <div>
              <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '15px', left: '30px'}} onClick={async () => {
-                setExploring(false)
+                // setExploring(false)
+                exploring = false
                 setLoaded(false)
                 setMintLoading(false)
-                loadingTreasure = false
+                // loadingTreasure = false
+                setLoadingTreasure(false)
+
                 count = 0
                 setItems([]);
                 txHash = '';
@@ -515,11 +529,16 @@ function App() {
                 setDailyMax(false)
                 setIsConnected(false)
                 setIsLoggingIn(false)
+                address = null
+                setProgressValue(0)
+                setProgressDescription('SCENARIO.GG AI GENERATION...')
+                setProgressStep(1)
                 try {
                   console.log('signing out')
                   const sessions = await sequence.listSessions()
                   console.log(sessions)
                   await sequence.dropSession({ sessionId: sessions[0].id })
+                location.reload()
                 }catch(err){
                   console.log(err)
                 }
@@ -532,7 +551,7 @@ function App() {
                 <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
                 {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
               </div>
-              <div style={{zIndex: 10, width: '79vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
+              <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
                   <p className='content' style={{fontSize: isMobileDevice() &&'15px' as any}}>Welcome to Dungeon Minter!
                     Walk around to discover loot boxes and click on a loot box to generate a unique collectible to mint to your Embedded Wallet.</p>
@@ -657,8 +676,13 @@ function App() {
                   setProgressStep(1)
                   count = 0
                   cancelled= true;
+                  // loadingTreasure = false
+                  setLoadingTreasure(false)
+
                   controller?.abort()
-                  setExploring(true)}}>
+                  // setExploring(true)
+                  exploring = true;
+                  }}>
                     <span className='cancel-generation'>Cancel</span>
                     <img src={playImage} alt="Play" className="play-image-cancel" />
                 </p>
@@ -676,7 +700,7 @@ function App() {
               >
               <div style={{
                 width: '340px',
-                height: '515px',
+                height: '550px',
                 paddingTop: '20px',
                 backgroundColor: 'black',
                 display: 'flex', /* Use flexbox to align children side by side */
@@ -740,8 +764,11 @@ function App() {
                   txHash = ''
                   count = 0
                   cancelled= true;
-                  setExploring(true)}}>
-                    <span className='cancel-generation'>Cancel</span>
+                  // setExploring(true)
+                  exploring = true;
+                }}
+                  >
+                    <span className='cancel-generation'>{txHash != '' ? 'Close' : 'Cancel'}</span>
                     <img src={playImage} alt="Play" className="play-image-cancel" />
                 </p>
               </div>
