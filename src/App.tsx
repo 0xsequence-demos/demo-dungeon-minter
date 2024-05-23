@@ -150,11 +150,13 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
      }}>
       {/* @ts-ignore */}
       <AppleSignin
+      key={sessionHash}
      authOptions={{
        clientId: 'com.sequence.dungeon-minter',
        scope: 'openid email',
        redirectURI: 'https://dungeon-minter.vercel.app/',
        usePopup: true,
+       nonce: sessionHash
      }}
      onError={(error: any) => console.error(error)}
      onSuccess={handleAppleLogin}
