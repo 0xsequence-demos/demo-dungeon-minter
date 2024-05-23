@@ -56,7 +56,7 @@ const ProgressBar = ({ completed, bgcolor }: any) => {
   );
 };
 
-function LoginScreen({ setIsLoggingIn, setIsConnected, isLoggingIn } : any) {
+function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
   const { sessionHash } = useSessionHash()
 
   const handleGoogleLogin = async (tokenResponse: CredentialResponse) => {
