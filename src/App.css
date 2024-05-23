@@ -328,3 +328,15 @@ hr {
 .hover-area:hover .hover-content {
   display: block; /* Show the content when hovering over the hover-area */
 }
+
+button:focus {
+  outline: none; /* Removes the outline */
+}
+
+.react-apple-signin-auth-btn.react-apple-signin-auth-btn-dark{
+  background: transparent;
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    border: 0px;
+}

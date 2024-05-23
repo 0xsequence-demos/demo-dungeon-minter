@@ -7,9 +7,10 @@ import playImage from './assets/play.svg'
 // const ENDPOINT = "http://localhost:8787/"; 
 import { SequenceIndexer } from '@0xsequence/indexer'
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
+import AppleSignin, { appleAuthHelpers } from 'react-apple-signin-auth';
 
-// const ENDPOINT = "http://localhost:36839"; 
-const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
+const ENDPOINT = "http://localhost:8787"; 
+// const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
 
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app', PROJECT_ACCESS_KEY)
@@ -70,9 +71,27 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
   }
 
   const [googleHover, setGoogleHover] = useState(false)
+  const [appleHover, setAppleHover] = useState(false)
   useEffect(() => {
 
-  }, [googleHover])
+  }, [googleHover, appleHover])
+
+  useEffect(() => {
+    var button = document.querySelector('.react-apple-signin-auth-btn');
+    if (button) {
+        button.innerHTML = '';  // This clears out all the content inside the button
+    }
+
+    var button = document.querySelector('.react-apple-signin-auth-btn');
+    if (button) {
+        // Removing the SVG element
+        var svg = button.querySelector('svg');
+        if (svg) {
+            button.removeChild(svg);
+        }
+    }
+
+  }, [])
   return (
     <>
     <div className="login-container">
@@ -83,7 +102,6 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
       <br/>
       <span style={{color: 'grey', position: 'absolute', marginTop: '-30px'}}>SIGN IN VIA</span>
       <br/>
-      <span style={{color: 'grey', position: 'absolute', marginTop: '365px', marginLeft: '5px'}}>(email login coming soon)</span>
       <br/>
       <br/>
       </div>
@@ -104,9 +122,37 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
        </p>
    </div>
    <div className='dashed-box-apple'>
-     <p className='content' style={{position:'relative'}}>
-         <span className='apple-login'>Apple</span>
-         <img src={playImage} alt="Play" className="play-image-apple" />
+     <p className='content' 
+     onMouseLeave={() => setAppleHover(false)} 
+     onMouseEnter={() => {setAppleHover(true)}}
+     style={{position:'relative'}}>
+         <span className='apple-login' onClick={() => {
+          console.log('signing into apple')
+        // appleAuthHelpers.signIn({
+        //   authOptions: {
+        //     clientId: 'com.sequence.dungeon-minter',
+        //     scope: 'email',
+        //     redirectURI: 'https://dungeon-minter.vercel.app/',
+        //   },
+        //   onSuccess: (response: any) => console.log(response),
+        //   onError: (error: any) => console.log(error),
+        // });
+     }}>
+      {/* @ts-ignore */}
+      <AppleSignin
+     authOptions={{
+       clientId: 'com.sequence.dungeon-minter',
+       scope: 'openid email',
+       redirectURI: 'https://dungeon-minter.vercel.app/',
+       usePopup: true,
+     }}
+     onError={(error: any) => console.error(error)}
+     onSuccess={(response: any) => console.log(response)}
+    //  render={(props: any) => <button style={{width: '150px', position: 'absolute', color: 'transparent'}}>&nbsp;</button>}
+   />Apple
+   </span>
+     
+         {appleHover && <img src={playImage} alt="Play" className="play-image-apple" />}
      </p>
      </div>
    </div>
@@ -547,8 +593,8 @@ function App() {
               </button>
               </div>
               <div style={{height: '100vh'}}>
-                <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
-                {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                {/* <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
               </div>
               <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
