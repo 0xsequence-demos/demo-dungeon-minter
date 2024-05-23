@@ -448,7 +448,7 @@ function App() {
   };
 
   function capitalizeFirstLetter(string: any) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
+      return string && string.charAt(0).toUpperCase() + string.slice(1);
   }
   const [transferLoading, setTransferLoading] = useState(false)
   const [collectibleTo, setCollectibleTo] = useState(null)
