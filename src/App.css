@@ -339,4 +339,8 @@ button:focus {
     height: 50px;
     position: absolute;
     border: 0px;
+    color: transparent;
+}
+svg {
+  display: none;
 }
