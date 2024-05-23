@@ -92,6 +92,16 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
     }
 
   }, [])
+
+  const handleAppleLogin = async (response: any) => {
+    const res = await sequence.signIn({
+      idToken: response.authorization.id_token!
+    }, "Dungeon Minter")
+ 
+    address = res.wallet
+    setIsConnected(true)
+    setIsLoggingIn(false)
+  }
   return (
     <>
     <div className="login-container">
@@ -147,7 +157,7 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
        usePopup: true,
      }}
      onError={(error: any) => console.error(error)}
-     onSuccess={(response: any) => console.log(response)}
+     onSuccess={handleAppleLogin}
     //  render={(props: any) => <button style={{width: '150px', position: 'absolute', color: 'transparent'}}>&nbsp;</button>}
    />Apple
    </span>
