@@ -750,7 +750,7 @@ function App() {
                       src={item.url}
                     />
                   </div>
-                  <p className={`content`} style={{marginLeft: '40px', marginTop: '-50px'}}>
+                  <p className={`content`} style={{marginLeft: '40px', marginTop: '-50px', fontSize: '20px !important'}}>
                     {item.name}
                   </p>
                   <h2 className={`name_${item.tier}`}>
