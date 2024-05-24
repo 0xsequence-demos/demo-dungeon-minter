@@ -543,32 +543,31 @@ function App() {
           {
             <div>
              <div style={{color: 'white', position:'fixed', cursor: 'pointer', top: '15px', left: '30px'}} onClick={async () => {
-                // setExploring(false)
-                exploring = false
-                setLoaded(false)
-                setMintLoading(false)
-                // loadingTreasure = false
-                setLoadingTreasure(false)
-
-                count = 0
-                setItems([]);
-                txHash = '';
-                live= false
-                setDailyMax(false)
-                setIsConnected(false)
-                setIsLoggingIn(false)
-                address = null
-                setProgressValue(0)
-                setProgressDescription('SCENARIO.GG AI GENERATION...')
-                setProgressStep(1)
                 try {
                   console.log('signing out')
                   const sessions = await sequence.listSessions()
                   console.log(sessions)
                   await sequence.dropSession({ sessionId: sessions[0].id })
-                location.reload()
+                  exploring = false
+                  setLoaded(false)
+                  setMintLoading(false)
+                  // loadingTreasure = false
+                  setLoadingTreasure(false)
+  
+                  count = 0
+                  setItems([]);
+                  txHash = '';
+                  live= false
+                  setDailyMax(false)
+                  setIsConnected(false)
+                  setIsLoggingIn(false)
+                  address = null
+                  setProgressValue(0)
+                  setProgressDescription('SCENARIO.GG AI GENERATION...')
+                  setProgressStep(1)
                 }catch(err){
                   console.log(err)
+                  alert('there was an error, try signing out again')
                 }
                 }}>
               <button className='logout-button'>
