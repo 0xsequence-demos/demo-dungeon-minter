@@ -15,12 +15,11 @@ const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev";
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app', PROJECT_ACCESS_KEY)
  
-let count = 0
 let live = false;
 let txHash: any = ''
 let cancelled = false
 let address: any = null
-// let loadingTreasure: boolean = false
+
 import sequence from './SequenceEmbeddedWallet.ts'
 
 export function useSessionHash() {
@@ -65,6 +64,7 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
       idToken: tokenResponse.credential!
     }, "Dungeon Minter")
  
+    exploring = true
     address = res.wallet
     setIsConnected(true)
     setIsLoggingIn(false)
@@ -82,14 +82,15 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
     }, "Dungeon Minter")
  
     address = res.wallet
+    exploring = true
     setIsConnected(true)
     setIsLoggingIn(false)
   }
   return (
     <>
     <div className="login-container">
-      <div style={{textAlign: 'center', width: '100%', margin: 'auto'}}>
-        <h1 style={{marginTop: '-67px'}}>Dungeon Minter</h1>
+      <div style={{textAlign: 'center', width: '98vw', margin: 'auto'}}>
+        <h1 style={{marginTop: '-70px'}}>Dungeon Minter</h1>
         <p className='content' style={{opacity: 0}}>DISCOVER LOOT BOXES TO MINT A UNIQUE COLLECTIBLE</p>
       </div>
       <br/>
@@ -218,7 +219,6 @@ function App() {
   const [progressStep, setProgressStep] = useState(1);
   const [progressValue, setProgressValue] = useState(0);
   const [progressDescription, setProgressDescription] = useState('SCENARIO.GG AI GENERATION...');
-  const [__, setDailyMax] = useState(false)
   const [___, setIsMobile] = useState(false);
   const [collectibleViewable, setCollectibleViewable] = useState<any>(null)
   const [controller, setController] = useState<any>(null);
@@ -250,13 +250,11 @@ function App() {
           return;
       }
 
-      if(event.data.portal == 'loot' && count == 0 && isConnected){
+      if(event.data.portal == 'loot' && isConnected){
         console.log(event.data.color)
         setColor(event.data.color)
-        // setExploring(false)
         exploring = false;
         generate()
-        count++
       }
     });
   }, [isConnected])
@@ -366,7 +364,6 @@ function App() {
 
     if(res.status == 400){
       console.log('reached daily max')
-      setDailyMax(true)
     } else if(res.status == 200){
       const json = await res.json()
       console.log(json)
@@ -391,10 +388,8 @@ function App() {
 
   useEffect(() => {
     setTimeout(async () => {
-      console.log(await sequence.isSignedIn())
       if(await sequence.isSignedIn()){
         address = await sequence.getAddress()
-        // setExploring(true)
         exploring = true
         setIsConnected(true)
       }
@@ -475,7 +470,23 @@ function App() {
 
   useEffect(() => {
 
-  }, [increment, transferLoading, loadingTreasure, exploring, count, progressValue])
+  }, [increment, transferLoading, loadingTreasure, exploring, progressValue])
+  
+  const signOutConfiguration = () => {
+    exploring = false
+    setLoaded(false)
+    setMintLoading(false)
+    setLoadingTreasure(false)
+    setItems([]);
+    txHash = '';
+    live = false
+    setIsConnected(false)
+    setIsLoggingIn(false)
+    address = null
+    setProgressValue(0)
+    setProgressDescription('SCENARIO.GG AI GENERATION...')
+    setProgressStep(1)
+  }
 
   return (
     <>
@@ -488,7 +499,7 @@ function App() {
           <>
           <div style={{
               justifyContent: 'center',
-              width: '90vw',
+              width: '98vw',
               }}
             >
 
@@ -508,11 +519,11 @@ function App() {
           <>
             <div style={{
               justifyContent: 'center',
-              width: '100vw',
+              width: '98vw',
               }}
             > 
             <div style={{textAlign: 'center', width: '100%', margin: 'auto'}}>
-              <h1 style={{margin: '-4px'}}>Dungeon Minter</h1>
+              <h1 style={{margin: '-9px'}}>Dungeon Minter</h1>
               <p className='content'>DISCOVER LOOT BOXES TO MINT A UNIQUE COLLECTIBLE</p>
             </div>
             
@@ -546,28 +557,15 @@ function App() {
                 try {
                   console.log('signing out')
                   const sessions = await sequence.listSessions()
-                  console.log(sessions)
-                  await sequence.dropSession({ sessionId: sessions[0].id })
-                  exploring = false
-                  setLoaded(false)
-                  setMintLoading(false)
-                  // loadingTreasure = false
-                  setLoadingTreasure(false)
-  
-                  count = 0
-                  setItems([]);
-                  txHash = '';
-                  live= false
-                  setDailyMax(false)
-                  setIsConnected(false)
-                  setIsLoggingIn(false)
-                  address = null
-                  setProgressValue(0)
-                  setProgressDescription('SCENARIO.GG AI GENERATION...')
-                  setProgressStep(1)
+
+                  for(let i = 0; i < sessions.length; i++){
+                    await sequence.dropSession({ sessionId: sessions[i].id })
+                  }
+
+                  signOutConfiguration()
                 }catch(err){
                   console.log(err)
-                  alert('there was an error, try signing out again')
+                  signOutConfiguration()
                 }
                 }}>
               <button className='logout-button'>
@@ -701,13 +699,9 @@ function App() {
                   setProgressValue(0)
                   setProgressDescription('SCENARIO.GG AI GENERATION...')
                   setProgressStep(1)
-                  count = 0
                   cancelled= true;
-                  // loadingTreasure = false
                   setLoadingTreasure(false)
-
                   controller?.abort()
-                  // setExploring(true)
                   exploring = true;
                   }}>
                     <span className='cancel-generation'>Cancel</span>
@@ -771,7 +765,6 @@ function App() {
                 })}
                 {!mintLoading && txHash == '' && <p className='content' style={{position:'relative', marginTop: '-10px'}} onClick={() => {
                   mint()
-                  count = 0
                   cancelled= true;
                   }}>
                     <span className='mint-generation'>Mint to wallet</span>
@@ -789,7 +782,6 @@ function App() {
                   setProgressStep(1)
                   setLoaded(false)
                   txHash = ''
-                  count = 0
                   cancelled= true;
                   // setExploring(true)
                   exploring = true;

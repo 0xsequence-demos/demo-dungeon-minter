@@ -105,7 +105,7 @@ span.mint-generation:hover + .play-image-mint {
 }
 
 .login-container {
-  width: 100vw;
+  width: 98vw;
   display: flex; /* Use flexbox to center align the box */
   justify-content: center; /* Center horizontally */
   align-items: center;
