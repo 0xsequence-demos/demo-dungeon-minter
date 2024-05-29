@@ -316,45 +316,42 @@ function App() {
     // setLoadingTreasure(true)
     loadingTreasure = true;
     exploring = false
-    alert(!exploring && loadingTreasure)
-    // const newController = new AbortController();
-    // setController(newController);
+    const newController = new AbortController();
+    setController(newController);
 
-    // const data = {
-    //   address: address,
-    //   mint: false
-    // };
+    const data = {
+      address: address,
+      mint: false
+    };
 
-    // try {
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        signal: newController.signal,
+      })
 
+      if(res.status == 400){
+        console.log('reached daily max')
+      } else if(res.status == 200){
+        const json = await res.json()
+        console.log(json)
+        setLoaded(true)
+        loadingTreasure = false
+      // setLoadingTreasure(false)
 
-    //   const res = await fetch(ENDPOINT, {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(data),
-    //     signal: newController.signal,
-    //   })
-
-    //   if(res.status == 400){
-    //     console.log('reached daily max')
-    //   } else if(res.status == 200){
-    //     const json = await res.json()
-    //     console.log(json)
-    //     setLoaded(true)
-    //     loadingTreasure = false
-    //   // setLoadingTreasure(false)
-
-    //     json.loot.loot.url = json.image
-    //     json.loot.loot.tokenID = json.tokenID
-    //     setItems([json.loot.loot])
-    //     txHash=''
-    //     singleClick = 0;
-    //   }
-    // }catch(err){
-    //   alert('generation service is erroring')
-    // }
+        json.loot.loot.url = json.image
+        json.loot.loot.tokenID = json.tokenID
+        setItems([json.loot.loot])
+        txHash=''
+        singleClick = 0;
+      }
+    }catch(err){
+      alert('generation service is erroring')
+    }
   }
 
   const playDemo = () => {
