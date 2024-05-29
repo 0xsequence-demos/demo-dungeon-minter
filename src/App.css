@@ -227,6 +227,7 @@ span.mint-generation:hover + .play-image-mint {
 }
 
 .logout-button {
+  color: white;
   font-family: 'ChiKareGo2';
   font-size: 25px;
   height: 40px;
@@ -251,6 +252,7 @@ span.mint-generation:hover + .play-image-mint {
 }
 
 .open-wallet-button {
+  color: white;
   font-family: 'ChiKareGo2';
   font-size: 25px;
   height: 100px;

@@ -548,7 +548,7 @@ function App() {
               </div>
               <div style={{height: '100vh'}}>
                 <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
-                {/*<iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>*/}
+                {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
               </div>
               <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
@@ -711,6 +711,7 @@ function App() {
                  {items.map((item: any, index: any) => {
                   console.log(item)
                 //@ts-ignore
+
                 return <div key={index} tier={item.tier}>
                   {/*@ts-ignore*/}
                   <div className="view" tier={item.tier} style={{scale: '0.5'}}>
@@ -727,14 +728,16 @@ function App() {
                   </h2>
                   <hr className="half" />
                   <ul className="scrollable-list">
-                    {item.main_stats.map((stat: any, index: any) => (
-                      <React.Fragment key={index}>
+                    {item.main_stats.map((stat: any, index: any) => {
+                      if(stat.length > 0){
+                      return <React.Fragment key={index}>
                         <li className={item.category}>{stat}</li>
                         {item.stats.map((stat: any, statIndex: any) => (
                           <li key={statIndex}>{stat}</li>
                         ))}
                       </React.Fragment>
-                    ))}
+                      }
+                    })}
                   </ul>
                 </div>
                 })}
