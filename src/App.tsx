@@ -678,6 +678,7 @@ function App() {
                   setProgressDescription('SCENARIO.GG AI GENERATION...')
                   setProgressStep(1)
                   cancelled= true;
+                  setColor(null)
                   // setLoadingTreasure(false)
                   loadingTreasure = false
                   controller?.abort()
