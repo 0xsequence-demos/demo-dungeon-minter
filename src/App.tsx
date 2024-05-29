@@ -20,7 +20,7 @@ let txHash: any = ''
 let cancelled = false
 let address: any = null
 let singleClick: any = 0
-
+let loadingTreasure: boolean = false
 import sequence from './SequenceEmbeddedWallet.ts'
 
 export function useSessionHash() {
@@ -227,7 +227,7 @@ function App() {
 
   const [items, setItems] = useState<any>([])
   const [loaded, setLoaded] = useState(false);
-  const [loadingTreasure, setLoadingTreasure] = useState(false);
+  // const [loadingTreasure, setLoadingTreasure] = useState(false);
 
   useEffect(() =>{
 
@@ -244,14 +244,12 @@ function App() {
 
   useEffect(() => {
     window.addEventListener('message', (event) => {
-
       if (event.origin !== 'https://integration-dungeon-minter-maze.vercel.app') {
           // Security check: Ensure that the message is from a trusted source
           return;
       }
 
       if(event.data.portal == 'loot' && singleClick == 0 && isConnected){
-        console.log(event.data.color)
         setColor(event.data.color)
         exploring = false;
         singleClick++
@@ -315,40 +313,48 @@ function App() {
     cancelled = false
     setIncrement(increment+1)
     triggerProgressBar()
-    setLoadingTreasure(true)
+    // setLoadingTreasure(true)
+    loadingTreasure = true;
+    exploring = false
+    alert(!exploring && loadingTreasure)
+    // const newController = new AbortController();
+    // setController(newController);
 
-    const newController = new AbortController();
-    setController(newController);
+    // const data = {
+    //   address: address,
+    //   mint: false
+    // };
 
-    const data = {
-      address: address,
-      mint: false
-    };
+    // try {
 
-    const res = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-      signal: newController.signal,
-    })
 
-    if(res.status == 400){
-      console.log('reached daily max')
-    } else if(res.status == 200){
-      const json = await res.json()
-      console.log(json)
-      setLoaded(true)
-      // loadingTreasure = false
-    setLoadingTreasure(false)
+    //   const res = await fetch(ENDPOINT, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    //     signal: newController.signal,
+    //   })
 
-      json.loot.loot.url = json.image
-      json.loot.loot.tokenID = json.tokenID
-      setItems([json.loot.loot])
-      txHash=''
-      singleClick = 0;
-    }
+    //   if(res.status == 400){
+    //     console.log('reached daily max')
+    //   } else if(res.status == 200){
+    //     const json = await res.json()
+    //     console.log(json)
+    //     setLoaded(true)
+    //     loadingTreasure = false
+    //   // setLoadingTreasure(false)
+
+    //     json.loot.loot.url = json.image
+    //     json.loot.loot.tokenID = json.tokenID
+    //     setItems([json.loot.loot])
+    //     txHash=''
+    //     singleClick = 0;
+    //   }
+    // }catch(err){
+    //   alert('generation service is erroring')
+    // }
   }
 
   const playDemo = () => {
@@ -446,12 +452,12 @@ function App() {
   }, [increment, transferLoading, loadingTreasure, exploring, progressValue])
   
   const signOutConfiguration = () => {
-    singleClick = 0
     localStorage.clear()
+    singleClick = 0
     exploring = false
     setLoaded(false)
     setMintLoading(false)
-    setLoadingTreasure(false)
+    loadingTreasure = false
     setItems([]);
     txHash = '';
     live = false
@@ -461,6 +467,7 @@ function App() {
     setProgressValue(0)
     setProgressDescription('SCENARIO.GG AI GENERATION...')
     setProgressStep(1)
+    location.reload() // requirement to reload because 'loadingTreasure' & 'exploring' is not reactive
   }
 
   return (
@@ -539,7 +546,6 @@ function App() {
 
                   signOutConfiguration()
                 }catch(err){
-                  console.log(err)
                   signOutConfiguration()
                 }
                 }}>
@@ -675,7 +681,8 @@ function App() {
                   setProgressDescription('SCENARIO.GG AI GENERATION...')
                   setProgressStep(1)
                   cancelled= true;
-                  setLoadingTreasure(false)
+                  // setLoadingTreasure(false)
+                  loadingTreasure = false
                   controller?.abort()
                   exploring = true;
                   singleClick = 0;
