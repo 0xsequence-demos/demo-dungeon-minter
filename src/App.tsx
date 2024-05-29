@@ -446,6 +446,7 @@ function App() {
   }, [increment, transferLoading, loadingTreasure, exploring, progressValue])
   
   const signOutConfiguration = () => {
+    singleClick = 0
     localStorage.clear()
     exploring = false
     setLoaded(false)
