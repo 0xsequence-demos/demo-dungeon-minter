@@ -19,6 +19,7 @@ let live = false;
 let txHash: any = ''
 let cancelled = false
 let address: any = null
+let singleClick: any = 0
 
 import sequence from './SequenceEmbeddedWallet.ts'
 
@@ -214,7 +215,6 @@ function App() {
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
   const [isConnected, setIsConnected] = useState<boolean>(false)
   const {setTheme} = useTheme()
-  // const [exploring, setExploring] = useState(false)
   const [mintLoading, setMintLoading] = useState(false);
   const [progressStep, setProgressStep] = useState(1);
   const [progressValue, setProgressValue] = useState(0);
@@ -250,10 +250,11 @@ function App() {
           return;
       }
 
-      if(event.data.portal == 'loot' && isConnected){
+      if(event.data.portal == 'loot' && singleClick == 0 && isConnected){
         console.log(event.data.color)
         setColor(event.data.color)
         exploring = false;
+        singleClick++
         generate()
       }
     });
@@ -314,14 +315,7 @@ function App() {
     cancelled = false
     setIncrement(increment+1)
     triggerProgressBar()
-
-    // setLoadingTreasure(true)
-
-    // loadingTreasure = true
     setLoadingTreasure(true)
-    console.log(loadingTreasure)
-    // alert(loadingTreasure)
-    console.log(address)
 
     const newController = new AbortController();
     setController(newController);
@@ -353,6 +347,7 @@ function App() {
       json.loot.loot.tokenID = json.tokenID
       setItems([json.loot.loot])
       txHash=''
+      singleClick = 0;
     }
   }
 
@@ -682,6 +677,7 @@ function App() {
                   setLoadingTreasure(false)
                   controller?.abort()
                   exploring = true;
+                  singleClick = 0;
                   }}>
                     <span className='cancel-generation'>Cancel</span>
                     <img src={playImage} alt="Play" className="play-image-cancel" />
@@ -764,6 +760,7 @@ function App() {
                   cancelled= true;
                   // setExploring(true)
                   exploring = true;
+                  singleClick=0;
                 }}
                   >
                     <span className='cancel-generation'>{txHash != '' ? 'Close' : 'Cancel'}</span>
