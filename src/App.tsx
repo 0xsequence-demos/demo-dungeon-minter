@@ -731,9 +731,9 @@ function App() {
                     {item.main_stats.map((stat: any, index: any) => {
                       if(stat.length > 0){
                       return <React.Fragment key={index}>
-                        <li className={item.category}>{stat}</li>
+                        <li style={{color: 'white'}} className={item.category}>{stat}</li>
                         {item.stats.map((stat: any, statIndex: any) => (
-                          <li key={statIndex}>{stat}</li>
+                          <li style={{color: 'white'}} key={statIndex}>{stat}</li>
                         ))}
                       </React.Fragment>
                       }
