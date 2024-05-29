@@ -9,8 +9,8 @@ import { SequenceIndexer } from '@0xsequence/indexer'
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import AppleSignin from 'react-apple-signin-auth';
 
-// const ENDPOINT = "http://localhost:8787"; 
-const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
+const ENDPOINT = "http://0.0.0.0:50234/http://localhost:8787"; 
+// const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
 
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app', PROJECT_ACCESS_KEY)
@@ -259,28 +259,6 @@ function App() {
     });
   }, [isConnected])
 
-  // const handleScroll = () => {
-  //   const scrollPosition = window.scrollY;
-  //   const windowHeight = window.innerHeight;
-  //   const documentHeight = document.documentElement.scrollHeight;
-    
-  //   // Calculate if the scroll is below 90% of the page
-  //   if ((scrollPosition + windowHeight) / documentHeight > 0.9) {
-  //     setShowElement(false);
-  //   } else {
-  //     setShowElement(true);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   // Clean up the event listener
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
   const triggerProgressBar = async () => {
     const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
     const times = [17000, 18000, 2000, 5000];
@@ -473,6 +451,7 @@ function App() {
   }, [increment, transferLoading, loadingTreasure, exploring, progressValue])
   
   const signOutConfiguration = () => {
+    localStorage.clear()
     exploring = false
     setLoaded(false)
     setMintLoading(false)
@@ -573,8 +552,8 @@ function App() {
               </button>
               </div>
               <div style={{height: '100vh'}}>
-                <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
-                {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                {/* <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
               </div>
               <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
