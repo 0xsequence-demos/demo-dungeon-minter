@@ -9,8 +9,8 @@ import { SequenceIndexer } from '@0xsequence/indexer'
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import AppleSignin from 'react-apple-signin-auth';
 
-const ENDPOINT = "http://0.0.0.0:50234/http://localhost:8787"; 
-// const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
+// const ENDPOINT = "http://localhost:8787"; 
+const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
 
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app', PROJECT_ACCESS_KEY)
@@ -552,8 +552,8 @@ function App() {
               </button>
               </div>
               <div style={{height: '100vh'}}>
-                {/* <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
-                <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
+                <iframe id='maze' src={`https://maze-inky.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
+                {/*<iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>*/}
               </div>
               <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
