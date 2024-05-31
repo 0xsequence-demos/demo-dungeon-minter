@@ -9,8 +9,8 @@ import { SequenceIndexer } from '@0xsequence/indexer'
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import AppleSignin from 'react-apple-signin-auth';
 
-// const ENDPOINT = "http://localhost:8787"; 
-const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
+const ENDPOINT = "http://localhost:8787"; 
+// const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
 
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app', PROJECT_ACCESS_KEY)
@@ -229,9 +229,11 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   // const [loadingTreasure, setLoadingTreasure] = useState(false);
 
+  const [waiting, setWaiting] = useState(false)
+
   useEffect(() =>{
 
-  }, [controller, isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
+  }, [controller, waiting, isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
 
   function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -250,13 +252,29 @@ function App() {
       }
 
       if(event.data.portal == 'loot' && singleClick == 0 && isConnected){
+        console.log(event.data.color)
         setColor(event.data.color)
-        exploring = false;
+        // exploring = false;
         singleClick++
         generate()
       }
+
+      if(event.data.portal == 'solved' && singleClick == 0 && isConnected){
+        console.log(items)
+        if(items.length > 0){
+          setLoaded(true)
+          setWaiting(false)
+        } else {
+          setWaiting(true)
+        }
+        singleClick++
+      }
+
+      if(event.data.portal == 'left' && isConnected){
+        controller?.abort()
+      }
     });
-  }, [isConnected])
+  }, [isConnected, items])
 
   const triggerProgressBar = async () => {
     const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
@@ -309,12 +327,12 @@ function App() {
   }
 
   const generate = async () => {
+    setTimeout(() => singleClick = 0, 100)
     console.log('generating')
     cancelled = false
-    setIncrement(increment+1)
-    triggerProgressBar()
-    // setLoadingTreasure(true)
-    loadingTreasure = true;
+    // setIncrement(increment+1)
+    // triggerProgressBar()
+    // loadingTreasure = true;
     exploring = false
     const newController = new AbortController();
     setController(newController);
@@ -339,9 +357,14 @@ function App() {
       } else if(res.status == 200){
         const json = await res.json()
         console.log(json)
-        setLoaded(true)
+        
         loadingTreasure = false
       // setLoadingTreasure(false)
+
+        if(singleClick > 0){
+          setLoaded(true)
+          setWaiting(false)
+        }
 
         json.loot.loot.url = json.image
         json.loot.loot.tokenID = json.tokenID
@@ -552,8 +575,12 @@ function App() {
               </div>
               <div style={{height: '100vh'}}>
                 <iframe id='maze' src={`https://integration-dungeon-minter-maze.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
-                {/* <iframe id='maze' src={`http://localhost:8002/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                {/* <iframe id='maze' src={`http://localhost:5174/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
               </div>
+              {loaded == false && waiting && <div style={{zIndex: 10, width: '40vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: '50vh', left: '50vw', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
+                  <p className='content' style={{fontSize: isMobileDevice() &&'15px' as any}}>Please wait a moment while the loot loads</p>
+              </div> }
+
               <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
                   <p className='content' style={{fontSize: isMobileDevice() &&'15px' as any}}>Welcome to Dungeon Minter!
@@ -637,7 +664,7 @@ function App() {
                   </div>
                 </>
               }
-            {!exploring && loadingTreasure && <> 
+            {loadingTreasure && <> 
             <div className="box-generation"
               style={{
                 backgroundSize: '150%',
