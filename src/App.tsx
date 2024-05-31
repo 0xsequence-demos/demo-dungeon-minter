@@ -273,6 +273,7 @@ function App() {
         singleClick = 0
         if(controllers && controllers.length > 0) controllers.map((controller: any) => {
           controller?.abort()
+          console.log('aborting signal')
         })
       }
     });
