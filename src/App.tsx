@@ -221,7 +221,7 @@ function App() {
   const [progressDescription, setProgressDescription] = useState('SCENARIO.GG AI GENERATION...');
   const [___, setIsMobile] = useState(false);
   const [collectibleViewable, setCollectibleViewable] = useState<any>(null)
-  const [controllers, setControllers] = useState<any>(null);
+  const [controllers, setControllers] = useState<any>([]);
   setTheme('dark')
 
   const [items, setItems] = useState<any>([])
