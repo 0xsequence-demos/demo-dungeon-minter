@@ -222,7 +222,6 @@ function App() {
   const [___, setIsMobile] = useState(false);
   const [collectibleViewable, setCollectibleViewable] = useState<any>(null)
   const [controller, setController] = useState<any>(null);
-  const [increment, setIncrement] = useState(0)
   setTheme('dark')
 
   const [items, setItems] = useState<any>([])
@@ -276,32 +275,32 @@ function App() {
     });
   }, [isConnected, items])
 
-  const triggerProgressBar = async () => {
-    const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
-    const times = [17000, 18000, 2000, 5000];
-    const steps = [1, 1, 2, 2];
-    const totalDuration = times.reduce((prev, val) => prev + val, 0); // Calculate total duration once
+//   const triggerProgressBar = async () => {
+//     const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
+//     const times = [17000, 18000, 2000, 5000];
+//     const steps = [1, 1, 2, 2];
+//     const totalDuration = times.reduce((prev, val) => prev + val, 0); // Calculate total duration once
 
-    // Calculate cumulative progress values
-    let cumulativeTime = 0; // Initialize cumulative time
-    const progressValues = times.map((el) => {
-        cumulativeTime += el; // Update cumulative time at each step
-        return cumulativeTime / totalDuration; // Calculate cumulative progress
-    });
+//     // Calculate cumulative progress values
+//     let cumulativeTime = 0; // Initialize cumulative time
+//     const progressValues = times.map((el) => {
+//         cumulativeTime += el; // Update cumulative time at each step
+//         return cumulativeTime / totalDuration; // Calculate cumulative progress
+//     });
 
-    const progressDescriptions = ['SCENARIO.GG AI GENERATION...', 'SCENARIO.GG AI GENERATION...', 'UPLOADING METADATA TO SEQUENCE...', 'UPLOADING METADATA TO SEQUENCE...'];
+//     const progressDescriptions = ['SCENARIO.GG AI GENERATION...', 'SCENARIO.GG AI GENERATION...', 'UPLOADING METADATA TO SEQUENCE...', 'UPLOADING METADATA TO SEQUENCE...'];
 
-    await wait(1000); // Initial wait before starting the loop
+//     await wait(1000); // Initial wait before starting the loop
 
-    for (let i = 0; i < times.length; i++) {
-        setProgressStep(steps[i]);
-        console.log(progressValues[i])
-        setProgressValue(progressValues[i]);
-        setProgressDescription(progressDescriptions[i]);
-        await wait(times[i]); // Wait for the duration of the current step
-        if(cancelled) break;
-    }
-};
+//     for (let i = 0; i < times.length; i++) {
+//         setProgressStep(steps[i]);
+//         console.log(progressValues[i])
+//         setProgressValue(progressValues[i]);
+//         setProgressDescription(progressDescriptions[i]);
+//         await wait(times[i]); // Wait for the duration of the current step
+//         if(cancelled) break;
+//     }
+// };
 
 
   const mint = async () => {
@@ -469,7 +468,7 @@ function App() {
 
   useEffect(() => {
 
-  }, [increment, transferLoading, loadingTreasure, exploring, progressValue])
+  }, [transferLoading, loadingTreasure, exploring, progressValue])
   
   const signOutConfiguration = () => {
     localStorage.clear()
