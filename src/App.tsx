@@ -376,7 +376,8 @@ function App() {
         singleClick = 0;
       }
     }catch(err){
-      alert('generation service is erroring')
+      // alert('generation service is erroring')
+      console.log(err)
     }
   }
 
