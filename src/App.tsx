@@ -277,7 +277,7 @@ function App() {
         })
       }
     });
-  }, [isConnected, items])
+  }, [isConnected, items,controllers])
 
 //   const triggerProgressBar = async () => {
 //     const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
