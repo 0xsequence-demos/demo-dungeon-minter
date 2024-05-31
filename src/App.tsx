@@ -17,7 +17,7 @@ const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app'
  
 let live = false;
 let txHash: any = ''
-let cancelled = false
+// let cancelled = false
 let address: any = null
 let singleClick: any = 0
 let loadingTreasure: boolean = false
@@ -328,7 +328,7 @@ function App() {
   const generate = async () => {
     setTimeout(() => singleClick = 0, 100)
     console.log('generating')
-    cancelled = false
+    // cancelled = false
     // setIncrement(increment+1)
     // triggerProgressBar()
     // loadingTreasure = true;
@@ -703,7 +703,7 @@ function App() {
                   setProgressValue(0)
                   setProgressDescription('SCENARIO.GG AI GENERATION...')
                   setProgressStep(1)
-                  cancelled= true;
+                  // cancelled= true;
                   setColor(null)
                   // setLoadingTreasure(false)
                   loadingTreasure = false
@@ -775,7 +775,7 @@ function App() {
                 })}
                 {!mintLoading && txHash == '' && <p className='content' style={{position:'relative', marginTop: '-10px'}} onClick={() => {
                   mint()
-                  cancelled= true;
+                  // cancelled= true;
                   }}>
                     <span className='mint-generation'>Mint to wallet</span>
                     <img src={playImage} alt="Play" className="play-image-mint" />
@@ -792,7 +792,7 @@ function App() {
                   setProgressStep(1)
                   setLoaded(false)
                   txHash = ''
-                  cancelled= true;
+                  // cancelled= true;
                   // setExploring(true)
                   exploring = true;
                   singleClick=0;
