@@ -221,7 +221,7 @@ function App() {
   const [progressDescription, setProgressDescription] = useState('SCENARIO.GG AI GENERATION...');
   const [___, setIsMobile] = useState(false);
   const [collectibleViewable, setCollectibleViewable] = useState<any>(null)
-  const [controller, setController] = useState<any>(null);
+  const [controllers, setControllers] = useState<any>(null);
   setTheme('dark')
 
   const [items, setItems] = useState<any>([])
@@ -271,7 +271,9 @@ function App() {
 
       if(event.data.portal == 'left' && isConnected){
         singleClick = 0
-        controller?.abort()
+        controllers.map((controller: any) => {
+          controller?.abort()
+        }     
       }
     });
   }, [isConnected, items])
@@ -335,7 +337,7 @@ function App() {
     // loadingTreasure = true;
     exploring = false
     const newController = new AbortController();
-    setController(newController);
+    setControllers([...controllers, newController]);
 
     const data = {
       address: address,
@@ -469,7 +471,7 @@ function App() {
 
   useEffect(() => {
 
-  }, [transferLoading, loadingTreasure, exploring, progressValue])
+  }, [transferLoading, loadingTreasure, exploring, progressValue, controllers])
   
   const signOutConfiguration = () => {
     localStorage.clear()
@@ -708,7 +710,9 @@ function App() {
                   setColor(null)
                   // setLoadingTreasure(false)
                   loadingTreasure = false
-                  controller?.abort()
+                  controllers.map((controller: any) => {
+                    controller?.abort()
+                  })
                   exploring = true;
                   singleClick = 0;
                   }}>
