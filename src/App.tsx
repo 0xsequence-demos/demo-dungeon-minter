@@ -273,7 +273,7 @@ function App() {
         singleClick = 0
         controllers.map((controller: any) => {
           controller?.abort()
-        }     
+        })
       }
     });
   }, [isConnected, items])
