@@ -577,8 +577,8 @@ function App() {
                 <iframe id='maze' src={`https://integration-dungeon-minter-maze.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
                 {/* <iframe id='maze' src={`http://localhost:5174/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
               </div>
-              {loaded == false && waiting && <div style={{zIndex: 10, width: '40vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: '50vh', left: '50vw', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
-                  <p className='content' style={{fontSize: isMobileDevice() &&'15px' as any}}>Please wait a moment while the loot loads</p>
+              {loaded == false && waiting && <div style={{zIndex: 10, width: '20vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: '50vh', left: '49.5vw', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
+                  <p className='content' style={{textAlign:'center', fontSize: isMobileDevice() &&'15px' as any}}>Please wait a moment<br/> while the loot loads</p>
               </div> }
 
               <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
