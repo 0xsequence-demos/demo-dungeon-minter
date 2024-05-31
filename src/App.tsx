@@ -232,7 +232,7 @@ function App() {
 
   useEffect(() =>{
 
-  }, [controller, waiting, isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
+  }, [controllers, waiting, isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
 
   function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
