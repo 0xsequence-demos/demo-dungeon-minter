@@ -9,8 +9,8 @@ import { SequenceIndexer } from '@0xsequence/indexer'
 import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import AppleSignin from 'react-apple-signin-auth';
 
-const ENDPOINT = "http://localhost:8787"; 
-// const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
+// const ENDPOINT = "http://localhost:8787"; 
+const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
 
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app', PROJECT_ACCESS_KEY)
