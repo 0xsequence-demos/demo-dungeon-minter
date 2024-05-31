@@ -271,7 +271,7 @@ function App() {
 
       if(event.data.portal == 'left' && isConnected){
         singleClick = 0
-        if(controllers.length > 0) controllers.map((controller: any) => {
+        if(controllers && controllers.length > 0) controllers.map((controller: any) => {
           controller?.abort()
         })
       }
@@ -710,7 +710,7 @@ function App() {
                   setColor(null)
                   // setLoadingTreasure(false)
                   loadingTreasure = false
-                  if(controllers.length > 0) controllers!.map((controller: any) => {
+                  if(controllers&&controllers.length > 0) controllers!.map((controller: any) => {
                     controller?.abort()
                   })
                   exploring = true;
