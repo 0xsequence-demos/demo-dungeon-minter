@@ -270,6 +270,7 @@ function App() {
       }
 
       if(event.data.portal == 'left' && isConnected){
+        singleClick = 0
         controller?.abort()
       }
     });
