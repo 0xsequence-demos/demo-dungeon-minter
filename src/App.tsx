@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef } from 'react'
 import { Box, useTheme } from '@0xsequence/design-system'
 import Grids from './Grids.tsx'
 import './App.css'
@@ -247,23 +247,27 @@ function App() {
       }
 
       if(event.data.portal == 'loot' && controller == null && singleClick == 0 && isConnected){
-        console.log(event.data.color)
-        setColor(event.data.color)
-        singleClick++
-        generate()
+        // setTimeout(() => {
+          console.log(event.data.color)
+          setColor(event.data.color)
+          singleClick++
+          generate()
+        // }, 1500)
       }
 
       if(event.data.portal == 'solved' && singleClick == 0 && isConnected){
         console.log(items)
-        if(items.length > 0){
-          setLoaded(true)
-          setWaiting(false)
-        } else {
-          setWaiting(true)
-          loadingTreasure = true;
-          loadProgressBar()
-        }
-        singleClick++
+        setTimeout(() => {
+          if(items.length > 0){
+            setLoaded(true)
+            setWaiting(false)
+          } else {
+            setWaiting(true)
+            loadingTreasure = true;
+            loadProgressBar()
+          }
+          singleClick++
+        }, 2500)
       }
 
       if(event.data.portal == 'left' && isConnected){
@@ -442,6 +446,7 @@ function App() {
   }
   const [transferLoading, setTransferLoading] = useState(false)
   const [collectibleTo, setCollectibleTo] = useState(null)
+  const iframeRef = useRef<any>(null);
 
   const sendCollectible = async () => {
     setTransferLoading(true)
@@ -486,6 +491,14 @@ function App() {
     setProgressStep(1)
     location.reload() // requirement to reload because 'loadingTreasure' & 'exploring' is not reactive
   }
+
+  const sendMessageToIframe = () => {
+    const message = { type: "movement", text: "step_back" };
+    // Ensure the iframe is loaded and the ref is set
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      iframeRef.current.contentWindow.postMessage(message, '*'); // Use specific domain in place of '*' for better security
+    }
+  };
 
   return (
     <>
@@ -571,8 +584,8 @@ function App() {
               </button>
               </div>
               <div style={{height: '100vh'}}>
-                <iframe id='maze' src={`https://integration-dungeon-minter-maze.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
-                {/* <iframe id='maze' src={`http://localhost:5174/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
+                <iframe id='maze' ref={iframeRef}  src={`https://integration-dungeon-minter-maze.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
+                {/* <iframe id='maze' ref={iframeRef}  src={`http://localhost:5174/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
               </div>
               {/* {loaded == false && waiting && <div style={{zIndex: 10, width: '20vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: '50vh', left: '49.5vw', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                   <p className='content' style={{textAlign:'center', fontSize: isMobileDevice() &&'15px' as any}}>Please wait a moment<br/> while the loot loads</p>
@@ -707,6 +720,7 @@ function App() {
                   controller?.abort()
                   exploring = true;
                   singleClick = 0;
+                  sendMessageToIframe()
                   }}>
                     <span className='cancel-generation'>Cancel</span>
                     <img src={playImage} alt="Play" className="play-image-cancel" />
@@ -790,9 +804,9 @@ function App() {
                   setLoaded(false)
                   txHash = ''
                   cancelled= true;
-                  // setExploring(true)
                   exploring = true;
                   singleClick=0;
+                  sendMessageToIframe()
                 }}
                   >
                     <span className='cancel-generation'>{txHash != '' ? 'Close' : 'Cancel'}</span>
