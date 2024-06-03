@@ -10,7 +10,7 @@ import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
 import AppleSignin from 'react-apple-signin-auth';
 
 // const ENDPOINT = "http://localhost:8787"; 
-const ENDPOINT = "https://proud-darkness-022a.yellow-shadow-d7ff.workers.dev"; 
+const ENDPOINT = "https://proud-darkness-022a.tpin.workers.dev/"; 
 
 const PROJECT_ACCESS_KEY = import.meta.env.VITE_PROJECT_ACCESS_KEY!
 const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app', PROJECT_ACCESS_KEY)
@@ -92,7 +92,7 @@ function LoginScreen({ setIsLoggingIn, setIsConnected } : any) {
     <div className="login-container">
       <div style={{textAlign: 'center', width: '98vw', margin: 'auto'}}>
         <h1 style={{marginTop: '-70px'}}>Dungeon Minter</h1>
-        <p className='content' style={{opacity: 0}}>DISCOVER LOOT BOXES TO MINT A UNIQUE COLLECTIBLE</p>
+        <p className='content' style={{opacity: 0}}>DISCOVER TREASURE CHESTS TO MINT A UNIQUE COLLECTIBLE</p>
       </div>
       <br/>
       <span style={{color: 'grey', position: 'absolute', marginTop: '-30px'}}>SIGN IN VIA</span>
@@ -354,10 +354,8 @@ function App() {
         console.log('reached daily max')
       } else if(res.status == 200){
         const json = await res.json()
-        console.log(json)
         
         loadingTreasure = false
-      // setLoadingTreasure(false)
 
         if(singleClick > 0){
           setLoaded(true)
@@ -368,8 +366,6 @@ function App() {
         json.loot.loot.tokenID = json.tokenID
         items = [json.loot.loot]
         txHash=''
-        singleClick = 0;
-
       }
     }catch(err){
       // alert('generation service is erroring')
@@ -527,7 +523,7 @@ function App() {
             > 
             <div style={{textAlign: 'center', width: '100%', margin: 'auto'}}>
               <h1 style={{margin: '-9px'}}>Dungeon Minter</h1>
-              <p className='content'>DISCOVER LOOT BOXES TO MINT A UNIQUE COLLECTIBLE</p>
+              <p className='content'>DISCOVER TREASURE CHESTS TO MINT A UNIQUE COLLECTIBLE</p>
             </div>
             
             <br/>
@@ -538,7 +534,7 @@ function App() {
                 <img src={playImage} alt="Play" className="play-image" />
             </p>
             <p className='content' style={{position: 'relative'}}>
-                <span className='read-build-guide'><a className='no-link' href='https://docs.sequence.xyz/guides/lootbox-guide' target='_blank'>Read build guide</a></span>
+                <span className='read-build-guide'><a className='no-link' href='https://docs.sequence.xyz/guides/treasure-chest-guide' target='_blank'>Read build guide</a></span>
                 <img src={playImage} alt="Play" className="play-image-read-build-guide" />
             </p>
             </div>
@@ -585,7 +581,7 @@ function App() {
               <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
                   <p className='content' style={{fontSize: isMobileDevice() &&'15px' as any}}>Welcome to Dungeon Minter!
-                    Walk around to discover loot boxes and click on a loot box to generate a unique collectible to mint to your Embedded Wallet.</p>
+                    Walk around to discover treasure chests and click on a treasure chest to generate a unique collectible to mint to your Embedded Wallet.</p>
                 </div>
               </div> 
               <div style={{zIndex: 10, color: 'white', cursor: 'pointer', position:'fixed', bottom: '25px', right: isMobileDevice() ? '30px' : '30px'}}>
@@ -687,7 +683,7 @@ function App() {
                 borderStyle: `dashed`,
                 borderColor: `${color}`}}>
                   <br/>
-                <p style={{textAlign: 'center', fontSize: '40px', margin: '0px'}}>Loot box </p><p style={{textAlign: 'center', fontSize: '40px', marginTop: '-10px',marginBottom: '0px'}}>discovered!</p>
+                <p style={{textAlign: 'center', fontSize: '40px', margin: '0px'}}>Treasure chest </p><p style={{textAlign: 'center', fontSize: '40px', marginTop: '-10px',marginBottom: '0px'}}>discovered!</p>
                 <br/>
                 <br/>
                 {/* <Box justifyContent={'center'} paddingRight={'16'} paddingLeft={'16'}> */}
