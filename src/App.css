@@ -45,6 +45,14 @@ p.content {
   transform: translateY(-50%); /* Adjust vertical centering */
 }
 
+.play-image-cancel-open-wallet{
+  margin-top: 13px;
+  margin-left: -80px;
+  display: none; /* Initially hide the image */
+  position: absolute; /* Position the image absolutely */
+  transform: translateY(-50%); /* Adjust vertical centering */
+}
+
 .play-image-apple {
   margin-top: 13px;
   margin-left: -75px;
@@ -72,8 +80,13 @@ p.content {
   margin-top: -20px;
 }
 
+.cancel-open-wallet {
+  margin-top: -20px;
+}
+
 span.play-demo,
 span.cancel-generation,
+span.cancel-open-wallet,
 span.mint-generation,
 span.read-build-guide {
   cursor: pointer;
@@ -83,6 +96,7 @@ span.read-build-guide {
 span.play-demo:hover + .play-image,
 span.read-build-guide:hover + .play-image-read-build-guide,
 span.cancel-generation:hover + .play-image-cancel,
+span.cancel-open-wallet:hover + .play-image-cancel-open-wallet,
 span.mint-generation:hover + .play-image-mint {
   display: inline-block; /* Show the image on hover */
 }

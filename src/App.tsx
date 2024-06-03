@@ -17,7 +17,7 @@ const indexer = new SequenceIndexer('https://arbitrum-nova-indexer.sequence.app'
  
 let live = false;
 let txHash: any = ''
-// let cancelled = false
+let cancelled = false
 let address: any = null
 let singleClick: any = 0
 let loadingTreasure: boolean = false
@@ -209,7 +209,7 @@ function Collectible({ collectibleViewable }: any) {
   );
 }
 let exploring: boolean = false
-
+let items: any = []
 function App() {
   const [color, setColor] = useState<any>(null)
   const [isLoggingIn, setIsLoggingIn] = useState<any>(false)
@@ -221,18 +221,14 @@ function App() {
   const [progressDescription, setProgressDescription] = useState('SCENARIO.GG AI GENERATION...');
   const [___, setIsMobile] = useState(false);
   const [collectibleViewable, setCollectibleViewable] = useState<any>(null)
-  const [controllers, setControllers] = useState<any>([]);
+  const [controller, setController] = useState<any>(null);
   setTheme('dark')
-
-  const [items, setItems] = useState<any>([])
   const [loaded, setLoaded] = useState(false);
-  // const [loadingTreasure, setLoadingTreasure] = useState(false);
-
   const [waiting, setWaiting] = useState(false)
 
   useEffect(() =>{
 
-  }, [controllers, waiting, isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
+  }, [controller, waiting, isConnected, isLoggingIn, progressStep, progressValue, progressDescription, items, loaded, exploring, loadingTreasure, mintLoading, txHash])
 
   function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -250,10 +246,9 @@ function App() {
           return;
       }
 
-      if(event.data.portal == 'loot' && singleClick == 0 && isConnected){
+      if(event.data.portal == 'loot' && controller == null && singleClick == 0 && isConnected){
         console.log(event.data.color)
         setColor(event.data.color)
-        // exploring = false;
         singleClick++
         generate()
       }
@@ -265,46 +260,49 @@ function App() {
           setWaiting(false)
         } else {
           setWaiting(true)
+          loadingTreasure = true;
+          loadProgressBar()
         }
         singleClick++
       }
 
       if(event.data.portal == 'left' && isConnected){
         singleClick = 0
-        if(controllers && controllers.length > 0) controllers.map((controller: any) => {
+        if(controller)
           controller?.abort()
           console.log('aborting signal')
-        })
+          setColor(null)
+          items = []
       }
     });
-  }, [isConnected, items,controllers])
+  }, [isConnected, items,controller])
 
-//   const triggerProgressBar = async () => {
-//     const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
-//     const times = [17000, 18000, 2000, 5000];
-//     const steps = [1, 1, 2, 2];
-//     const totalDuration = times.reduce((prev, val) => prev + val, 0); // Calculate total duration once
+  const loadProgressBar = async () => {
+    const wait = (ms: any) => new Promise((res) => setTimeout(res, ms));
+    const times = [7000, 8000, 1000, 4000];
+    const steps = [1, 1, 2, 2];
+    const totalDuration = times.reduce((prev, val) => prev + val, 0); // Calculate total duration once
 
-//     // Calculate cumulative progress values
-//     let cumulativeTime = 0; // Initialize cumulative time
-//     const progressValues = times.map((el) => {
-//         cumulativeTime += el; // Update cumulative time at each step
-//         return cumulativeTime / totalDuration; // Calculate cumulative progress
-//     });
+    // Calculate cumulative progress values
+    let cumulativeTime = 0; // Initialize cumulative time
+    const progressValues = times.map((el) => {
+        cumulativeTime += el; // Update cumulative time at each step
+        return cumulativeTime / totalDuration; // Calculate cumulative progress
+    });
 
-//     const progressDescriptions = ['SCENARIO.GG AI GENERATION...', 'SCENARIO.GG AI GENERATION...', 'UPLOADING METADATA TO SEQUENCE...', 'UPLOADING METADATA TO SEQUENCE...'];
+    const progressDescriptions = ['SCENARIO.GG AI GENERATION...', 'SCENARIO.GG AI GENERATION...', 'UPLOADING METADATA TO SEQUENCE...', 'UPLOADING METADATA TO SEQUENCE...'];
 
-//     await wait(1000); // Initial wait before starting the loop
+    await wait(1000); // Initial wait before starting the loop
 
-//     for (let i = 0; i < times.length; i++) {
-//         setProgressStep(steps[i]);
-//         console.log(progressValues[i])
-//         setProgressValue(progressValues[i]);
-//         setProgressDescription(progressDescriptions[i]);
-//         await wait(times[i]); // Wait for the duration of the current step
-//         if(cancelled) break;
-//     }
-// };
+    for (let i = 0; i < times.length; i++) {
+        setProgressStep(steps[i]);
+        console.log(progressValues[i])
+        setProgressValue(progressValues[i]);
+        setProgressDescription(progressDescriptions[i]);
+        await wait(times[i]); // Wait for the duration of the current step
+        if(cancelled) break;
+    }
+};
 
 
   const mint = async () => {
@@ -330,15 +328,12 @@ function App() {
   }
 
   const generate = async () => {
-    setTimeout(() => singleClick = 0, 100)
+    singleClick = 0
     console.log('generating')
-    // cancelled = false
-    // setIncrement(increment+1)
-    // triggerProgressBar()
-    // loadingTreasure = true;
+    cancelled = false
     exploring = false
     const newController = new AbortController();
-    setControllers([...controllers, newController]);
+    setController(newController);
 
     const data = {
       address: address,
@@ -371,9 +366,10 @@ function App() {
 
         json.loot.loot.url = json.image
         json.loot.loot.tokenID = json.tokenID
-        setItems([json.loot.loot])
+        items = [json.loot.loot]
         txHash=''
         singleClick = 0;
+
       }
     }catch(err){
       // alert('generation service is erroring')
@@ -473,7 +469,7 @@ function App() {
 
   useEffect(() => {
 
-  }, [transferLoading, loadingTreasure, exploring, progressValue, controllers])
+  }, [transferLoading, loadingTreasure, exploring, progressValue, controller])
   
   const signOutConfiguration = () => {
     localStorage.clear()
@@ -482,7 +478,8 @@ function App() {
     setLoaded(false)
     setMintLoading(false)
     loadingTreasure = false
-    setItems([]);
+    // setItems([]);
+    items = []
     txHash = '';
     live = false
     setIsConnected(false)
@@ -581,9 +578,9 @@ function App() {
                 <iframe id='maze' src={`https://integration-dungeon-minter-maze.vercel.app/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe>
                 {/* <iframe id='maze' src={`http://localhost:5174/${ live ? '?refresh=true' : ''}`} width={window.innerWidth*.988} height={window.innerHeight*.995} ></iframe> */}
               </div>
-              {loaded == false && waiting && <div style={{zIndex: 10, width: '20vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: '50vh', left: '49.5vw', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
+              {/* {loaded == false && waiting && <div style={{zIndex: 10, width: '20vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: '50vh', left: '49.5vw', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                   <p className='content' style={{textAlign:'center', fontSize: isMobileDevice() &&'15px' as any}}>Please wait a moment<br/> while the loot loads</p>
-              </div> }
+              </div> } */}
 
               <div style={{zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                 <div className={ isMobileDevice() ? "dashed-greeting-mobile":'dashed-greeting'}>
@@ -661,8 +658,8 @@ function App() {
                         setOpenWallet(false)
                         setCollectibleViewable(null)
                         }}>
-                          <span className='cancel-generation'>Cancel</span>
-                          <img src={playImage} alt="Play" className="play-image-cancel" />
+                          <span className='cancel-open-wallet'>Close</span>
+                          <img src={playImage} alt="Play" className="play-image-cancel-open-wallet" />
                       </p>
                     </div>
                   </div>
@@ -708,13 +705,10 @@ function App() {
                   setProgressValue(0)
                   setProgressDescription('SCENARIO.GG AI GENERATION...')
                   setProgressStep(1)
-                  // cancelled= true;
+                  cancelled= true;
                   setColor(null)
-                  // setLoadingTreasure(false)
                   loadingTreasure = false
-                  if(controllers&&controllers.length > 0) controllers!.map((controller: any) => {
-                    controller?.abort()
-                  })
+                  controller?.abort()
                   exploring = true;
                   singleClick = 0;
                   }}>
@@ -782,7 +776,7 @@ function App() {
                 })}
                 {!mintLoading && txHash == '' && <p className='content' style={{position:'relative', marginTop: '-10px'}} onClick={() => {
                   mint()
-                  // cancelled= true;
+                  cancelled= true;
                   }}>
                     <span className='mint-generation'>Mint to wallet</span>
                     <img src={playImage} alt="Play" className="play-image-mint" />
@@ -799,7 +793,7 @@ function App() {
                   setProgressStep(1)
                   setLoaded(false)
                   txHash = ''
-                  // cancelled= true;
+                  cancelled= true;
                   // setExploring(true)
                   exploring = true;
                   singleClick=0;
