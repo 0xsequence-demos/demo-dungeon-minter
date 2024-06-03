@@ -494,6 +494,7 @@ function App() {
 
   const sendMessageToIframe = () => {
     const message = { type: "movement", text: "step_back" };
+    console.log('console')
     // Ensure the iframe is loaded and the ref is set
     if (iframeRef.current && iframeRef.current.contentWindow) {
       iframeRef.current.contentWindow.postMessage(message, '*'); // Use specific domain in place of '*' for better security
