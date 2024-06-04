@@ -227,6 +227,7 @@ function App() {
   const [controller, setController] = useState<any>(null);
   setTheme('dark')
   const [loaded, setLoaded] = useState(false);
+  const [chestOpened, setChestOpened] = useState(false);
   const [waiting, setWaiting] = useState(false)
 
   useEffect(() => {
@@ -254,6 +255,7 @@ function App() {
       function onOpen() {
         console.log(items)
         setTimeout(() => {
+          setChestOpened(true)
           if (items.length > 0) {
             setLoaded(true)
             setWaiting(false)
@@ -269,6 +271,7 @@ function App() {
           controller?.abort()
         console.log('aborting signal')
         setColor(null)
+        setChestOpened(false)
         d.loot()
         items = []
       }
@@ -720,7 +723,7 @@ function App() {
                   </div>
                 </>}
                 {
-                  loaded &&
+                  loaded && chestOpened && 
                   <div className="box-generation"
                     style={{
                       backgroundSize: '150%',
