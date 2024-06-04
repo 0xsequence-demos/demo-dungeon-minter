@@ -1,5 +1,5 @@
 # sequence dungeon minter demo
-login with a universal wallet using sequence kit, browse a maze to find lootboxes and generate AI tokens from diablo via [scenario.gg](https://www.scenario.com/)
+login with an embedded wallet using web2 social auth, browse a maze to find treasure chests and generate AI tokens from diablo via [scenario.gg](https://www.scenario.com/)
 
 ## technologies used
 - sequence kit universal wallet
