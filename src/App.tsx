@@ -275,12 +275,14 @@ function App() {
         d.loot()
         items = []
       }
-      game.listenForEachChestData(chestData => {
+      function onEachChestData(chestData: ChestData) {
         chestData.approachSignal.listen(onApproach)
         chestData.openSignal.listen(onOpen)
         chestData.abandonSignal.listen(onAbandon)
-      })
+      }
+      game.listenForEachChestData(onEachChestData)
       return () => {
+        game.stopListeningForEachChestData(onEachChestData)
         for (const chestData of game.chestDatas) {
           chestData.approachSignal.stopListening(onApproach)
           chestData.openSignal.stopListening(onOpen)
@@ -723,7 +725,7 @@ function App() {
                   </div>
                 </>}
                 {
-                  loaded && chestOpened && 
+                  loaded && chestOpened &&
                   <div className="box-generation"
                     style={{
                       backgroundSize: '150%',

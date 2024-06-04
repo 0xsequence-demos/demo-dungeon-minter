@@ -42,13 +42,13 @@ export class DungeonGame {
   private _activeChest: InteractiveChest | undefined;
   private _onEachChestSignal = new Signal<ChestData>();
   listenForEachChestData(listener: (chestData: ChestData) => void) {
-    this._onEachChestSignal.listen((listener))
+    this._onEachChestSignal.listen(listener)
     for (const chestData of this.chestDatas) {
       this._onEachChestSignal.emit(chestData)
     }
   }
   stopListeningForEachChestData(listener: (chestData: ChestData) => void) {
-    this._onEachChestSignal.stopListening((listener))
+    this._onEachChestSignal.stopListening(listener)
   }
   public get activeChest(): InteractiveChest | undefined {
     return this._activeChest;
