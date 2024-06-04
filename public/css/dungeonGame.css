@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+canvas {
+  display: block; /* Make canvas fill its parent container */
+  touch-action: manipulation;
+}
+
+#glass {
+    left: 150px;
+}
+
+@font-face {
+	font-family: ChiKareGo2;
+	src: url(fonts/ChiKareGo2.ttf);
+}
+
+.buttons {
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+  width: 150px;
+  height: 100px;
+}
+
+.navigationButton {
+  border: 2px solid slate;
+  background: black;
+  font-family: ChiKareGo2;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  border: 2px #eee inset;
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  touch-action: manipulation;
+}
+
+.mini-map {
+  position: fixed;
+  height: 180px;
+  top: 15px;
+  right: 30px;
+  width: 180px;
+  flex-direction: column;
+  border: 2px solid grey; /* Grey border around the mini-map */
+}
+.glass {
+  display: none;
+}
+@media (max-width: 600px) {
+  .mini-map {
+    display: none;
+    top: -17px;
+    right: 0px;
+    /* transform: scale(0.7); Reduces size to 70% of the original on mobile screens */
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  /* border: 1px solid #000; */
+  position: relative; /* Needed for absolute positioning inside */
+}
+
+.cell.obstacle {
+  background-color: #333; /* Obstacle color */
+}
+
+.color-marker {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.party-marker {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg); /* Adjust rotation based on player orientation */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
+  background-color: #A020F0; /* Default color for the player marker */
+}
