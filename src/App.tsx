@@ -129,7 +129,7 @@ function LoginScreen({ setIsLoggingIn, setIsConnected }: any) {
                 authOptions={{
                   clientId: 'com.sequence.dungeon-minter',
                   scope: 'openid email',
-                  redirectURI: 'https://dungeon-minter.vercel.app/',
+                  redirectURI: 'https://0xsequence-demos.github.io/demo-dungeon-minter/',
                   usePopup: true,
                   nonce: sessionHash
                 }}
