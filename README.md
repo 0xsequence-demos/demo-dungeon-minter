@@ -1,12 +1,12 @@
-# sequence dungeon minter demo
-login with an embedded wallet using web2 social auth, browse a maze to find treasure chests and generate AI tokens from diablo via [scenario.gg](https://www.scenario.com/)
+# Sequence Dungeon Minter Demo
+Lgin with a Sequence Embedded Wallet using Google or Apple auth, and then browse a maze to find treasure chests and dynamically generate and mint tokens with random attributes leveraging [scenario.gg](https://www.scenario.com/)
 
-## technologies used
-- sequence kit universal wallet
-- cloudflare worker
-- scenario.gg AI generation
-- sequence metadata service
-- sequence relayer
+## Technologies Used
+- Sequence Kit Embedded Wallet
+- Cloudflare Worker
+- Scenario AI Image Generation
+- Sequence Metadata Service
+- Sequence Relayer
 
-## evm network
-- arbitrum nova
+## EVM Network
+- Arbitrum Nova
