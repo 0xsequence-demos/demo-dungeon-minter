@@ -229,6 +229,7 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [chestOpened, setChestOpened] = useState(false);
   const [waiting, setWaiting] = useState(false)
+  const [hideWelcomeMessage, setHideWelcomeMessage] = useState(false)
 
   useEffect(() => {
 
@@ -585,12 +586,17 @@ function App() {
                 {/* {loaded == false && waiting && <div style={{zIndex: 10, width: '20vw', color: 'white', cursor: 'pointer', position:'fixed', bottom: '50vh', left: '49.5vw', transform: isMobileDevice() ? '0' : 'translateX(-50%)'}}>
                   <p className='content' style={{textAlign:'center', fontSize: isMobileDevice() &&'15px' as any}}>Please wait a moment<br/> while the loot loads</p>
               </div> } */}
-
                 <div style={{ zIndex: 10, width: '70vw', color: 'white', cursor: 'pointer', position: 'fixed', bottom: isMobileDevice() ? '150px' : '30px', left: isMobileDevice() ? '30px' : '50%', transform: isMobileDevice() ? '0' : 'translateX(-50%)' }}>
-                  <div className={isMobileDevice() ? "dashed-greeting-mobile" : 'dashed-greeting'}>
-                    <p className='content' style={{ fontSize: isMobileDevice() && '15px' as any }}>Welcome to Dungeon Minter!
-                      Walk around to discover treasure chests and click on a treasure chest to generate a unique collectible to mint to your Embedded Wallet.</p>
-                  </div>
+                  {
+                    !hideWelcomeMessage && <>
+                      <div className={isMobileDevice() ? "dashed-greeting-mobile" : 'dashed-greeting'} onClick={() => {
+                        setHideWelcomeMessage(true)
+                      }}>
+                        <p className='content' style={{ fontSize: isMobileDevice() && '15px' as any }}>Welcome to Dungeon Minter!
+                          Walk around to discover treasure chests and click on a treasure chest to generate a unique collectible to mint to your Embedded Wallet.</p>
+                      </div>
+                    </>
+                  }
                 </div>
                 <div style={{ zIndex: 10, color: 'white', cursor: 'pointer', position: 'fixed', bottom: '25px', right: isMobileDevice() ? '30px' : '30px' }}>
                   <button className='open-wallet-button' onClick={() => setOpenWallet(true)}>
