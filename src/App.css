@@ -13,10 +13,9 @@ iframe {
   border: none;
 } */
 
-
-p.content {
+.content {
   color: white;
-  font-family: 'ChiKareGo2';
+  font-family: "ChiKareGo2";
   font-size: 25px;
   line-height: 1.1;
 }
@@ -36,7 +35,6 @@ p.content {
   transform: translateY(-50%); /* Adjust vertical centering */
 }
 
-
 .play-image-cancel {
   margin-top: 13px;
   margin-left: -90px;
@@ -45,7 +43,7 @@ p.content {
   transform: translateY(-50%); /* Adjust vertical centering */
 }
 
-.play-image-cancel-open-wallet{
+.play-image-cancel-open-wallet {
   margin-top: 13px;
   margin-left: -80px;
   display: none; /* Initially hide the image */
@@ -102,14 +100,14 @@ span.mint-generation:hover + .play-image-mint {
 }
 
 .gmail-login,
-.apple-login{ 
+.apple-login {
   cursor: pointer;
   display: inline-block; /* Show the image on hover */
   /* position: relative; Ensure the parent container is positioned */
 }
 
 .play-image-gmail,
-.play-image-apple{
+.play-image-apple {
   display: inline-block; /* Show the image on hover */
 }
 
@@ -125,11 +123,11 @@ span.mint-generation:hover + .play-image-mint {
   align-items: center;
   text-align: center;
   color: white;
-  font-family: 'ChiKareGo2', monospace;
+  font-family: "ChiKareGo2", monospace;
   text-align: center;
 }
 
-.box-generation{
+.box-generation {
   position: fixed; /* Fix position relative to the viewport */
   top: 0; /* Start from the top edge of the viewport */
   left: 0; /* Start from the left edge of the viewport */
@@ -141,7 +139,7 @@ span.mint-generation:hover + .play-image-mint {
   background-color: rgba(0, 0, 0, 0.5); /* Optional: Overlay background */
   z-index: 1000; /* High z-index to ensure it's on top of other content */
   color: white;
-  font-family: 'ChiKareGo2', monospace;
+  font-family: "ChiKareGo2", monospace;
 }
 
 .title {
@@ -150,7 +148,9 @@ span.mint-generation:hover + .play-image-mint {
   font-size: 24px; /* Adjust based on actual size needed */
 }
 
-.email-login input, .email-login button, .social-login button {
+.email-login input,
+.email-login button,
+.social-login button {
   font-size: 25px;
   margin: 10px 0;
 }
@@ -161,7 +161,8 @@ span.mint-generation:hover + .play-image-mint {
   margin-bottom: 5px;
 }
 
-.email-login button, .social-login button {
+.email-login button,
+.social-login button {
   width: 100%;
   padding: 10px;
   cursor: pointer;
@@ -182,7 +183,8 @@ span.mint-generation:hover + .play-image-mint {
 }
 
 /* Hover effects */
-.email-login button:hover, .social-login button:hover {
+.email-login button:hover,
+.social-login button:hover {
   background-color: #555;
 }
 
@@ -197,7 +199,6 @@ span.mint-generation:hover + .play-image-mint {
   border: 3px dashed #555; /* Adjust border width and color as needed */
   padding: 10px; /* Adjust border width and color as needed */
 }
-
 
 .dashed-greeting-mobile {
   width: 100%;
@@ -228,7 +229,8 @@ span.mint-generation:hover + .play-image-mint {
   padding: 10px; /* Adjust border width and color as needed */
 }
 
-.dashed-box-google, .dashed-box-apple {
+.dashed-box-google,
+.dashed-box-apple {
   margin: 10px;
   margin-top: 70px;
   width: 140px;
@@ -242,7 +244,7 @@ span.mint-generation:hover + .play-image-mint {
 
 .logout-button {
   color: white;
-  font-family: 'ChiKareGo2';
+  font-family: "ChiKareGo2";
   font-size: 25px;
   height: 40px;
   background-color: black;
@@ -255,7 +257,7 @@ span.mint-generation:hover + .play-image-mint {
 }
 
 .send-collectible-button {
-  font-family: 'ChiKareGo2';
+  font-family: "ChiKareGo2";
   font-size: 25px;
   height: 40px;
   border: 1px white solid;
@@ -267,7 +269,7 @@ span.mint-generation:hover + .play-image-mint {
 
 .open-wallet-button {
   color: white;
-  font-family: 'ChiKareGo2';
+  font-family: "ChiKareGo2";
   font-size: 25px;
   height: 100px;
   border: 2px #eee inset;
@@ -279,7 +281,7 @@ span.mint-generation:hover + .play-image-mint {
   width: 100px;
 }
 
-.dashed-box-generation-box{
+.dashed-box-generation-box {
   width: 340px;
   height: 340px;
   background-color: black;
@@ -313,13 +315,13 @@ span.mint-generation:hover + .play-image-mint {
   overflow-y: auto; /* This makes the list scrollable when the content exceeds 150px */
 }
 
-.scrollable-wallet{
+.scrollable-wallet {
   width: 500px;
   max-height: 200px;
   overflow-y: auto; /* This makes the list scrollable when the content exceeds 150px */
 }
 
-.scrollable-item{
+.scrollable-item {
   padding: 40px;
   padding-left: 30px;
   padding-right: 0px;
@@ -349,13 +351,13 @@ button:focus {
   outline: none; /* Removes the outline */
 }
 
-.react-apple-signin-auth-btn.react-apple-signin-auth-btn-dark{
+.react-apple-signin-auth-btn.react-apple-signin-auth-btn-dark {
   background: transparent;
-    width: 150px;
-    height: 50px;
-    position: absolute;
-    border: 0px;
-    color: transparent;
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  border: 0px;
+  color: transparent;
 }
 svg {
   display: none;

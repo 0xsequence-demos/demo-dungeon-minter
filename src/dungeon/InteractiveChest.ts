@@ -29,7 +29,7 @@ const tempIntersections: Intersection<Object3D<Object3DEventMap>>[] = [];
 export class InteractiveChest {
   visuals: Object3D;
   rollers: Object3D[] = [];
-  intervalID: number | undefined;
+  intervalID: NodeJS.Timeout | undefined;
   isPointerDown = false;
   raycaster: Raycaster;
   pointer: Vector2;
@@ -49,7 +49,7 @@ export class InteractiveChest {
       return;
     }
     if (!this.light || !this.glowMaterial || !this.lid) {
-      throw new Error("visuals not ready")
+      throw new Error("visuals not ready");
     }
     this._openness = openness;
     this.light.intensity = Math.min(
@@ -262,7 +262,7 @@ export class InteractiveChest {
   };
 
   private onTouchEnd = (event: TouchEvent) => {
-    void event
+    void event;
     if (this.activeRoller) {
       this.activeRoller.userData.virtualY = nearestNotchAngle(
         this.activeRoller.userData.virtualY,
@@ -286,7 +286,7 @@ export class InteractiveChest {
   tick = () => {
     if (!this.glowMaterialOff || !this.glowMaterial || !this.powerLineToLock) {
       // throw new Error("visuals not ready")
-      return
+      return;
     }
     this.glowMaterialOff.emissive
       .copy(this.glowMaterial.emissive)
@@ -375,7 +375,7 @@ export class InteractiveChest {
     document.addEventListener("mousemove", this.onMouseMove);
     document.addEventListener("mouseup", this.onMouseUp);
     console.log("activate interactive chest");
-    this.chestData.approach()
+    this.chestData.approach();
   }
 
   stopTickLoop = () => {
@@ -399,6 +399,6 @@ export class InteractiveChest {
     document.removeEventListener("mousemove", this.onMouseMove);
     document.removeEventListener("mouseup", this.onMouseUp);
     console.log("deactivate interactive chest");
-    this.chestData.abandon()
+    this.chestData.abandon();
   }
 }

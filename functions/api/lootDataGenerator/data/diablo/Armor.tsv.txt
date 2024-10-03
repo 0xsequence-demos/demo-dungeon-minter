@@ -1,0 +1,204 @@
+Armor
+name	rarity	speed	reqstr	durability	level	type
+Cap/hat	1	0	0	12	1	helm
+Skull Cap	4	0	15	18	5	helm
+Helm	4	0	26	24	11	helm
+Full Helm	4	0	41	30	15	helm
+Great Helm	4	0	63	40	23	helm
+Crown	4	0	55	50	29	helm
+Mask	4	0	23	20	19	helm
+Quilted Armor	1	0	12	20	1	tors
+Leather Armor	2	0	15	24	3	tors
+Hard Leather Armor	3	0	20	28	5	tors
+Studded Leather 	4	0	27	32	8	tors
+Ring Mail	4	5	36	26	11	tors
+Scale Mail	4	10	44	36	13	tors
+Chain Mail	4	5	48	45	15	tors
+Breast Plate	4	0	30	50	18	tors
+Splint Mail	4	5	51	30	20	tors
+Plate Mail	4	10	65	60	24	tors
+Field Plate	4	5	55	48	28	tors
+Gothic Plate	4	5	70	55	32	tors
+Full Plate Mail	4	10	80	70	37	tors
+Ancient Armor	4	5	100	60	40	tors
+Light Plate	4	0	41	60	35	tors
+Buckler	2	0	12	12	1	shie
+Small Shield	3	0	22	16	5	shie
+Large Shield	4	5	34	24	11	shie
+Kite Shield	4	0	47	30	15	shie
+Tower Shield	4	10	75	60	22	shie
+Gothic Shield	4	5	60	40	30	shie
+Gloves(L)	1	0	0	12	3	glov
+Heavy Gloves	1	0	0	14	7	glov
+Bracers(M)	2	0	25	16	12	glov
+Light Gauntlets	3	0	45	18	20	glov
+Gaunlets(H)	4	0	60	24	27	glov
+Leather Boots	1	0	0	12	3	boot
+Heavy Boots	1	0	18	14	7	boot
+Chain Boots	2	0	30	16	12	boot
+Light Plate Boots	3	0	50	18	20	boot
+Plate Boots	4	0	70	24	27	boot
+Sash(L)	1	0	0	12	3	belt
+Light Belt	1	0	0	14	7	belt
+Belt(M)	2	0	25	16	12	belt
+Heavy Belt	2	0	45	18	20	belt
+Girdle(H)	3	0	60	24	27	belt
+Bone Helm	2	0	25	40	22	helm
+Bone Shield	2	0	25	40	19	shie
+Spiked Shield	3	0	30	40	11	shie
+War Hat	1	0	20	12	34	helm
+Sallet	4	0	43	18	37	helm
+Casque	4	0	59	24	42	helm
+Basinet	4	0	82	30	45	helm
+Winged Helm	4	0	115	40	51	helm
+Grand Crown	4	0	103	50	55	helm
+Death Mask	4	0	55	20	48	helm
+Ghost Armor	1	0	38	20	34	tors
+Serpentskin Armor	2	0	43	24	36	tors
+Demonhide Armor	3	0	50	28	37	tors
+Trellised Armor	4	0	61	32	40	tors
+Linked Mail	4	5	74	26	42	tors
+Tigulated Mail	4	10	86	36	43	tors
+Mesh Armor	4	5	92	45	45	tors
+Cuirass	4	0	65	50	47	tors
+Russet Armor	4	5	97	30	49	tors
+Templar Coat	4	10	118	60	52	tors
+Sharktooth Armor	4	5	103	48	55	tors
+Embossed Plate	4	5	125	55	58	tors
+Chaos Armor	4	10	140	70	61	tors
+Ornate Armor	4	5	170	60	64	tors
+Mage Plate	4	0	55	60	60	tors
+Defender	2	0	38	68	34	shie
+Round Shield	3	0	53	64	37	shie
+Scutum	4	5	71	62	42	shie
+Dragon Shield	4	0	91	76	45	shie
+Pavise	4	10	133	72	50	shie
+Ancient Shield	4	5	110	80	56	shie
+Demonhide Gloves	1	0	20	12	33	glov
+Sharkskin Gloves	1	0	20	14	39	glov
+Heavy Bracers	2	0	58	16	43	glov
+Battle Gauntlets	3	0	88	18	49	glov
+War Gauntlets	4	0	110	24	54	glov
+Demonhide Boots	1	0	20	12	36	boot
+Sharkskin Boots	1	0	47	14	39	boot
+Mesh Boots	2	0	65	16	43	boot
+Battle Boots	3	0	95	18	49	boot
+War Boots	4	0	125	24	54	boot
+Demonhide Sash	1	0	20	12	36	belt
+Sharkskin Belt	1	0	20	14	39	belt
+Mesh Belt	2	0	58	16	43	belt
+Battle Belt	2	0	88	18	49	belt
+War Belt	3	0	110	24	54	belt
+Grim Helm	2	0	58	40	50	helm
+Grim Shield	2	0	58	70	48	shie
+Barbed Shield	3	0	65	55	42	shie
+Wolf Head	1	0	16	20	4	pelt
+Hawk Helm	1	0	20	20	8	pelt
+Antlers	1	0	24	20	16	pelt
+Falcon Mask	1	0	28	20	20	pelt
+Spirit Mask	1	0	30	20	24	pelt
+Jawbone Cap	2	0	25	25	4	phlm
+Fanged Helm	2	0	35	35	8	phlm
+Horned Helm	2	0	45	45	16	phlm
+Assault Helmet	2	0	55	50	20	phlm
+Avenger Guard	2	0	65	55	24	phlm
+Targe	2	0	16	20	4	ashd
+Rondache	2	0	26	30	8	ashd
+Heraldic Shield	2	0	40	40	16	ashd
+Aerin Shield	2	0	50	50	20	ashd
+Crown Shield	2	0	65	60	24	ashd
+Preserved Head	1	0	12	20	4	head
+Zombie Head	1	0	14	20	8	head
+Unraveller Head	1	0	18	20	16	head
+Gargoyle Head	1	0	20	20	20	head
+Demon Head	1	0	25	20	24	head
+Circlet	1	0	0	35	24	circ
+Coronet	1	0	0	30	52	circ
+Tiara	1	0	0	25	70	circ
+Diadem	1	0	0	20	85	circ
+Shako	1	0	50	12	58	helm
+Hydraskull	4	0	84	18	63	helm
+Armet	4	0	109	24	68	helm
+Giant Conch	4	0	142	30	54	helm
+Spired Helm	4	0	192	40	79	helm
+Corona	4	0	174	50	85	helm
+Demonhead	4	0	102	20	74	helm
+Dusk Shroud	1	0	77	20	65	tors
+Wyrmhide	2	0	84	24	67	tors
+Scarab Husk	3	0	95	28	68	tors
+Wire Fleece	4	0	111	32	70	tors
+Diamond Mail	4	5	131	26	72	tors
+Loricated Mail	4	10	149	36	73	tors
+Boneweave	4	5	158	45	62	tors
+Great Hauberk	4	0	118	50	75	tors
+Balrog Skin	4	5	165	30	76	tors
+Hellforged Plate	4	10	196	60	78	tors
+Kraken Shell	4	5	174	48	81	tors
+Lacquered Plate	4	5	208	55	82	tors
+Shadow Plate	4	10	230	70	83	tors
+Sacred Armor	4	5	232	60	85	tors
+Archon Plate	4	0	103	60	84	tors
+Heater	2	0	77	88	58	shie
+Luna	3	0	100	84	61	shie
+Hyperion	4	5	127	82	64	shie
+Monarch	4	0	156	86	72	shie
+Aegis	4	10	219	92	79	shie
+Ward	4	5	185	100	84	shie
+Bramble Mitts	1	0	50	12	57	glov
+Vampirebone Gloves	1	0	50	14	63	glov
+Vambraces	2	0	106	16	69	glov
+Crusader Gauntlets	3	0	151	18	76	glov
+Ogre Gauntlets	4	0	185	24	85	glov
+Wyrmhide Boots	1	0	50	12	60	boot
+Scarabshell Boots	1	0	91	14	66	boot
+Boneweave Boots	2	0	118	16	72	boot
+Mirrored Boots	3	0	163	18	81	boot
+Myrmidon Greaves	4	0	208	24	85	boot
+Spiderweb Sash	1	0	50	12	61	belt
+Vampirefang Belt	1	0	50	14	68	belt
+Mithril Coil	2	0	106	16	75	belt
+Troll Belt	2	0	151	18	82	belt
+Colossus Girdle	3	0	185	24	85	belt
+Bone Visage	2	0	106	40	84	helm
+Troll Nest	2	0	106	74	76	shie
+Blade Barrier	3	0	118	83	68	shie
+Alpha Helm	1	0	44	20	35	pelt
+Griffon Headress	1	0	50	20	40	pelt
+Hunter's Guise	1	0	56	20	46	pelt
+Sacred Feathers	1	0	62	20	50	pelt
+Totemic Mask	1	0	65	20	55	pelt
+Jawbone Visor	2	0	58	25	33	phlm
+Lion Helm	2	0	73	35	38	phlm
+Rage Mask	2	0	88	45	44	phlm
+Savage Helmet	2	0	103	50	49	phlm
+Slayer Guard	2	0	118	55	54	phlm
+Akaran Targe	2	0	44	20	35	ashd
+Akaran Rondache	2	0	59	30	40	ashd
+Protector Shield	2	0	69	40	46	ashd
+Guilded Shield	2	0	89	50	51	ashd
+Royal Shield	2	0	114	60	55	ashd
+Mummified Trophy	1	0	38	20	33	head
+Fetish Trophy	1	0	41	20	39	head
+Sexton Trophy	1	0	47	20	45	head
+Cantor Trophy	1	0	50	20	49	head
+Heirophant Trophy	1	0	58	20	54	head
+Blood Spirt	1	0	86	20	62	pelt
+Sun Spirit	1	0	95	20	69	pelt
+Earth Spirit	1	0	104	20	76	pelt
+Sky Spirit	1	0	113	20	83	pelt
+Dream Spirit	1	0	118	20	85	pelt
+Carnage Helm	2	0	106	25	60	phlm
+Fury Visor	2	0	129	35	66	phlm
+Destroyer Helm	2	0	151	45	73	phlm
+Conquerer Crown	2	0	174	50	80	phlm
+Guardian Crown	2	0	196	55	85	phlm
+Sacred Targe	2	0	86	45	63	ashd
+Sacred Rondache	2	0	109	68	70	ashd
+Ancient Shield	2	0	124	55	74	ashd
+Zakarum Shield	2	0	142	65	82	ashd
+Vortex Shield	2	0	148	90	85	ashd
+Minion Skull	1	0	77	20	59	head
+Hellspawn Skull	1	0	82	20	67	head
+Overseer Skull	1	0	91	20	66	head
+Succubae Skull	1	0	95	20	81	head
+Bloodlord Skull	1	0	106	20	85	head

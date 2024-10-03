@@ -1,11 +1,12 @@
 /// <reference types="vite/client" />
-declare namespace JSX {
-    interface Spline extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
-        url: string
-        width: any
-        height: any
-    }
-    interface IntrinsicElements {
-      'spline-viewer': Spline;
-    }
-  }
+/// <reference types="vite-plugin-svgr/client" />
+interface ImportMetaEnv {
+  readonly VITE_BUILDER_PROJECT_ACCESS_KEY: string;
+  readonly VITE_WAAS_CONFIG_KEY: string;
+  readonly VITE_GOOGLE_CLIENT_ID: string;
+  readonly VITE_APPLE_CLIENT_ID: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}

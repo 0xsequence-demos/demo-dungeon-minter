@@ -1,0 +1,308 @@
+Weapons
+name	type	rarity	speed	StrBonus	DexBonus	reqstr	reqdex	durability	level	mindam	maxdam	2handmindam	2handmaxdam
+Hand Axe	axe	3		100				28	3	3	6		
+Axe	axe	4	10	100		32		24	7	4	11		
+Double Axe	axe	4	10	100		43		24	13	5	13		
+Military Pick	axe	4	-10	100		49	33	26	19	7	11		
+War Axe	axe	4		100		67		26	25	10	18		
+Large Axe	axe	4	-10	100		35		30	6			6	13
+Broad Axe 	axe	4		100		48		35	12			10	18
+Battle Axe	axe	4	10	100		54		40	17			12	32
+Great Axe	axe	4	-10	100		63	39	50	23			9	30
+Giant Axe	axe	4	10	100		70		50	27			22	45
+Wand	wand	1		100				15	2	2	4		
+Yew Wand	wand	1	10	100				15	12	2	8		
+Bone Wand	wand	1	-20	100				15	18	3	7		
+Grim Wand	wand	1		100				15	26	5	11		
+Club	club	1	-10	100				24	1	1	6		
+Scepter	scep	2		100		25		50	3	6	11		
+Grand Scepter	scep	4	10	100		37		60	15	8	18		
+War Scepter	scep	4	-10	100		55		70	21	10	17		
+Spiked Club	club	3		100				36	4	5	8		
+Mace	mace	4		100		27		60	8	3	10		
+Morning Star	mace	4	10	100		36		72	13	7	16		
+Flail	mace	4	-10	100		41	35	30	19	1	24		
+War Hammer	hamm	4	20	110		53		55	25	19	29		
+Maul	hamm	4	10	110		69		60	21			30	43
+Great Maul	hamm	3	20	110		99		60	32			38	58
+Short Sword	swor	3		100				24	1	2	7		
+Scimitar	swor	3	-20	100			21	22	5	2	6		
+Saber	swor	3	-10	100		25	25	32	8	3	8		
+Falchion	swor	4	20	100		33		32	11	9	17		
+Crystal Sword	swor	2		100		43		20	11	5	15		
+Broad Sword	swor	4		100		48		32	15	7	14		
+Long Sword 	swor	4	-10	100		55	39	44	20	3	19		
+War Sword	swor	4		100		71	45	44	27	8	20		
+Two-Handed Sword	swor	4		100		35	27	44	10	2	9	8	17
+Claymore	swor	4	10	100		47		50	17	5	12	13	30
+Giant Sword	swor	4		100		56	34	50	21	3	16	9	28
+Bastard Sword	swor	4	10	100		62		40	24	7	19	20	28
+Flamberge	swor	4	-10	100		70	49	50	27	9	15	13	26
+Great Sword	swor	4	10	100		100	60	50	33	12	20	25	42
+Dagger	knif	2	-20	75	75			16	3	1	4		
+Dirk	knif	2		75	75		25	20	9	3	9		
+Kriss	knif	2	-20	75	75		45	24	17	2	11		
+Blade	knif	3	-10	75	75	35	51	24	23	4	15		
+Throwing Knife	tkni	2		75	75		21	4	2	2	3		
+Throwing Axe	taxe	2	10	75	75		40	6	7	4	7		
+Balanced Knife	tkni	2	-20	75	75		51	8	13	1	8		
+Balanced Axe	taxe	2	-10	75	75		57	10	16	5	10		
+Javelin	jave	4	-10	75	75			2	1	1	5		
+Pilum	jave	4		75	75		45	3	10	4	9		
+Short Spear	jave	4	10	75	75	40	40	4	15	2	13		
+Glaive	jave	4	20	75	75	52	35	5	23	5	17		
+Throwing Spear	jave	4	-10	75	75		65	6	29	5	15		
+Spear	spea	4	-10	100			20	30	5			3	15
+Trident	spea	4		100		38	24	35	9			9	15
+Brandistock	spea	4	-20	100		40	50	28	16			7	17
+Spetum	spea	4		100		54	35	28	20			15	23
+Pike	spea	4	20	100		60	45	25	24			14	63
+Bardiche	pole	4	10	100		40		50	5			1	27
+Voulge	pole	4		100		50		50	11			6	21
+Scythe	pole	4	-10	100		41	41	65	15			8	20
+Poleaxe	pole	4	10	100		62		65	21			18	39
+Halberd	pole	4		100		75	47	55	29			12	45
+War Scythe	pole	3	-10	100		80	80	55	34			15	36
+Short Staff	staf	2	-10	100				20	1			1	5
+Long Staff	staf	2		100				30	8			2	8
+Gnarled Staff	staf	2	10	100				35	12			4	12
+Battle Staff	staf	2		100				40	17			6	13
+War Staff	staf	2	20	100				50	24			12	28
+Short Bow	bow	2	5		100		15	20	1			1	4
+Hunter's Bow	bow	2	-10		100		28	32	5			2	6
+Long Bow	bow	2			100	22	19	28	8			3	10
+Composite Bow	bow	2	-10		100	25	35	36	12			4	8
+Short Battle Bow	bow	2			100	30	40	40	18			5	11
+Long Battle Bow	bow	2	10		100	40	50	44	23			3	18
+Short War Bow	bow	2			100	35	55	48	27			6	14
+Long War Bow	bow	2	10		100	50	65	55	31			3	23
+Light Crossbow	xbow	2	-10		100	21	27	30	6			6	9
+Crossbow	xbow	2			100	40	33	40	15			9	16
+Heavy Crossbow	xbow	2	10		100	60	40	50	24			14	26
+Repeating Crossbow	xbow	2	-40		100	40	50	40	33			6	12
+Rancid Gas Potion	tpot							2	32	0	1		
+Oil Potion	tpot							2	28	0	1		
+Choking Gas Potion	tpot							2	20	0	1		
+Exploding Potion	tpot							2	16	0	1		
+Strangling Gas Potion	tpot							2	8	0	1		
+Fulminating Potion	tpot							2	4	0	1		
+decoy dagger	knif		-20	100		15	20	10	0	1	2		
+Gidbinn	knif		-20	100		15	25	30	0	3	7		
+Wirt's Leg	club		-10	100				66	0	2	8		
+Horadric Malus	hamm		20	100		15	15	55	0	6	15		
+Hellforge Hammer	hamm			100				55	0	6	15		
+Horadric Staff	staf			100		30		50	0			12	20
+Staff of the Kings	staf			100		25		45	0			10	15
+Hatchet	axe	3		100		25	25	28	31	10	21		
+Cleaver	axe	4	10	100		68		24	34	10	33		
+Twin Axe	axe	4	10	100		85		24	39	13	38		
+Crowbill	axe	4	-10	100		94	70	26	43	14	34		
+Naga	axe	4		100		121		26	48	16	45		
+Military Axe	axe	4	-10	100		73		30	34			14	34
+Bearded Axe 	axe	4		100		92		35	38			21	49
+Tabar	axe	4	10	100		101		40	42			24	77
+Gothic Axe	axe	4	-10	100		115	79	50	46			18	70
+Ancient Axe	axe	4	10	100		125		50	51			43	85
+Burnt Wand	wand	1		100		25		15	31	8	18		
+Petrified Wand	wand	1	10	100		25		15	38	8	24		
+Tomb Wand	wand	1	-20	100		25		15	43	10	22		
+Grave Wand	wand	1		100		25		15	49	13	29		
+Cudgel	club	1	-10	100		25		24	30	6	21		
+Rune Scepter	scep	2		100		58		50	31	13	24		
+Holy Water Sprinkler	scep	4	10	100		76		60	40	14	36		
+Divine Scepter	scep	4	-10	100		103		70	45	16	38		
+Barbed Club	club	3		100		30		36	32	13	25		
+Flanged Mace	mace	4		100		61		60	35	15	23		
+Jagged Star	mace	4	10	100		74		72	39	20	31		
+Knout	mace	4	-10	100		82	73	30	43	13	35		
+Battle Hammer	hamm	4	20	110		100		55	48	35	58		
+War Club	hamm	4	10	110		124		60	45			53	78
+Martel de Fer	hamm	3	20	110		169		60	53			61	99
+Gladius	swor	3		100		25		24	30	8	22		
+Cutlass	swor	3	-30	100		25	52	22	43	8	21		
+Shamshir	swor	3	-10	100		58	58	32	35	10	24		
+Tulwar	swor	4	20	100		70	42	32	37	16	35		
+Dimensional Blade	swor	2		100		85	60	20	37	13	35		
+Battle Sword	swor	4		100		92	43	32	40	16	34		
+Rune Sword	swor	4	-10	100		103	79	44	44	10	42		
+Ancient Sword	swor	4		100		127	88	44	49	18	43		
+Espadon	swor	4		100		73	61	44	37	8	26	18	40
+Dacian Falx	swor	4	10	100		91	20	50	42	13	30	26	61
+Tusk Sword	swor	4		100		104	71	50	45	10	37	19	58
+Gothic Sword	swor	4	10	100		113	20	40	48	14	40	39	60
+Zweihander	swor	4	-10	100		125	94	50	49	19	35	29	54
+Executioner Sword	swor	4	10	100		170	110	50	54	24	40	47	80
+Poignard	knif	2	-20	75	75	25		16	31	6	18		
+Rondel	knif	2		75	75	25	58	20	36	10	26		
+Cinquedeas	knif	2	-20	75	75	25	88	24	42	15	31		
+Stilleto	knif	3	-10	75	75	47	97	24	46	19	36		
+Battle Dart	tkni	2		75	75	25	52	6	31	8	16		
+Francisca	taxe	2	10	75	75	25	80	15	34	11	22		
+War Dart	tkni	2	-20	75	75	25	97	20	39	6	24		
+Hurlbat	taxe	2	-10	75	75	25	106	16	41	13	27		
+War Javelin	jave	4	-10	75	75	25	25	10	30	6	19		
+Great Pilum	jave	4		75	75	25	88	12	37	11	26		
+Simbilan	jave	4	10	75	75	80	80	14	40	8	32		
+Spiculum	jave	4	20	75	75	98	73	16	46	13	38		
+Harpoon	jave	4	-10	75	75	25	118	18	51	13	35		
+War Spear	spea	4	-10	100		25	25	30	33			10	37
+Fuscina	spea	4		100		77	25	35	36			19	37
+War Fork	spea	4	-20	100		80	95	28	41			16	40
+Yari	spea	4		100		101		28	44			29	59
+Lance	spea	4	20	100		110	88	25	47			27	114
+Lochaber Axe	pole	4	10	100		80		50	33			6	58
+Bill	pole	4		100		95		50	37			14	53
+Battle Scythe	pole	4	-10	100		82	82	65	40			18	45
+Partizan	pole	4	10	100		113	67	65	35			34	75
+Bec-de-Corbin	pole	4		100		133	91	55	51			13	85
+Grim Scythe	pole	3	-10	100		140	140	55	55			30	70
+Jo Staff	staf	2	-10	100		25		20	30			6	21
+Quarterstaff	staf	2		100		25		30	35			8	26
+Cedar Staff	staf	2	10	100		25		35	38			11	32
+Gothic Staff	staf	2		100		25		40	42			14	34
+Rune Staff	staf	2	20	100		25		50	47			24	58
+Edge Bow	bow	2	5		100	25	43	20	30			6	19
+Razor Bow	bow	2	-10		100	25	62	32	33			8	22
+Cedar Bow	bow	2			100	53	49	28	35			10	29
+Double Bow	bow	2	-10		100	58	73	36	39			11	26
+Short Siege Bow	bow	2			100	65	80	40	43			13	30
+Long Siege Bow	bow	2	10		100	80	95	44	46			10	42
+Rune Bow	bow	2			100	73	103	48	49			14	35
+Gothic Bow	bow	2	10		100	95	118	55	52			10	50
+Arbalest	xbow	2	-10		100	52	61	30	34			14	27
+Siege Crossbow	xbow	2			100	80	70	40	40			20	42
+Balista	xbow	2	10		100	110	80	50	47			33	55
+Chu-Ko-Nu	xbow	2	-60		100	80	95	40	54			14	32
+KhalimFlail	mace		-10	100		41	35	30	0	1	15		
+SuperKhalimFlail	mace		-10	100				30	0	1	15		
+Katar	h2h	2	-10	75	75	20	20	48	1	4	7		
+Wrist Blade	h2h	2		75	75	33	33	52	9	5	9		
+Hatchet Hands	h2h	2	10	75	75	37	37	56	12	2	15		
+Cestus	h2h	2		75	75	42	42	72	15	7	15		
+Claws	h2h	2	-10	75	75	46	46	64	18	8	15		
+Blade Talons	h2h	2	-20	75	75	50	50	69	21	10	14		
+Scissors Katar	h2h	2	-10	75	75	55	55	68	24	9	17		
+Quhab	h2h	2		75	75	57	57	48	28	11	24		
+Wrist Spike	h2h	2	-10	75	75	66	66	56	32	13	27		
+Fascia	h2h	2	10	75	75	69	69	64	36	8	37		
+Hand Scythe	h2h2	2	-10	75	75	73	73	72	41	16	37		
+Greater Claws	h2h2	2	-20	75	75	76	76	52	45	18	37		
+Greater Talons	h2h2	2	-30	75	75	79	79	69	50	21	35		
+Scissors Quhab	h2h2	2		75	75	82	82	68	54	19	40		
+Suwayyah	h2h2	2		75	75	99	99	48	59	39	52		
+Wrist Sword	h2h2	2	-10	75	75	105	105	56	62	34	45		
+War Fist	h2h2	2	10	75	75	108	108	64	68	44	53		
+Battle Cestus	h2h2	2	-10	75	75	110	110	72	73	36	42		
+Feral Claws	h2h2	2	-20	75	75	113	113	52	78	22	53		
+Runic Talons	h2h2	2	-30	75	75	115	115	69	81	24	44		
+Scissors Suwayyah	h2h2	2		75	75	118	118	68	85	40	51		
+Tomahawk	axe	3		100		125	67	28	54	33	58		
+Small Crescent	axe	4	10	100		115	83	24	61	38	60		
+Ettin Axe	axe	4	10	100		145	45	24	70	33	66		
+War Spike	axe	4	-10	100		133	54	26	79	30	48		
+Berserker Axe	axe	4		100		138	59	26	85	24	71		
+Feral Axe	axe	4	-15	100		196		30	57			25	123
+Silver Edged Axe	axe	4		100		166	65	35	65			62	110
+Decapitator	axe	4	10	100		189	33	40	73			49	137
+Champion Axe	axe	4	-10	100		167	59	50	82			59	94
+Glorious Axe	axe	4	10	100		164	55	50	85			60	124
+Polished Wand	wand	1		100		25		22	55	18	33		
+Ghost Wand	wand	1	10	100		25		14	65	20	40		
+Lich Wand	wand	1	-20	100		25		17	75	10	31		
+Unearthed Wand	wand	1		100		25		18	86	22	28		
+Truncheon	club	1	-10	100		88	43	55	52	35	43		
+Mighty Scepter	scep	2		100		125	65	50	62	40	52		
+Seraph Rod	scep	4	10	100		108	69	60	76	45	54		
+Caduceus	scep	4	-10	100		97	70	70	85	37	43		
+Tyrant Club	club	3		100		133		65	57	32	58		
+Reinforced Mace	mace	4		100		145	46	60	63	41	49		
+Devil Star	mace	4	10	100		153	44	72	70	43	53		
+Scourge	mace	4	-10	100		125	77	65	76	3	80		
+Legendary Mallet	hamm	4	20	110		189		65	82	50	61		
+Ogre Maul	hamm	4	10	110		225		60	69			77	106
+Thunder Maul	hamm	3	20	110		253		60	85			33	180
+Falcata	swor	3		100		150	88	24	56	31	59		
+Ataghan	swor	3	-20	100		138	95	22	61	26	46		
+Elegant Blade	swor	3	-10	100		109	122	32	63	33	45		
+Hydra Edge	swor	4	10	100		142	105	32	69	28	68		
+Phase Blade	swor	2	-30	100		25	136	0	73	31	35		
+Conquest Sword	swor	4		100		142	112	32	78	37	53		
+Cryptic Sword	swor	4	-10	100		99	109	44	82	5	77		
+Mythical Sword	swor	4		100		147	124	44	85	40	50		
+Legend Sword	swor	4	-15	100		175	100	44	59	22	56	50	94
+Highland Blade	swor	4	-5	100		171	104	50	66	22	62	67	96
+Balrog Blade	swor	4		100		185	87	50	71	15	75	55	118
+Champion Sword	swor	4	-10	100		163	103	40	77	24	54	71	83
+Colossal Sword	swor	4	10	100		182	95	50	80	26	70	61	121
+Colossus Blade	swor	4	5	100		189	110	50	85	25	65	58	115
+Bone Knife	knif	2	-20	75	75	38	75	26	58	23	49		
+Mithral Point	knif	2		75	75	55	98	55	70	37	53		
+Fanged Knife	knif	2	-20	75	75	42	86	36	83	15	57		
+Legend Spike	knif	3	-10	75	75	65	67	47	85	31	47		
+Flying Knife	tkni	2		75	75	48	141	6	64	23	54		
+Flying Axe	taxe	2	10	75	75	88	108	15	56	17	65		
+Winged Knife	tkni	2	-20	75	75	45	142	20	77	27	35		
+Winged Axe	taxe	2	-10	75	75	96	122	16	80	11	56		
+Hyperion Javelin	jave	4	-10	75	75	98	123	10	54	21	57		
+Stygian Pilum	jave	4		75	75	118	112	12	62	14	64		
+Balrog Spear	jave	4	10	75	75	127	95	14	71	33	63		
+Ghost Glaive	jave	4	20	75	75	89	137	16	79	19	60		
+Winged Harpoon	jave	4	-10	75	75	76	145	18	85	27	35		
+Hyperion Spear	spea	4	-10	100		155	120	30	58			35	119
+Stygian Pike	spea	4		100		168	97	35	66			29	144
+Mancatcher	spea	4	-20	100		132	134	28	74			42	92
+Ghost Spear	spea	4		100		122	163	28	83			18	155
+War Pike	spea	4	20	100		165	106	25	85			33	178
+Ogre Axe	pole	4		100		195	75	50	60			28	145
+Colossus Voulge	pole	4	10	100		210	55	50	64			17	165
+Thresher	pole	4	-10	100		152	118	65	71			12	141
+Cryptic Axe	pole	4	10	100		165	103	65	79			33	150
+Great Poleaxe	pole	4		100		179	99	55	84			46	127
+Giant Thresher	pole	3	-10	100		188	140	55	85			40	114
+Walking Stick	staf	2	-10	100		25		20	58			69	85
+Stalagmite	staf	2	10	100		63	35	30	66			75	107
+Elder Staff	staf	2		100		44	37	35	74			80	93
+Shillelah	staf	2		100		52	27	40	83			65	108
+Archon Staff	staf	2	10	100		34		26	85			83	99
+Spider Bow	bow	2	5		100	64	143	20	55			23	50
+Blade Bow	bow	2	-10		100	76	119	32	60			21	41
+Shadow Bow	bow	2			100	52	188	28	63			15	59
+Great Bow	bow	2	-10		100	121	107	36	68			12	52
+Diamond Bow	bow	2			100	89	132	40	72			33	40
+Crusader Bow	bow	2	10		100	97	121	44	77			15	63
+Ward Bow	bow	2			100	72	146	48	80			20	53
+Hydra Bow	bow	2	10		100	134	167	55	85			10	68
+Pellet Bow	xbow	2	-10		100	83	155	30	57			28	73
+Gorgon Crossbow	xbow	2			100	117	105	40	67			25	87
+Colossus Crossbow	xbow	2	10		100	163	77	50	75			32	91
+Demon Crossbow	xbow	2	-60		100	141	98	40	84			26	40
+Eagle Orb	orb	2	-10	100				20	1	2	5		
+Sacred Globe	orb	3	-10	100				30	8	3	8		
+Smoked Sphere	orb	3		100				35	12	4	10		
+Clasped Orb	orb	4		100				40	17	5	12		
+Dragon Stone	orb	5	10	100				50	24	8	18		
+Stag Bow	abow	3			100	30	45	48	18			7	12
+Reflex Bow	abow	3	10		100	35	60	55	27			9	19
+Maiden Spear	aspe	3		80	50	54	40	28	18			18	24
+Maiden Pike	aspe	3	10	80	50	63	52	25	27			23	55
+Maiden Javelin	ajav	3	-10	80	50	33	47	6	23	8	14		
+Glowing Orb	orb	2	-10	100				20	32	8	21		
+Crystalline Globe	orb	3	-10	100				30	37	10	26		
+Cloudy Sphere	orb	3		100				35	41	11	29		
+Sparkling Ball	orb	4		100				40	46	13	32		
+Swirling Crystal	orb	5	10	100				50	50	18	42		
+Ashwood Bow	abow	3			100	56	77	48	39			16	29
+Ceremonial Bow	abow	3	10		100	73	110	55	47			19	41
+Ceremonial Spear	aspe	3		80	50	101	80	28	43			34	51
+Ceremonial Pike	aspe	3	20	80	50	115	98	25	51			42	101
+Ceremonial Javelin	ajav	3	-10	80	50	25	109	6	35	18	35		
+Heavenly Stone	orb	2	-10	100				20	59	21	46		
+Eldritch Orb	orb	3	-10	100				30	67	18	50		
+Demon Heart	orb	3		100				35	75	23	55		
+Vortex Orb	orb	4		100				40	84	12	66		
+Dimensional Shard	orb	5	10	100				50	85	30	53		
+Matriarchal Bow	abow	3	-10		100	87	187	48	53			20	47
+Grand Matron Bow	abow	3	10		100	108	152	55	78			14	72
+Matriarchal Spear	aspe	3		80	50	114	142	28	61			65	95
+Matriarchal Pike	aspe	3	20	80	50	132	149	25	81			37	153
+MatriarchalJavelin	ajav	3	-10	80	50	107	151	6	65	30	54		

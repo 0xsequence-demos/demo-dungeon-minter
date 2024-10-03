@@ -26,3 +26,8 @@ dist-ssr
 *.blend1
 
 dist
+
+wrangler.toml
+.wrangler
+
+*.tsbuildinfo

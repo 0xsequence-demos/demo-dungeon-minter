@@ -32,23 +32,23 @@ const buttonKeyMap = {
 };
 
 export class DungeonGame {
-  map: MapData | undefined
-  party: PartyController | undefined
-  dungeon: Dungeon | undefined
-  buttonsContainer: HTMLDivElement | undefined
+  map: MapData | undefined;
+  party: PartyController | undefined;
+  dungeon: Dungeon | undefined;
+  buttonsContainer: HTMLDivElement | undefined;
   navButtons = new Map<string, HTMLElement>();
-  partyState: PartyState | undefined
-  minimap: MiniMap | undefined
+  partyState: PartyState | undefined;
+  minimap: MiniMap | undefined;
   private _activeChest: InteractiveChest | undefined;
   private _onEachChestSignal = new Signal<ChestData>();
   listenForEachChestData(listener: (chestData: ChestData) => void) {
-    this._onEachChestSignal.listen(listener)
+    this._onEachChestSignal.listen(listener);
     for (const chestData of this.chestDatas) {
-      this._onEachChestSignal.emit(chestData)
+      this._onEachChestSignal.emit(chestData);
     }
   }
   stopListeningForEachChestData(listener: (chestData: ChestData) => void) {
-    this._onEachChestSignal.stopListening(listener)
+    this._onEachChestSignal.stopListening(listener);
   }
   public get activeChest(): InteractiveChest | undefined {
     return this._activeChest;
@@ -80,7 +80,7 @@ export class DungeonGame {
   }
   private async init() {
     if (!this.map) {
-      throw new Error("not ready")
+      throw new Error("not ready");
     }
     this.dungeon = new Dungeon(this.pivot, this.map);
     const partyState = new PartyState(
@@ -126,12 +126,12 @@ export class DungeonGame {
     generateChestDatas(this.map, this.chestDatas);
     for (const chestData of this.chestDatas) {
       chestData.openSignal.listen(this.minimap.render);
-      this._onEachChestSignal.emit(chestData)
+      this._onEachChestSignal.emit(chestData);
     }
 
     makeChestVisuals(this.chestDatas, this.pivot, this.chests, this.camera);
 
-    const map = this.map
+    const map = this.map;
     this.party.locationChangeSignal.listen(() => {
       const chestData = isFacingLoot(
         partyState.x,
@@ -146,7 +146,7 @@ export class DungeonGame {
     if (import.meta.hot) {
       import.meta.hot.accept("./makeChestVisuals", (mod) => {
         if (!mod) {
-          return
+          return;
         }
         for (const chest of this.chests) {
           this.pivot.remove(chest.visuals);
@@ -190,15 +190,14 @@ export class DungeonGame {
   gameContainer: HTMLElement;
 
   onClickNavigationButton = (event: MouseEvent) => {
-    const el = event.target
+    const el = event.target;
     if (!el || !(el instanceof HTMLElement)) {
-      throw new Error("no element!")
+      throw new Error("no element!");
     }
     const keyLabel = el.textContent;
 
     if (keyLabel && keyLabel in buttonKeyMap) {
-      //@ts-ignore
-      const key_code = buttonKeyMap[keyLabel];
+      const key_code = buttonKeyMap[keyLabel as keyof typeof buttonKeyMap];
       if (this.party) {
         this.party.handleKey(key_code);
       }
