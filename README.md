@@ -12,4 +12,4 @@ Lgin with a Sequence Embedded Wallet using Google or Apple auth, and then browse
 
 ## EVM Network
 
-- Arbitrum Sepolia
+- Arbitrum Nova
