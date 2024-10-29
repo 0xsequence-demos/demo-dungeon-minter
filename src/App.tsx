@@ -9,7 +9,7 @@ import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import AppleSignin from "react-apple-signin-auth";
 
 const indexer = new SequenceIndexer(
-  "https://arbitrum-nova-indexer.sequence.app",
+  "https://arbitrum-sepolia-indexer.sequence.app",
   import.meta.env.VITE_BUILDER_PROJECT_ACCESS_KEY!,
 );
 
