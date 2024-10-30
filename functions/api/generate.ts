@@ -63,7 +63,7 @@ const upload = async (
   );
 
   const collectionID = Number(env.COLLECTION_ID);
-  const projectId = env.BUILDER_PROJECT_ID;
+  const projectId = Number(env.BUILDER_PROJECT_ID);
 
   // tokenID
   const randomTokenIDSpace = BigInt(ethers.hexlify(ethers.randomBytes(20)));
