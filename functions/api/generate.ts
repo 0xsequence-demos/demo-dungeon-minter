@@ -66,9 +66,7 @@ const upload = async (
   const projectId = env.BUILDER_PROJECT_ID;
 
   // tokenID
-  const randomTokenIDSpace = ethers.BigNumber.from(
-    ethers.utils.hexlify(ethers.utils.randomBytes(20)),
-  );
+  const randomTokenIDSpace = BigInt(ethers.hexlify(ethers.randomBytes(20)));
 
   try {
     await collectionsService.createToken({
@@ -235,7 +233,7 @@ const getInferenceObjectWithPolling = async (env: IEnv, id: InferenceData) => {
 };
 
 export const onRequest: PagesFunction<IEnv> = async (ctx) => {
-  console.log(JSON.stringify(ctx.env))
+  console.log(JSON.stringify(ctx.env));
   if (ctx.request.method === "OPTIONS") {
     return new Response(null, {
       headers: {

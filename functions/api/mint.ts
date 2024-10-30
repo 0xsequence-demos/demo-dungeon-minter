@@ -18,13 +18,14 @@ const callContract = async (
   collectibleAddress: string,
   address: string,
   tokenID: number,
-): Promise<ethers.providers.TransactionResponse> => {
+): Promise<ethers.TransactionResponse> => {
   const chainConfig: NetworkConfig = findSupportedNetwork(env.CHAIN_HANDLE)!;
 
-  const provider = new ethers.providers.StaticJsonRpcProvider({
-    url: chainConfig.rpcUrl,
-    skipFetchSetup: true, // Required for ethers.js Cloudflare Worker support
-  });
+  const provider = new ethers.JsonRpcProvider(
+    chainConfig.rpcUrl,
+    chainConfig.chainId,
+    { staticNetwork: true }, // Required for ethers.js Cloudflare Worker support
+  );
 
   const walletEOA = new ethers.Wallet(env.EOA_WALLET_PKEY, provider);
   const relayerUrl = `https://${chainConfig.name}-relayer.sequence.app`;
@@ -57,7 +58,7 @@ const callContract = async (
   const signer = session.account.getSigner(chainConfig.chainId);
 
   // Standard interface for ERC1155 contract deployed via Sequence Builder
-  const collectibleInterface = new ethers.utils.Interface([
+  const collectibleInterface = new ethers.Interface([
     "function mint(address to, uint256 tokenId, uint256 amount, bytes data)",
   ]);
 
