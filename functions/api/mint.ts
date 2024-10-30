@@ -125,7 +125,7 @@ export const onRequest: PagesFunction<IEnv> = async (ctx) => {
       status: 200,
     });
   } catch (error: unknown) {
-    console.log(error);
+    console.log(JSON.stringify(error));
     response = new Response(JSON.stringify(error), { status: 400 });
   }
 

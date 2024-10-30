@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 .env
+.env.*
 
 node_modules
 dist-ssr
@@ -28,6 +29,7 @@ dist-ssr
 dist
 
 wrangler.toml
+wrangler.*.*toml
 .wrangler
 
 *.tsbuildinfo
