@@ -44,6 +44,7 @@ export default function WalletInventoryModal(props: {
         includeMetadata: true,
       })
       .then((tokenBalances) => {
+        console.log("indexer", tokenBalances);
         setCollectedItems(
           tokenBalances.balances
             .filter((tb: TokenBalance) => !!tb.tokenMetadata)
@@ -54,9 +55,8 @@ export default function WalletInventoryModal(props: {
                 tier: "",
                 type: "",
                 category: "",
-                url: tb.tokenMetadata?.image || "",
+                image: tb.tokenMetadata?.image || "",
                 attributes: tb.tokenMetadata!.attributes,
-                main_stats: [],
                 stats: [],
               };
             }),
@@ -153,21 +153,19 @@ export default function WalletInventoryModal(props: {
           <>
             <hr className="half" />
             <ul className="scrollable-item">
-              {collectibleViewable.attributes.map((item_attributes) => {
+              WIP
+              {collectibleViewable.attributes.map((attr) => {
                 // <React.Fragment key={index}>
-                if (
-                  item_attributes.display_type != "tier" &&
-                  item_attributes.display_type != "type"
-                )
-                  if (item_attributes.display_type == "category") {
+                if (attr.display_type != "tier" && attr.display_type != "type")
+                  if (attr.display_type == "category") {
                     return (
                       <li
                         style={{
                           transform: "translateY(-15px)",
                         }}
-                        className={item_attributes.display_type}
+                        className={attr.display_type}
                       >
-                        {capitalizeFirstLetter(item_attributes.value)}
+                        {capitalizeFirstLetter(attr.value)}
                       </li>
                     );
                   } else {
@@ -177,9 +175,7 @@ export default function WalletInventoryModal(props: {
                           transform: "translateY(-15px)",
                         }}
                       >
-                        {item_attributes.trait_type +
-                          ": " +
-                          item_attributes.value}
+                        {attr.trait_type + ": " + attr.value}
                       </li>
                     );
                   }

@@ -172,28 +172,36 @@ export function generateItem(type: "Armor" | "Weapons") {
     (suffix ? getItemValue(suffix, "level") : 0);
   const attributes =
     type === "Weapons"
-      ? {
-          rarity,
-          level,
-          speed: getItemValue(item, "speed"),
-          strBonus: getItemValue(item, "StrBonus"),
-          dexBonus: getItemValue(item, "DexBonus"),
-          reqStr: getItemValue(item, "reqstr"),
-          reqDex: getItemValue(item, "reqdex"),
-          durability: getItemValue(item, "durability"),
-          minDam: getItemValue(item, "mindam"),
-          maxDam: getItemValue(item, "maxdam"),
-          twoHandMinDam: getItemValue(item, "2handmindam"),
-          twoHandMaxDam: getItemValue(item, "2handmaxdam"),
-        }
-      : {
-          type: "armor",
-          rarity,
-          level,
-          speed: getItemValue(item, "speed"),
-          requiredStrength: getItemValue(item, "reqstr"),
-          durability: getItemValue(item, "durability"),
-        };
+      ? [
+          { trait_type: "rarity", value: rarity },
+          { trait_type: "level", value: level },
+          { trait_type: "speed", value: getItemValue(item, "speed") },
+          { trait_type: "strBonus", value: getItemValue(item, "StrBonus") },
+          { trait_type: "dexBonus", value: getItemValue(item, "DexBonus") },
+          { trait_type: "reqStr", value: getItemValue(item, "reqstr") },
+          { trait_type: "reqDex", value: getItemValue(item, "reqdex") },
+          { trait_type: "durability", value: getItemValue(item, "durability") },
+          { trait_type: "minDam", value: getItemValue(item, "mindam") },
+          { trait_type: "maxDam", value: getItemValue(item, "maxdam") },
+          {
+            trait_type: "twoHandMinDam",
+            value: getItemValue(item, "2handmindam"),
+          },
+          {
+            trait_type: "twoHandMaxDam",
+            value: getItemValue(item, "2handmaxdam"),
+          },
+        ]
+      : [
+          { trait_type: "rarity", value: rarity },
+          { trait_type: "level", value: level },
+          { trait_type: "speed", value: getItemValue(item, "speed") },
+          {
+            trait_type: "requiredStrength",
+            value: getItemValue(item, "reqstr"),
+          },
+          { trait_type: "durability", value: getItemValue(item, "durability") },
+        ];
   return {
     name: fullName,
     type: type === "Weapons" ? "weapon" : "armor",

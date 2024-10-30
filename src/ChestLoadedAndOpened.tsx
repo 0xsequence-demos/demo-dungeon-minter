@@ -1,13 +1,9 @@
-import {
-  Dispatch,
-  Fragment,
-  SetStateAction,
-  useCallback,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, useCallback, useState } from "react";
 import { Collectible } from "./Collectible";
 import { getDungeonGame } from "./dungeon/entry";
 import PlayImage from "./assets/play.svg?react";
+
+const tiers = ["Rubbish", "Common", "Magic", "Rare", "Legendary"];
 
 export default function ChestLoadedAndOpenedModal(props: {
   color: string;
@@ -19,6 +15,8 @@ export default function ChestLoadedAndOpenedModal(props: {
   const { color, address, txHash, setTxHash, discoveredItems } = props;
 
   const [minting, setMinting] = useState(false);
+
+  console.log(discoveredItems);
 
   const mint = useCallback(async () => {
     setMinting(true);
@@ -71,15 +69,18 @@ export default function ChestLoadedAndOpenedModal(props: {
       >
         {discoveredItems.map((item, index) => {
           console.log(item);
+          const tier =
+            tiers[
+              parseInt(
+                item.attributes.find((attr) => attr.trait_type === "rarity")!
+                  .value,
+              )
+            ];
 
           return (
-            <div key={index} data-tier={item.tier}>
-              <div
-                className="view"
-                data-tier={item.tier}
-                style={{ scale: "0.5" }}
-              >
-                <img style={{ width: "298px" }} src={item.url} />
+            <div key={index} data-tier={tier}>
+              <div className="view" data-tier={tier} style={{ scale: "0.5" }}>
+                <img style={{ width: "298px" }} src={item.image} />
               </div>
               <p
                 className={`content`}
@@ -91,30 +92,16 @@ export default function ChestLoadedAndOpenedModal(props: {
               >
                 {item.name}
               </p>
-              <h2 className={`name_${item.tier}`}>
-                {item.tier} {item.type}
+              <h2 className={`name_${tier}`}>
+                {tier} {item.type}
               </h2>
               <hr className="half" />
               <ul className="scrollable-list">
-                {item.main_stats.map((stat, index) => {
-                  if (stat.length > 0) {
-                    return (
-                      <Fragment key={index}>
-                        <li
-                          style={{ color: "white" }}
-                          className={item.category}
-                        >
-                          {stat}
-                        </li>
-                        {item.stats.map((stat, statIndex) => (
-                          <li style={{ color: "white" }} key={statIndex}>
-                            {stat}
-                          </li>
-                        ))}
-                      </Fragment>
-                    );
-                  }
-                })}
+                {item.attributes.map((attr) => (
+                  <li style={{ color: "white" }} className={item.category}>
+                    {attr.trait_type} - {attr.value}
+                  </li>
+                ))}
               </ul>
             </div>
           );

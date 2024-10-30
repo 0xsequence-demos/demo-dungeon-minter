@@ -276,19 +276,18 @@ export const onRequest: PagesFunction<IEnv> = async (ctx) => {
     const uploadResponse = await upload(
       ctx.env,
       loot.name + " " + loot.type,
-      // loot.attributes,
-      [{ test: "a" }],
+      loot.attributes,
       inferenceObject.inference.images[0].url,
     );
-    response = new Response(
-      JSON.stringify({
-        loot: loot,
-        image: response.url,
-        name: loot.name,
-        tokenID: uploadResponse.tokenID,
-      }),
-      { status: 200 },
-    );
+    const lootResponse = {
+      loot: loot,
+      attributes: loot.attributes,
+      image: inferenceObject.inference.images[0].url,
+      name: loot.name,
+      tokenID: uploadResponse.tokenID,
+    };
+    console.log(JSON.stringify(lootResponse));
+    response = new Response(JSON.stringify(lootResponse), { status: 200 });
   } catch (error) {
     console.log(error);
     response = new Response(JSON.stringify(error), { status: 500 }); // Handle errors

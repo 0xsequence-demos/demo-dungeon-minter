@@ -39,7 +39,7 @@ export default function ImageGallery(props: {
         >
           <div className="view" style={{ scale: "0.45" }}>
             <img
-              src={item.url}
+              src={item.image}
               alt={`Token ${item.tokenID}`}
               style={{ width: "100%", height: "auto" }}
             />

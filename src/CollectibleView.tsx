@@ -29,7 +29,7 @@ export default function CollectibleView(props: {
       >
         <div className="view" style={{ scale: "0.45" }}>
           <img
-            src={collectibleViewable.url}
+            src={collectibleViewable.image}
             alt={`Token`}
             style={{ width: "100%", height: "auto" }}
           />

@@ -17,7 +17,7 @@ const callContract = async (
   env: IEnv,
   collectibleAddress: string,
   address: string,
-  tokenID: number,
+  tokenID: bigint,
 ): Promise<ethers.TransactionResponse> => {
   const chainConfig: NetworkConfig = findSupportedNetwork(env.CHAIN_HANDLE)!;
 
@@ -112,12 +112,14 @@ export const onRequest: PagesFunction<IEnv> = async (ctx) => {
   };
   const { address, tokenID } = payload;
 
+  console.log("tokenID", tokenID);
+
   try {
     const txn = await callContract(
       ctx.env,
       ctx.env.CONTRACT_ADDRESS,
       address,
-      parseInt(tokenID),
+      BigInt(tokenID),
     );
     response = new Response(JSON.stringify({ txnHash: txn.hash }), {
       status: 200,

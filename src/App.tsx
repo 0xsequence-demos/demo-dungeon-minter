@@ -26,6 +26,10 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    console.log(`logged in as ${address}`);
+  }, [address]);
+
+  useEffect(() => {
     sequence.isSignedIn().then(async (signedIn) => {
       if (signedIn) {
         console.log("logged in");

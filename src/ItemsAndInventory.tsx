@@ -99,9 +99,7 @@ export default function ItemsAndInventory(props: {
 
         setLoaded(true);
 
-        json.loot.loot.url = json.image;
-        json.loot.loot.tokenID = json.tokenID;
-        setDiscoveredItems([json.loot.loot]);
+        setDiscoveredItems([json]);
         setTxHash("");
       }
     } catch (err) {
