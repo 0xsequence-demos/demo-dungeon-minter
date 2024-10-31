@@ -1,6 +1,6 @@
 # Sequence Dungeon Minter Demo
 
-Lgin with a Sequence Embedded Wallet using Google or Apple auth, and then browse a maze to find treasure chests and dynamically generate and mint tokens with random attributes leveraging [scenario.gg](https://www.scenario.com/)
+Login with a Sequence Embedded Wallet using Google or Apple auth, and explore a maze to find treasure chests that generate their loot via [scenario.gg](https://www.scenario.com/)
 
 ## Technologies Used
 
