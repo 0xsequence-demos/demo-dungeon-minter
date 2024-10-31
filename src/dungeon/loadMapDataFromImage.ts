@@ -20,12 +20,6 @@ export function loadMapDataFromImage(imagePath: string) {
       if (!ctx) {
         throw new Error("Could not start 2d context on canvas");
       }
-      //@ts-ignore
-      ctx.mozImageSmoothingEnabled = false;
-      //@ts-ignore
-      ctx.webkitImageSmoothingEnabled = false;
-      //@ts-ignore
-      ctx.msImageSmoothingEnabled = false;
       ctx.imageSmoothingEnabled = false;
       ctx.drawImage(img, 0, 0);
       const data = ctx.getImageData(0, 0, w, h);

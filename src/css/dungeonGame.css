@@ -1,6 +1,6 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
   overflow: hidden; /* Prevent scrolling */
 }
 canvas {
@@ -9,12 +9,12 @@ canvas {
 }
 
 #glass {
-    left: 150px;
+  left: 150px;
 }
 
 @font-face {
-	font-family: ChiKareGo2;
-	src: url(fonts/ChiKareGo2.ttf);
+  font-family: ChiKareGo2;
+  src: url(fonts/ChiKareGo2.ttf);
 }
 
 .buttons {
@@ -98,5 +98,5 @@ canvas {
   left: 50%;
   transform: translate(-50%, -50%) rotate(0deg); /* Adjust rotation based on player orientation */
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
-  background-color: #A020F0; /* Default color for the player marker */
+  background-color: #a020f0; /* Default color for the player marker */
 }

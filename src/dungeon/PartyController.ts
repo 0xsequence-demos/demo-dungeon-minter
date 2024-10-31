@@ -180,9 +180,9 @@ export class PartyController {
     if (!action) {
       return;
     }
-    this.submitAction(action)
+    this.submitAction(action);
   }
-  private submitAction(action:PartyAction) {
+  private submitAction(action: PartyAction) {
     if (this.busy) {
       this.nextAction = action;
     } else {
@@ -191,7 +191,7 @@ export class PartyController {
   }
 
   stepBack() {
-    this.submitAction("moveBackward")
+    this.submitAction("moveBackward");
   }
 
   tick() {

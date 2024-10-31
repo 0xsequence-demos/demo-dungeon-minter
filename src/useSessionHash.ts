@@ -1,26 +1,26 @@
-import sequence from './SequenceEmbeddedWallet.ts'
+import sequence from "./SequenceEmbeddedWallet.ts";
 import { useEffect, useState } from "react";
 
 export function useSessionHash() {
-    const [sessionHash, setSessionHash] = useState("")
-    const [error, setError] = useState<any>(undefined)
+  const [sessionHash, setSessionHash] = useState("");
+  const [error, setError] = useState<unknown>();
 
-    useEffect(() => {
-        const handler = async () => {
-            try {
-                setSessionHash(await sequence.getSessionHash())
-            } catch (error) {
-                console.error(error)
-                setError(error)
-            }
-        }
-        handler()
-        return sequence.onSessionStateChanged(handler)
-    }, [setSessionHash, setError])
+  useEffect(() => {
+    const handler = async () => {
+      try {
+        setSessionHash(await sequence.getSessionHash());
+      } catch (error: unknown) {
+        console.error(error);
+        setError(error);
+      }
+    };
+    handler();
+    return sequence.onSessionStateChanged(handler);
+  }, [setSessionHash, setError]);
 
-    return {
-        sessionHash,
-        error,
-        loading: !!sessionHash,
-    }
+  return {
+    sessionHash,
+    error,
+    loading: !!sessionHash,
+  };
 }

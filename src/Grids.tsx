@@ -1,9 +1,15 @@
-import { useState, useEffect } from 'react';
-import './Grids.css';
+import { useState, useEffect } from "react";
+import "./Grids.css";
 
 const GRID_SIZE = 40; // Number of rows and columns in the grid
 
-const Square = ({ x, y }: any) => {
+interface SquareProps {
+  x: number;
+  y: number;
+}
+
+const Square = (props: SquareProps) => {
+  const { x, y } = props;
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -23,14 +29,14 @@ const Square = ({ x, y }: any) => {
 
   return (
     <div
-      className={`square ${visible ? 'visible' : 'hidden'}`}
+      className={`square ${visible ? "visible" : "hidden"}`}
       style={{ top: `${y}px`, left: `${x}px` }}
     />
   );
 };
 
 const Grids = () => {
-  const [squares, setSquares] = useState<any>([]);
+  const [squares, setSquares] = useState<SquareProps[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,7 +48,7 @@ const Grids = () => {
         const y = Math.floor(Math.random() * GRID_SIZE) * gridCellSize;
         return { x, y };
       });
-      setSquares((prevSquares: any) => [...prevSquares, ...newSquares]);
+      setSquares((prevSquares) => [...prevSquares, ...newSquares]);
     }, 1000); // Generate new squares every 1 second
 
     return () => clearInterval(interval);
@@ -50,7 +56,7 @@ const Grids = () => {
 
   return (
     <div className="grid-app">
-      {squares.map((square: any, index: any) => (
+      {squares.map((square: SquareProps, index) => (
         <Square key={index} x={square.x} y={square.y} />
       ))}
     </div>

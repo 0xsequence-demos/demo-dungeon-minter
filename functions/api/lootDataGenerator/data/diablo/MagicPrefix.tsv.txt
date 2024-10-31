@@ -1,0 +1,673 @@
+MagicPrefix
+MagicPrefix																
+Name	rare	level	levelreq	frequency	itype1	itype2	itype3	itype4	itype5	itype6	itype7	etype1	etype2	etype3	etype4	etype5
+																
+Sturdy	1	4	3	0	armo											
+Strong	1	9	6	0	armo											
+Glorious	1	19	14	0	armo											
+Blessed	1	25	18	0	armo											
+Saintly	1	31	23	0	armo											
+Holy	1	36	27	0	armo											
+Devious	1	7	5	0	shld											
+Fortified	1	14	10	0	shld											
+																
+																
+																
+Jagged	1	1	1	0	weap											
+Deadly	1	5	3	0	weap											
+Vicious	1	8	6	0	weap											
+Brutal	1	14	10	0	weap											
+Massive	1	20	15	0	weap											
+Savage	1	26	19	0	weap							staf	wand			
+Merciless	1	32	24	0	weap							staf	wand			
+Vulpine	1	9	6	0	shld	amul										
+																
+																
+																
+																
+Tireless	1	14	10	0	boot											
+Rugged	1	14	10	0	boot	glov	belt	ring	amul							
+Bronze	1	1	1	0	weap	ring	glov	amul								
+Iron	1	4	3	0	weap	ring										
+Steel	1	8	6	0	weap	ring										
+Silver	1	12	9	0	weap	ring										
+																
+Gold	1	17	12	0	weap											
+Platinum	1	22	16	0	weap	ring										
+Meteoric	1	27	20	0	weap	ring						staf	wand			
+Sharp	1	5	3	0	weap											
+Fine	1	9	6	0	weap											
+Warrior's	1	15	11	0	weap											
+Soldier's	1	21	15	0	weap											
+Knight's	1	25	18	0	weap											
+Lord's	1	30	22	0	weap							staf	wand			
+King's	1	35	26	0	weap							staf	wand			
+Howling	1	16	12	0	weap							miss				
+Fortuitous	1	5	3	0	ring	amul										
+																
+																
+																
+																
+																
+Glimmering	1	1	1	0	armo	wand	staf	ring	amul							
+Glowing	1	6	4	0	armo	wand	staf	ring	amul							
+																
+																
+Lizard's	1	3	2	0	armo	ring	amul	rod				boot	glov			
+																
+Snake's	1	6	4	0	shld	rod	belt	ring	amul							
+Serpent's	1	14	10	0	shld	rod	belt	ring	amul							
+Serpent's	1	37	27	0	tors	helm	boot	glov	mele			h2h	rod			
+Drake's	1	20	15	0	rod	ring	amul	belt								
+Dragon's	1	24	18	0	rod	ring	amul									
+Dragon's	1	52	39	0	tors	helm	boot	glov								
+Wyrm's	1	30	22	0	rod	ring	amul									
+																
+																
+Prismatic	1	27	20	0	amul											
+Prismatic	1	62	46	0	ring											
+Azure	1	5	3	0	armo	rod	miss	ring	amul							
+Lapis	1	12	9	0	armo	ring	amul	rod								
+Lapis	1	35	26	0	weap	glov						rod				
+Cobalt	1	18	13	0	armo	ring	amul	rod				glov				
+Cobalt	1	55	41	0	weap	glov						rod				
+																
+Sapphire	1	25	18	0	rod	boot	ring	amul	miss			scep				
+																
+																
+Crimson	1	5	3	0	armo	rod	miss	ring	amul	amul						
+Burgundy	1	12	9	0	armo	rod	ring	amul	amul							
+Burgundy	1	35	26	0	weap							rod				
+Garnet	1	18	13	0	armo	rod	ring	amul				glov				
+Garnet	1	55	41	0	weap	glov						rod				
+																
+Ruby	1	25	18	0	wand	staf	boot	ring	amul							
+																
+																
+Ocher	1	5	3	0	armo	rod	ring	amul	miss							
+Tangerine	1	12	9	0	armo	ring	amul	rod								
+Tangerine	1	35	26	0	weap							rod				
+Coral	1	18	13	0	armo	ring	amul	rod				glov				
+Coral	1	55	41	0	weap	glov						rod				
+																
+Amber	1	25	18	0	armo	ring	amul	staf	wand			shld	glov			
+																
+																
+Beryl	1	5	3	0	armo	ring	amul	scep	staf	miss						
+Jade	1	12	9	0	armo	ring	amul	scep	staf							
+Jade	1	35	26	0	weap	ring						staf	scep			
+Viridian	1	18	13	0	tors	helm	shld	scep	staf	ring	amul					
+Viridian	1	55	41	0	weap	boot	glov	belt				staf	scep			
+																
+Emerald	1	25	18	0	scep	ring	amul									
+																
+Fletcher's	1	30	22	0	miss	amul										
+Archer's	1	40	30	0	miss											
+Archer's	1	90	67	0	amul											
+Monk's	1	30	22	0	scep	amul										
+Priest's	1	40	30	0	scep											
+Priest's	1	90	67	0	amul											
+Summoner's	1	30	22	0	wand	amul										
+Necromancer's	1	40	30	0	wand											
+Necromancer's	1	90	67	0	amul											
+Angel's	1	30	22	0	staf	amul										
+Arch-Angel's	1	40	30	0	staf											
+Arch-Angel's	1	90	67	0	amul											
+Slayer's	1	30	22	0	mele	amul						rod	h2h			
+Berserker's	1	40	30	0	mele							rod	h2h			
+Berserker's	1	90	67	0	amul											
+																
+																
+Triumphant	1	3	2	0	mele	ring										
+Expansion																
+Stout	1	1	1	4	lcha											
+Stout	1	7	5	4	lcha											
+Stout	1	12	9	4	lcha											
+Burly	1	17	12	4	lcha											
+Burly	1	22	16	4	lcha											
+Burly	1	27	20	4	lcha											
+Stalwart		32	24	4	lcha											
+Stalwart		37	29	4	lcha											
+Stalwart		42	34	4	lcha											
+Stout	1	1	1	4	mcha											
+Stout	1	14	10	4	mcha											
+Stout	1	20	15	4	mcha											
+Burly	1	26	19	4	mcha											
+Burly	1	32	24	4	mcha											
+Stalwart		38	30	4	mcha											
+Stalwart		45	37	4	mcha											
+Stout	1	1	1	4	scha											
+Stout	1	21	15	4	scha											
+Burly	1	36	28	4	scha											
+Stalwart		48	40	4	scha											
+Blanched	1	1	1	4	jewl											
+Eburin	1	16	12	4	jewl											
+Bone	1	32	24	4	jewl											
+Ivory		64	56	4	jewl											
+Sturdy	1	1	1	9	armo											
+Sturdy	1	4	3	9	armo											
+Strong	1	9	6	8	armo											
+Glorious	1	19	14	8	armo											
+Blessed	1	25	18	7	armo											
+Saintly	1	31	23	7	armo											
+Holy	1	36	27	6	armo											
+Godly		45	38	3	armo											
+Devious	1	7	5	5	shld	circ	orb	wand	staf							
+Blank	1	14	10	4	shld	circ	orb	wand	staf							
+Null	1	21	16	4	shld	circ										
+Antimagic		28	21	4	shld	circ										
+Red	1	4	3	4	lcha											
+Red	1	16	12	4	lcha											
+Sanguinary	1	28	21	4	lcha											
+Sanguinary	1	40	32	4	lcha											
+Bloody		52	46	4	lcha											
+Red	1	11	8	4	mcha											
+Sanguinary	1	33	25	4	mcha											
+Bloody		55	47	4	mcha											
+Red	1	24	16	4	scha											
+Sanguinary	1	41	33	4	scha											
+Bloody		58	50	4	scha											
+Scarlet	1	8	6	4	jewl											
+Crimson	1	38	30	4	jewl											
+Jagged	1	3	2	4	lcha											
+Jagged	1	10	7	4	lcha											
+Jagged	1	17	12	4	lcha											
+Forked	1	25	18	4	lcha											
+Forked	1	32	24	4	lcha											
+Serrated		39	31	4	lcha											
+Serrated		47	39	4	lcha											
+Jagged	1	10	7	4	mcha											
+Jagged	1	20	15	4	mcha											
+Forked	1	30	22	4	mcha											
+Forked	1	40	32	4	mcha											
+Serrated		50	42	4	mcha											
+Jagged	1	23	17	4	scha											
+Forked	1	38	30	4	scha											
+Serrated		53	45	4	scha											
+Carbuncle	1	12	9	4	jewl											
+Carmine	1	35	27	4	jewl											
+Vermillion		58	50	4	jewl											
+Jagged	1	1	1	9	weap	circ						staf	wand	orb		
+Deadly	1	5	3	9	weap	circ						staf	wand	orb		
+Vicious	1	8	6	8	weap							staf	wand	orb		
+Brutal	1	14	10	8	weap							staf	wand	orb		
+Massive	1	20	15	7	weap							staf	wand	orb		
+Savage	1	26	19	7	weap							staf	wand	orb		
+Merciless	1	32	24	6	weap							staf	wand	orb		
+Ferocious	1	41	33	6	weap							staf	wand	orb		
+Cruel		51	43	5	weap							staf	wand	orb		
+Cinnabar	1	1	1	4	jewl											
+Rusty	1	13	9	4	jewl											
+Realgar	1	45	37	4	jewl											
+Ruby		66	58	4	jewl											
+Vulpine	1	9	6	3	shld	amul	orb	staf								
+Dun	1	7	5	3	jewl											
+Tireless	1	6	4	4	boot											
+Tireless	1	14	10	4	boot											
+Brown	1	39	31	4	jewl											
+Rugged	1	1	1	4	lcha											
+Rugged	1	7	5	4	lcha											
+Rugged	1	21	15	4	lcha											
+Rugged	1	1		4	mcha											
+Rugged	1	7	5	4	mcha											
+Rugged	1	21	15	4	mcha											
+Rugged	1	1		4	scha											
+Rugged	1	21	15	4	scha											
+Rugged	1	1	1	4	boot	glov	belt	ring	amul	circ						
+Rugged	1	8	6	4	boot	belt										
+Rugged	1	8	6	4	ring	amul	circ									
+Vigorous	1	16	12	4	boot	belt										
+Chestnut	1	1	1	4	jewl											
+Maroon	1	17	12	4	jewl											
+Bronze	1	1	1	4	lcha											
+Bronze	1	7	5	4	lcha											
+Bronze	1	13	9	4	lcha											
+Iron	1	19	14	4	lcha											
+Iron	1	25	18	4	lcha											
+Iron	1	31	23	4	lcha											
+Steel		37	29	4	lcha											
+Steel		43	35	4	lcha											
+Steel		49	41	4	lcha											
+Bronze	1	1	1	4	mcha											
+Bronze	1	7	5	4	mcha											
+Bronze	1	16	12	4	mcha											
+Iron	1	25	18	4	mcha											
+Iron	1	34	26	4	mcha											
+Steel		43	36	4	mcha											
+Steel		52	44	4	mcha											
+Bronze	1	1	1	4	scha											
+Bronze	1	21	15	4	scha											
+Iron	1	39	31	4	scha											
+Steel		57	49	4	scha											
+Bronze	1	1	1	8	weap	ring	glov	amul	circ			staf	wand	orb		
+Iron	1	4	3	8	weap	ring	circ					staf	wand	orb		
+Steel	1	8	6	7	weap	ring	circ					staf	wand	orb		
+Silver	1	12	9	7	weap	ring	circ					staf	wand	orb		
+Gold	1	17	12	6	weap	ring	circ					staf	wand	orb		
+Platinum	1	22	16	6	weap	ring	circ					staf	wand	orb		
+Meteoric	1	27	20	5	weap							staf	wand	orb		
+Strange	1	32	24	5	weap							staf	wand	orb		
+Weird		37	27	4	weap							staf	wand	orb		
+Nickel	1	1	1	4	jewl											
+Tin	1	8	6	4	jewl											
+Silver	1	25	18	4	jewl											
+Argent		44	36	4	jewl											
+Fine	1	15	11	4	lcha											
+Fine	1	22	16	4	lcha											
+Sharp	1	29	21	4	lcha											
+Fine	1	19	14	4	mcha											
+Sharp	1	28	21	4	mcha											
+Fine		28	21	4	scha											
+Sharp	1	5	3	9	weap							staf	wand	orb		
+Fine	1	12	9	9	weap							staf	wand	orb		
+Warrior's	1	19	13	8	weap							staf	wand	orb		
+Soldier's	1	27	19	8	weap							staf	wand	orb		
+Knight's	1	38	30	7	weap							staf	wand	orb		
+Lord's	1	47	39	6	weap							staf	wand	orb		
+King's	1	56	48	5	weap							staf	wand	orb		
+Master's	1	56	48	5	weap							staf	wand	orb		
+Grandmaster's		69	61	4	weap							staf	wand	orb		
+Glimmering	1	1	1	1	armo	wand	staf	ring	amul	orb						
+Glowing	1	6	4	1	armo	wand	staf	ring	amul	orb						
+Bright	1	1	1	1	jewl											
+Screaming	1	10	7	3	weap							miss	swor	axe	pole	spea
+Howling	1	16	12	3	weap							miss	swor	axe	pole	spea
+Wailing	1	20	13	3	weap							miss	swor	axe	pole	spea
+Screaming	1	10	7	4	miss											
+Howling	1	16	12	4	miss											
+Wailing		24	18	4	miss											
+Lucky	1	21		4	lcha											
+Lucky		38		4	lcha											
+Lucky		55		4	lcha											
+Lucky	1	34		4	mcha											
+Lucky		53		4	mcha											
+Lucky		51		4	mcha											
+Felicitous	1	5	3	4	ring	amul	circ									
+Fortuitous		12	8	4	ring	amul	circ									
+Emerald	1	16	12	4	jewl											
+Lizard's	1	1	1	4	lcha											
+Lizard's	1	7	5	4	lcha											
+Lizard's	1	13	9	4	lcha											
+Snake's	1	19	14	4	lcha											
+Snake's	1	25	18	4	lcha											
+Snake's	1	31	23	4	lcha											
+Serpent's	1	37	29	4	lcha											
+Serpent's	1	43	35	4	lcha											
+Serpent's	1	49	41	4	lcha											
+Lizard's	1	1	1	4	mcha											
+Lizard's	1	9	6	4	mcha											
+Lizard's	1	17	12	4	mcha											
+Snake's	1	25	18	4	mcha											
+Snake's	1	33	25	4	mcha											
+Serpent's	1	41	33	4	mcha											
+Serpent's	1	49	41	4	mcha											
+Lizard's	1	16	12	4	scha											
+Lizard's	1	16	12	4	scha											
+Snake's	1	32	24	4	scha											
+Serpent's		48	40	4	scha											
+Lizard's	1	3	2	4	armo	ring	amul	rod	orb			boot	glov			
+Snake's	1	6	4	4	shld	rod	belt	ring	amul	circ						
+Serpent's	1	14	10	3	shld	rod	belt	ring	amul	circ						
+Serpent's	1	37	27	2	tors	boot	glov	weap	orb			rod				
+Drake's	1	20	15	2	rod	ring	amul	orb	circ							
+Dragon's	1	24	18	2	rod	ring	amul	orb	circ							
+Dragon's	1	52	39	2	tors	boot	glov									
+Wyrm's	1	30	22	2	rod	ring	amul	orb	circ							
+Great Wyrm's	1	37	29	2	rod	ring	amul	orb	circ							
+Bahamut's		45	37	2	rod	ring	amul	orb	circ							
+Zircon	1	3	2	2	jewl											
+Jacinth	1	17	12	2	jewl											
+Turquoise		29	21	2	jewl											
+Shimmering		8	6	1	lcha											
+Shimmering		14	10	1	lcha											
+Shimmering		35	27	1	lcha											
+Shimmering		17	12	1	mcha											
+Shimmering		34	26	1	mcha											
+Shimmering		33	25	1	scha											
+Shimmering	1	6	4	5	shld											
+Rainbow	1	18	13	5	shld											
+Scintillating	1	28	21	5	shld											
+Prismatic	1	39	31	4	shld											
+Chromatic		50	42	4	shld											
+Shimmering	1	8	6	5	amul	circ										
+Rainbow	1	21	15	5	amul	circ										
+Scintillating	1	34	25	5	amul	circ										
+Prismatic	1	42	31	4	amul	circ										
+Chromatic		55	41	3	amul	circ										
+Shimmering	1	45	37	3	ring											
+Rainbow	1	56	48	2	ring											
+Scintillating		67	59	2	ring											
+Shimmering	1	16	12	1	jewl											
+Scintillating		34	26	1	jewl											
+Azure	1	1	1	2	lcha											
+Lapis	1	10	7	2	lcha											
+Cobalt	1	20	15	2	lcha											
+Sapphire		30	22	2	lcha											
+Azure	1	1	1	2	mcha											
+Lapis	1	16	12	2	mcha											
+Cobalt	1	25	18	2	mcha											
+Sapphire		35	27	2	mcha											
+Azure	1	1	1	2	scha											
+Lapis	1	14	10	2	scha											
+Cobalt	1	27	20	2	scha											
+Sapphire		40	32	2	scha											
+Azure	1	5	3	2	armo	weap	ring	amul	orb	circ						
+Lapis	1	12	9	4	armo	ring	amul	orb	circ							
+Lapis	1	35	26	2	weap							orb				
+Cobalt	1	18	13	3	armo	ring	amul	orb	circ							
+Cobalt	1	55	41	2	weap							orb				
+Sapphire	1	25	18	3	rod	boot	amul	orb	circ							
+Lapis Lazuli	1	2	1	4	jewl											
+Sapphire	1	19	14	4	jewl											
+Crimson	1	1	1	2	lcha											
+Russet	1	10	7	2	lcha											
+Garnet	1	20	15	2	lcha											
+Ruby		30	22	2	lcha											
+Crimson	1	1	1	2	mcha											
+Russet	1	16	12	2	mcha											
+Garnet	1	25	18	2	mcha											
+Ruby		35	27	2	mcha											
+Crimson	1	1	1	2	scha											
+Russet	1	14	10	2	scha											
+Garnet		27	20	2	scha											
+Ruby	1	40	32	2	scha											
+Russet	1	12	9	4	armo	ring	amul	orb	circ							
+Russet	1	35	26	1	weap							orb				
+Garnet	1	18	13	3	armo	ring	amul	orb	circ							
+Garnet	1	55	41	1	weap							orb				
+Ruby	1	25	18	3	rod	boot	amul	orb	circ							
+Garnet	1	2	1	4	jewl											
+Ruby	1	18	13	4	jewl											
+Tangerine	1	1	1	2	lcha											
+Ocher	1	10	7	2	lcha											
+Coral	1	20	15	2	lcha											
+Amber		30	22	2	lcha											
+Tangerine	1	1	1	2	mcha											
+Ocher	1	16	12	2	mcha											
+Coral	1	25	18	2	mcha											
+Amber		35	27	2	mcha											
+Tangerine	1	1	1	2	scha											
+Ocher	1	14	10	2	scha											
+Coral	1	27	20	2	scha											
+Amber		40	32	2	scha											
+Tangerine	1	5	3	4	armo	weap	ring	amul	orb	circ						
+Ocher	1	12	9	4	armo	ring	amul	orb	circ							
+Ocher	1	35	26	1	weap							orb				
+Coral	1	18	13	3	armo	ring	amul	orb	circ							
+Coral	1	55	41	1	weap							orb				
+Amber	1	25	18	3	rod	boot	amul	orb	circ							
+Camphor	1	2	1	4	jewl											
+Ambergris	1	19	14	4	jewl											
+Beryl	1	1	1	2	lcha											
+Viridian	1	10	7	2	lcha											
+Jade	1	20	15	2	lcha											
+Emerald		30	22	2	lcha											
+Beryl	1	1	1	2	mcha											
+Viridian	1	16	12	2	mcha											
+Jade	1	25	18	2	mcha											
+Emerald		35	27	2	mcha											
+Beryl	1	1	1	2	scha											
+Viridian	1	14	10	2	scha											
+Jade	1	27	20	2	scha											
+Emerald		40	32	2	scha											
+Beryl	1	5	3	4	armo	weap	ring	amul	orb	circ						
+Viridian	1	12	9	4	armo	ring	amul	orb	circ							
+Viridian	1	35	26	1	weap							orb				
+Jade	1	18	13	3	armo	ring	amul	orb	circ							
+Jade	1	55	41	1	weap							orb				
+Emerald	1	25	18	3	rod	boot	amul	orb	circ							
+Beryl	1	2	1	4	jewl											
+Jade	1	19	14	4	jewl											
+Triumphant	1	3	2	4	weap	ring	circ									
+Victorious	1	17	12	4	weap	circ										
+Aureolin	1	22	16	4	jewl											
+Mechanist's	1	10	7	3	weap	shld	helm	tors	circ			thro				
+Artificer's		33	25	2	weap	shld	helm	tors				thro				
+Jeweler's		55	47	1	weap	shld	helm	tors				thro				
+Assamic	1	3	1	2	weap	circ						wand	orb			
+Arcadian	1	15	11	2	weap	circ						wand	orb			
+Unearthly	1	25	18	1	weap							wand	orb			
+Astral	1	35	26	1	weap							wand	orb			
+Elysian	1	45	33	1	weap							wand	orb			
+Celestial		55	41	1	weap							wand	orb			
+Diamond	1	26	19	1	jewl											
+Fletcher's		50	42	1	lcha											
+Acrobat's		50	42	1	lcha											
+Harpoonist's		50	42	1	lcha											
+Fletcher's	1	20	15	1	miss	glov										
+Bowyer's	1	40	30	1	miss	glov										
+Archer's		60	45	1	miss	glov										
+Acrobat's	1	20	15	1	glov	amul	circ									
+Gymnast's	1	40	30	1	glov	amul	circ									
+Athlete's		60	45	1	glov	amul	circ									
+Harpoonist's	1	20	15	1	spea	glov										
+Spearmaiden's	1	40	30	1	spea	glov										
+Lancer's		60	45	1	spea	glov										
+Burning	1	50	42	1	lcha											
+Sparking	1	50	42	1	lcha											
+Chilling	1	50	42	1	lcha											
+Burning	1	20	15	1	staff	orb	amul	circ								
+Blazing	1	40	30	1	staff	orb	amul	circ								
+Volcanic		60	45	1	staff	orb	amul	circ								
+Sparking	1	20	15	1	staff	orb	amul	circ								
+Charged	1	40	30	1	staff	orb	amul	circ								
+Powered		60	45	1	staff	orb	amul	circ								
+Chilling	1	20	15	1	staff	orb	amul	circ								
+Freezing	1	40	30	1	staff	orb	amul	circ								
+Glacial		60	45	1	staff	orb	amul	circ								
+Hexing	1	50	42	1	lcha											
+Fungal	1	50	42	1	lcha											
+Graverobber's	1	50	42	1	lcha											
+Hexing	1	20	15	1	wand	head	amul	circ								
+Blighting	1	40	30	1	wand	head	amul	circ								
+Accursed		60	45	1	wand	head	amul	circ								
+Fungal	1	20	15	1	wand	head	amul	knif	circ			tkni				
+Noxious	1	40	30	1	wand	head	amul	knif	circ			tkni				
+Venomous		60	45	1	wand	head	amul	knif	circ			tkni				
+Graverobber's	1	20	15	1	wand	head	amul	circ								
+Vodoun	1	40	30	1	wand	head	amul	circ								
+Golemlord's		60	45	1	wand	head	amul	circ								
+Lion Branded	1	50	42	1	lcha											
+Captain's	1	50	42	1	lcha											
+Preserver's	1	50	42	1	lcha											
+Lion Branded	1	20	15	1	scep	swor	mace	shld	ashd	amul	circ					
+Hawk Branded	1	40	30	1	scep	swor	mace	shld	ashd	amul	circ					
+Rose Branded		60	45	1	scep	swor	mace	shld	ashd	amul	circ					
+Captain's	1	20	15	1	scep	swor	mace	shld	ashd	amul	circ					
+Commander's	1	40	30	1	scep	swor	mace	shld	ashd	amul	circ					
+Marshal's		60	45	1	scep	swor	mace	shld	ashd	amul	circ					
+Preserver's	1	20	15	1	shld	ashd	amul	circ								
+Warder's	1	40	30	1	shld	ashd	amul	circ								
+Guardian's		60	45	1	shld	ashd	amul	circ								
+Expert's	1	50	42	1	lcha											
+Fanatic	1	50	42	1	lcha											
+Sounding	1	50	42	1	lcha											
+Expert's	1	20	15	1	phlm	weap	helm					miss	rod			
+Veteran's	1	40	30	1	phlm	weap	helm					miss	rod			
+Master's		60	45	1	phlm	weap	helm					miss	rod			
+Fanatic	1	20	15	1	phlm	weap	amul					miss	rod			
+Raging	1	40	30	1	phlm	weap	amul					miss	rod			
+Furious		60	45	1	phlm	weap	amul					miss	rod			
+Sounding	1	20	15	1	phlm	weap	amul					miss	rod			
+Resonant	1	40	30	1	phlm	weap	amul					miss	rod			
+Echoing		60	45	1	phlm	weap	amul					miss	rod			
+Trainer's	1	50	42	1	lcha											
+Spiritual	1	50	42	1	lcha											
+Nature's	1	50	42	1	lcha											
+Trainer's	1	20	15	1	club	pelt	amul	circ								
+Caretaker's	1	40	30	1	club	pelt	amul	circ								
+Keeper's		60	45	1	club	pelt	amul	circ								
+Spiritual	1	20	15	1	club	pelt	amul	circ								
+Feral	1	40	30	1	club	pelt	amul	circ								
+Communal		60	45	1	club	pelt	amul	circ								
+Nature's	1	20	15	1	club	pelt	amul	circ								
+Terra's	1	40	30	1	club	pelt	amul	circ								
+Gaea's		60	45	1	club	pelt	amul	circ								
+Entrapping	1	50	42	1	lcha											
+Mentalist's	1	50	42	1	lcha											
+Shogukusha's	1	50	42	1	lcha											
+Entrapping	1	20	15	1	h2h	amul	circ									
+Trickster's	1	40	30	1	h2h	amul	circ									
+Cunning		60	45	1	h2h	amul	circ									
+Mentalist's	1	20	15	1	h2h	amul	helm	circ								
+Psychic	1	40	30	1	h2h	amul	helm	circ								
+Shadow		60	45	1	h2h	amul	helm	circ								
+Shogukusha's	1	20	15	1	h2h	amul	glov	circ								
+Sensei's	1	40	30	1	h2h	amul	glov	circ								
+Kenshi's		60	45	1	h2h	amul	glov	circ								
+Miocene		1	1	1	tors											
+Miocene	1	1	1	1	glov	boot	belt	shld								
+Oligocene	1	10	7	1	tors											
+Oligocene	1	10	7	1	glov	boot	belt	shld								
+Eocene	1	20	15	1	tors											
+Eocene	1	20	15	1	glov	boot	belt	shld								
+Paleocene	1	30	22	4	tors											
+Paleocene	1	30	22	3	glov	boot	belt	shld								
+Knave's		1	1	1	weap							staf	wand	orb		
+Jack's	1	10	7	1	weap							staf	wand	orb		
+Jester's	1	20	15	1	weap							staf	wand	orb		
+Joker's	1	35	26	1	weap							staf	wand	orb		
+Trump	1	50	37	7	weap							staf	wand	orb		
+Loud		1	1	1	weap							staf	wand	orb		
+Calling	1	10	7	1	weap							staf	wand	orb		
+Yelling	1	20	15	1	weap							staf	wand	orb		
+Shouting	1	35	26	1	weap							staf	wand	orb		
+Gritty	1	50	37	7	weap							staf	wand	orb		
+Paradox	1	25	18	1	tors											
+Paradox	1	25	18	1	weap							staf	wand	orb		
+Robineye		1	1	1	weap							staf	wand	orb		
+Sparroweye		10	7	1	weap							staf	wand	orb		
+Falconeye		20	15	1	weap							staf	wand	orb		
+Hawkeye		35	26	7	weap							staf	wand	orb		
+Eagleeye		50	37	1	weap							staf	wand	orb		
+Visionary	1	25	18	1	helm	miss										
+Mnemonic	1	25	18	1	helm											
+Snowflake	1	25	18	3	weap	circ										
+Shivering	1	35	26	2	weap											
+Boreal	1	50	40	1	weap											
+Hibernal	1	70	60	1	weap											
+Ember	1	25	18	3	weap	circ										
+Smoldering	1	35	26	2	weap											
+Smoking	1	47	37	1	weap											
+Flaming	1	61	51	1	weap											
+Scorching	1	77	67	1	weap											
+Static	1	25	18	3	weap	circ										
+Glowing	1	34	25	2	weap											
+Buzzing	1	46	36	1	weap											
+Arcing	1	60	50	1	weap											
+Shocking	1	76	66	1	weap											
+Septic	1	1	1	3	weap	circ										
+Envenomed	1	10	7	2	weap											
+Corosive	1	20	15	1	weap											
+Toxic	1	35	26	1	weap											
+Pestilent		50	37	1	weap											
+Maiden's	1	36	27	4	amul	circ										
+Valkyrie's	1	90	67	2	amul	circ										
+Maiden's	1	30	22	4	miss	spea										
+Valkyrie's	1	50	42	2	miss	spea										
+Monk's	1	36	27	4	amul	circ										
+Priest's	1	90	67	2	amul	circ										
+Monk's	1	30	22	4	scep	ashd										
+Priest's	1	50	42	2	scep	ashd										
+Monk's	1	35	27	4	swor	mace	hamm	shld								
+Priest's	1	65	58	2	swor	mace	hamm	shld								
+Summoner's	1	36	27	4	amul	circ										
+Necromancer's	1	90	67	2	amul	circ										
+Summoner's	1	30	22	4	wand	knif	head									
+Necromancer's	1	50	42	2	wand	knif	head									
+Angel's	1	36	27	4	amul	circ										
+Arch-Angel's	1	90	67	2	amul	circ										
+Angel's	1	30	22	4	staf	orb										
+Arch-Angel's	1	50	42	2	staf	orb										
+Slayer's	1	36	27	4	amul	circ										
+Berserker's	1	90	67	2	amul	circ										
+Slayer's	1	30	22	4	tkni	axe	spea	club	swor	hamm	mace	jave				
+Berserker's	1	50	42	1	tkni	axe	spea	club	swor	hamm	mace	jave				
+Slayer's	1	30	22	4	phlm											
+Berserker's	1	50	42	2	phlm											
+Shaman's	1	36	27	4	amul	circ										
+Hierophant's	1	90	67	2	amul	circ										
+Shaman's	1	30	22	4	club	pelt										
+Hierophant's	1	50	42	2	club	pelt										
+Magekiller's	1	36	27	4	amul	circ										
+Witch-hunter's	1	90	67	2	amul	circ										
+Magekiller's	1	30	22	4	h2h											
+Witch-hunter's	1	50	42	2	h2h											
+Compact	1	1	1	6	thro											
+Thin	1	17	12	5	thro											
+Dense	1	38	30	4	thro											
+Consecrated	1	1	1	4	weap							wand	orb			
+Pure	1	15	11	3	weap							wand	orb			
+Sacred	1	25	18	2	weap							wand	orb			
+Hallowed	1	35	27	1	weap							wand	orb			
+Divine		45	37	1	weap							wand	orb			
+Pearl	1	18	13	1	jewl											
+Crimson	1	5	3	4	armo	ring	amul	orb	circ	weap						
+Red	1	15	11	4	lcha											
+Sanguinary	1	45	37	4	lcha											
+Bloody		75	67	4	lcha											
+Red	1	30	22	4	mcha											
+Sanguinary		60	52	4	mcha											
+Red	1	90	82	4	scha											
+Jagged	1	7	5	4	lcha											
+Forked	1	37	29	4	lcha											
+Serrated		67	59	4	lcha											
+Jagged	1	22	16	4	mcha											
+Forked		52	44	4	mcha											
+Jagged	1	81	73	4	scha											
+Snowflake	1	9	6	2	lcha											
+Shivering	1	15	11	1	lcha											
+Boreal	1	30	22	1	lcha											
+Hibernal		45	38	1	lcha											
+Snowflake	1	18	13	2	mcha											
+Shivering	1	29	21	1	mcha											
+Boreal	1	49	41	1	mcha											
+Hibernal		69	61	1	mcha											
+Snowflake	1	27	20	2	scha											
+Shivering	1	42	34	1	scha											
+Boreal	1	66	58	1	scha											
+Hibernal		91	83	1	scha											
+Ember	1	5	3	2	lcha											
+Smoldering	1	15	11	1	lcha											
+Smoking	1	28	21	1	lcha											
+Flaming		43	35	1	lcha											
+Ember	1	13	9	2	mcha											
+Smoldering	1	27	20	1	mcha											
+Smoking	1	47	39	1	mcha											
+Flaming		67	59	1	mcha											
+Ember	1	21	15	2	scha											
+Smoldering	1	40	32	1	scha											
+Smoking	1	64	56	1	scha											
+Flaming		89	81	1	scha											
+Static	1	7	5	2	lcha											
+Glowing	1	14	10	1	lcha											
+Arcing	1	29	21	1	lcha											
+Shocking		44	36	1	lcha											
+Static	1	14	10	2	mcha											
+Glowing	1	28	20	1	mcha											
+Arcing	1	48	40	1	mcha											
+Shocking		68	60	1	mcha											
+Static	1	23	17	2	scha											
+Glowing	1	41	33	1	scha											
+Arcing	1	65	57	1	scha											
+Shocking		90	82	1	scha											
+Septic	1	1	1	2	lcha											
+Envenomed	1	12	9	1	lcha											
+Toxic	1	27	20	1	lcha											
+Pestilent		42	34	1	lcha											
+Septic	1	9	6	2	mcha											
+Envenomed	1	26	19	1	mcha											
+Toxic	1	46	38	1	mcha											
+Pestilent		66	58	1	mcha											
+Septic	1	18	13	2	scha											
+Envenomed	1	39	31	1	scha											
+Toxic	1	63	55	1	scha											
+Pestilent		88	80	1	scha											
+Tireless	1	1	1	4	boot											
+Lizard's	1	1	1	4	armo	ring	amul	rod	orb			boot	glov			
+Azure	1	1	1	3	armo	ring	amul	orb	circ							
+Crimson	1	1	1	3	armo	ring	amul	orb	circ							
+Tangerine	1	1	1	3	armo	ring	amul	orb	circ							
+Beryl	1	1	1	3	armo	ring	amul	orb	circ							
+Godly	1	50	43	1	armo											
+Cruel	1	56	48	1	weap							staf	wand	orb		

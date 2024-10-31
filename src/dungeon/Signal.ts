@@ -7,11 +7,11 @@ export class Signal<T> {
   stopListening(listener: (value: T) => void) {
     const i = this.listeners.indexOf(listener);
     if (i !== -1) {
-      this.listeners.splice(i, 1)
+      this.listeners.splice(i, 1);
     }
     const i2 = this.oneTimeListeners.indexOf(listener);
     if (i2 !== -1) {
-      this.oneTimeListeners.splice(i2, 1)
+      this.oneTimeListeners.splice(i2, 1);
     }
   }
 

@@ -1,0 +1,23 @@
+compatibility_date = "2024-02-08"
+
+# Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
+# Note: Use secrets to store sensitive data.
+# Docs: https://developers.cloudflare.com/workers/platform/environment-variables
+
+name = "demo-dungeon-minter"
+pages_build_output_dir = "./dist"
+
+[vars]
+BUILDER_PROJECT_ACCESS_KEY= "AQAAAAAAADVH8R2AGuQhwQ1y8NaEf1T7PJM"
+BUILDER_PROJECT_ID = 13639
+COLLECTION_ID = 814
+CONTRACT_ADDRESS = "0x4eea78b0404a92bcb7d05157342e6bb9f270e27a"
+CHAIN_HANDLE = 'arbitrum-sepolia'
+
+# SCENARIO_MODEL_ID = "XXX"
+# SCENARIO_API_KEY = "XXX"
+# EOA_WALLET_PKEY = "XXX"
+# JWT_ACCESS_KEY = "XXX"
+
+[dev]
+port = 4444

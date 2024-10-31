@@ -1,11 +1,11 @@
 @font-face {
-	font-family: PixelFraktur;
-	src: url(fonts/PixelFraktur.ttf);
+  font-family: PixelFraktur;
+  src: url(fonts/PixelFraktur.ttf);
 }
 
 @font-face {
-	font-family: ChiKareGo2;
-	src: url(fonts/ChiKareGo2.ttf);
+  font-family: ChiKareGo2;
+  src: url(fonts/ChiKareGo2.ttf);
 }
 
 :root {
@@ -37,7 +37,7 @@ body {
 
 h1 {
   color: white;
-  font-family: 'PixelFraktur';
+  font-family: "PixelFraktur";
   font-size: 72px;
   line-height: 1.1;
 }
@@ -78,7 +78,7 @@ button:focus-visible {
 }
 
 .devils-note {
-  margin-left: 38px !important
+  margin-left: 38px !important;
 }
 
 ._1acm19y1 {

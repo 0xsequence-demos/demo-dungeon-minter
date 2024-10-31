@@ -1,0 +1,750 @@
+MagicSuffix
+Name	rare	level	frequency	itype1	itype2	itype3	itype4	itype5	itype6	itype7	etype1	etype2	etype3
+of Health	1	7		tors	helm	shld	ring	amul					
+of Protection	1	18		ring	amul								
+of Absorption	1	26		amul									
+of Life	1	35		amul									
+													
+of Warding	1	7		tors	helm	shld	ring	amul					
+of the Sentinel	1	18		ring	amul								
+of Guarding	1	26		amul									
+of Negation	1	35		amul									
+													
+of Piercing	1	25		rod									
+of Bashing	1	16		mele							wand	staf	
+of Puncturing	1	6		mele							wand	staf	
+of Thorns	1	14		tors	helm	shld	belt						
+of Spikes	1	21		tors	helm	shld	belt						
+of Readiness	1	1		weap	glov								
+of Alacrity	1	8		weap									
+of Swiftness	1	19		mele							wand	staf	
+of Quickness	1	25		mele							wand	staf	
+of Blocking	1	1		shld									
+of Deflecting	1	11		shld									
+of the Apprentice	1	5		rod	ring	amul							
+of the Magus	1	17		rod									
+of Frost	1	4		weap									
+of the Glacier	1	18		mele									
+of Frost	1	55		belt	amul								
+of Warmth	1	10		shld	boot	glov	ring	amul					
+of Flame	1	4		weap									
+of Fire	1	15		weap									
+of Burning	1	25		weap									
+of Flame	1	40		glov	ring	amul							
+of Shock	1	4		weap									
+of Lightning	1	15		weap									
+of Thunder	1	25		weap									
+of Shock	1	50		boot	ring	amul	weap				miss	rod	
+of Craftsmanship	1	1		weap	ring	amul							
+of Quality	1	4		weap									
+of Maiming	1	7		weap									
+of Slaying	1	11		weap									
+of Gore	1	14		weap									
+of Carnage	1	19		weap							wand	staf	
+of Slaughter	1	25		weap							wand	staf	
+of Maiming	1	42		shld	ring	amul							
+of Worth	1	2		weap							rod		
+of Measure	1	6		weap									
+of Excellence	1	12		weap	ring	amul							
+of Performance	1	18		weap									
+of Measure	1	37		tors	helm	ring	amul						
+of Blight	1	5		weap							scep		
+of Venom	1	15		weap							scep		
+of Pestilence	1	25		weap							scep		
+of Blight	1	45		ring	amul								
+of Dexterity	1	4		ring	amul								
+of Dexterity	1	5		scep	miss	boot	glov	ring	amul				
+of Skill	1	10		scep	miss	boot	glov	ring	amul				
+of Skill	1	45		armo							boot	glov	
+of Accuracy	1	18		scep	miss	boot	glov	ring	amul				
+of Precision	1	22		scep	miss	amul							
+of Precision	1	60		armo	ring								
+of Perfection	1	30		miss	glov	amul							
+of Balance	1	5		armo							glov		
+of Stability	1	9		armo							glov		
+													
+of Regeneration	1	10		scep	belt	ring	amul						
+of Regeneration	1	40		shld	glov								
+of Regeneration	1	70		tors	helm	weap	boot				scep		
+of Regrowth	1	17		scep	amul								
+of Regrowth	1	55		belt	ring								
+of Vileness	1	9		mele							scep		
+													
+of Greed	1	2		ring	amul								
+of Wealth	1	17		boot	glov	belt	amul						
+of Chance	1	12		ring	amul								
+of Fortune	1	16		boot	glov	amul							
+of Energy	1	4		ring	amul								
+of Energy	1	5		rod	ring	amul							
+of the Mind	1	10		rod	ring	amul							
+of Brilliance	1	18		rod	ring	amul							
+of Sorcery	1	22		rod	amul								
+of Wizardry	1	30		rod	ring	amul							
+of the Bear	1	8		mele									
+of Light	1	6		armo	rod	miss	ring	amul					
+of Radiance	1	15		rod	miss	ring	amul						
+of the Sun	1	17		rod	miss	glov	ring	amul					
+of Life	1	23		tors	helm	shld	belt	amul					
+of the Jackal	1	3		armo	rod	ring	amul						
+of the Fox	1	6		armo	rod	ring	amul						
+of the Wolf	1	14		armo	rod	ring	amul						
+of the Wolf	1	45		weap							rod		
+of the Tiger	1	20		armo	ring	amul							
+of the Mammoth	1	24		tors	helm	shld	ring	amul					
+of the Mammoth	1	60		mele	glov	belt					rod		
+of the Colosuss	1	30		tors	helm	shld	belt	amul					
+of the Leech	1	6		weap	ring	amul							
+of the Locust	1	20		mele									
+of the Bat	1	6		weap	ring	amul							
+of the Vampire	1	20		mele									
+of Defiance	1	25		tors	helm	shld	amul						
+of Amelioration	1	18		tors	helm	shld	amul						
+of Remedy	1	7		armo	ring	amul							
+													
+of Simplicity	1	25		tors	helm	weap	shld				rod		
+of Ease	1	15		tors	helm	weap	shld				rod		
+													
+of Strength	1	5		belt	ring	amul							
+of Might	1	10		mele	shld	ring	amul				wand	staf	
+of the Ox	1	18		mele	belt	ring	amul				wand	staf	
+of the Ox	1	47		shld	boot	glov							
+of the Giant	1	22		mele	belt	amul					wand	staf	
+of the Giant	1	62		boot	glov	ring	shld						
+of the Titan	1	30		boot	belt	amul							
+of Pacing	1	2		boot									
+of Haste	1	12		boot									
+of Speed	1	22		boot									
+Expansion													
+of Health	1	7	4	tors	shld	ring	amul	circ					
+of Protection	1	18	4	ring	amul	circ							
+of Absorption	1	26	4	amul	circ								
+of Life	1	35	4	amul	circ								
+of Life Everlasting		45	4	amul	circ								
+of Protection	1	24	4	tors	shld	circ							
+of Absorption	1	32	4	tors	shld	circ							
+of Life	1	41	4	tors	shld	circ							
+of Anima		51	4	tors	shld	circ							
+of Warding	1	7	4	tors	shld	ring	amul	orb	circ				
+of the Sentinel	1	18	4	ring	amul	orb	circ						
+of Guarding	1	26	4	amul	orb	circ							
+of Negation		42	4	amul	orb	circ							
+of the Sentinel	1	24	4	tors	shld	circ							
+of Guarding	1	32	4	tors	shld	circ							
+of Negation		41	4	tors	shld	circ							
+of Coolness	1	11	1	tors	shld	boot	circ						
+of Incombustibility	1	19	1	tors	shld	boot	circ						
+of Amianthus	1	28	1	tors	shld	boot	circ						
+of Fire Quenching		38	1	tors	shld	boot	circ						
+of Coolness	1	13	1	ring	amul	orb	circ						
+of Incombustibility	1	22	1	amul	orb	circ							
+of Amianthus	1	33	1	amul	orb	circ							
+of Fire Quenching		46	1	amul	orb	circ							
+of Faith	1	23	1	jewl									
+of Resistance	1	11	1	tors	shld	boot	circ						
+of Insulation	1	19	1	tors	shld	boot	circ						
+of Grounding	1	28	1	tors	shld	boot	circ						
+of the Dynamo		38	1	tors	shld	boot	circ						
+of Resistance	1	13	1	ring	amul	orb	circ						
+of Insulation	1	22	1	amul	orb	circ							
+of Grounding	1	33	1	amul	orb	circ							
+of the Dynamo		46	1	amul	orb	circ							
+of Stoicism	1	22	1	jewl									
+of Warming	1	11	1	tors	shld	boot	circ						
+of Thawing	1	19	1	tors	shld	boot	circ						
+of the Dunes	1	28	1	tors	shld	boot	circ						
+of the Sirocco		38	1	tors	shld	boot	circ						
+of Warming	1	13	1	ring	amul	orb	circ						
+of Thawing	1	22	1	amul	orb	circ							
+of the Dunes	1	33	1	amul	orb	circ							
+of the Sirocco		46	1	amul	orb	circ							
+of Desire	1	23	1	jewl									
+of Piercing	1	25	2	rod	knif	h2h							
+of Bashing	1	16	4	blun							wand	staf	orb
+of Puncturing	1	6	4	spea	knif	h2h							
+of Thorns	1	14	4	tors	shld	belt	circ						
+of Spikes	1	21	4	tors	shld	belt	circ						
+of Razors	1	34	4	tors	shld	circ							
+of Swords		47	4	tors	shld	circ							
+of Malice	1	37	4	jewl									
+of Readiness	1	5	6	weap							wand	orb	
+of Alacrity	1	25	6	weap							wand	orb	
+of Swiftness	1	34	6	mele							wand	staf	orb
+of Quickness	1	46	5	mele							wand	staf	orb
+of Alacrity	1	43	4	glov									
+of Fervor		39	4	jewl									
+of Blocking	1	1	7	shld									
+of Deflecting	1	11	6	shld									
+of the Apprentice	1	5	6	rod	ring	amul	orb	circ					
+of the Magus	1	29	5	rod	orb	circ					scep		
+of Frost	1	4	5	weap							wand	orb	
+of the Icicle	1	13	4	weap							wand	orb	
+of the Glacier	1	27	3	weap							wand	orb	
+of Winter	1	45	2	mele							wand	orb	
+of Frost	1	55	2	belt	amul								
+of Frigidity	1	16	2	jewl									
+of Warmth	1	10	4	shld	boot	glov	ring	amul	circ	orb			
+of Flame	1	4	5	weap							wand	orb	
+of Fire	1	15	4	weap							wand	orb	
+of Burning	1	25	3	weap							wand	orb	
+of Incineration	1	43	2	mele							wand	orb	
+of Flame	1	40	2	glov	ring	amul							
+of Passion	1	15	2	jewl									
+of Shock	1	4	5	weap							wand	orb	
+of Lightning	1	15	4	weap							wand	orb	
+of Thunder	1	25	3	weap							wand	orb	
+of Storms	1	34	2	mele							wand	orb	
+of Shock	1	50	2	boot	ring	amul							
+of Ennui	1	15	2	jewl									
+of Craftsmanship	1	1	8	weap	ring	amul					wand	staf	orb
+of Quality	1	4	8	weap							wand	staf	orb
+of Maiming	1	7	7	weap							wand	staf	orb
+of Slaying	1	11	7	weap							wand	staf	orb
+of Gore	1	14	6	weap							wand	staf	orb
+of Carnage	1	19	6	weap							wand	staf	orb
+of Slaughter	1	25	5	weap							wand	staf	orb
+of Butchery		35	5	weap							wand	staf	orb
+of Evisceration		45	4	weap							wand	staf	orb
+of Maiming	1	42	4	shld	ring	amul							
+of Craftsmanship	1	1	4	circ									
+of Craftsmanship	1	8	4	circ									
+of Craftsmanship	1	15	4	circ									
+of Quality	1	23	4	circ									
+of Quality	1	30	4	circ									
+of Maiming		37	4	circ									
+of Maiming		45	4	circ									
+of Craftsmanship	1	8	4	mcha									
+of Craftsmanship	1	18	4	mcha									
+of Quality	1	28	4	mcha									
+of Quality	1	38	4	mcha									
+of Maiming		48	4	mcha									
+of Craftsmanship	1	21	4	scha									
+of Quality	1	36	4	scha									
+of Maiming		51	4	scha									
+of Ire	1	4	4	jewl									
+of Wrath	1	11	4	jewl									
+of Carnage		25	4	jewl									
+of Worth	1	1	8	weap							staf	wand	orb
+of Measure	1	12	7	weap							staf	wand	orb
+of Excellence	1	24	6	weap							staf	wand	orb
+of Performance	1	48	5	weap							staf	wand	orb
+of Transcendence	1	76	4	weap							staf	wand	orb
+of Worth	1	15	4	ring	amul	circ							
+of Measure	1	37	4	ring	amul	circ							
+of Excellence	1	59	4	ring	amul	circ							
+of Performance		81	4	ring	amul	circ							
+of Joyfulness	1	5	4	jewl									
+of Bliss	1	43	4	jewl									
+of Blight	1	5	5	weap	circ						rod	orb	
+of Venom	1	15	4	weap	circ						rod	orb	
+of Pestilence	1	25	3	weap	circ						rod	orb	
+of Anthrax	1	33	2	weap							rod	orb	
+of Blight	1	45	2	ring	amul								
+of Envy	1	1	2	jewl									
+of Dexterity	1	1	4	amul	miss	circ							
+of Skill	1	11	3	amul	miss	circ							
+of Accuracy	1	27	3	amul	miss	circ							
+of Precision	1	43	3	amul	miss	circ							
+of Perfection	1	59	3	amul	miss	circ							
+of Nirvana		72	3	amul	miss	circ							
+of Dexterity	1	6	4	ring	glov								
+of Skill	1	22	3	ring	glov								
+of Accuracy	1	39	3	ring	glov								
+of Precision	1	56	3	ring	glov								
+of Perfection		75	3	ring	glov								
+of Dexterity	1	13	3	tors	boot						glov		
+of Skill	1	34	3	tors	boot						glov		
+of Accuracy	1	46	3	tors	boot						glov		
+of Precision		60	3	tors	boot						glov		
+of Dexterity	1	1	4	lcha									
+of Dexterity	1	3	4	mcha									
+of Dexterity	1	7	4	scha									
+of Dexterity	1	14	4	lcha									
+of Dexterity	1	18	4	mcha									
+of Dexterity	1	22	4	scha									
+of Daring	1	7	3	jewl									
+of Balance	1	5	4	armo							glov		
+of Equilibrium	1	9	4	tors	belt	shld							
+of Stability	1	18	4	tors	belt								
+of Balance	1	1	4	lcha									
+of Balance	1	19	4	mcha									
+of Balance	1	37	4	scha									
+of Truth	1	44	4	jewl									
+of Regeneration	1	10	4	scep	belt	ring	amul	circ					
+of Regeneration	1	40	4	shld	glov								
+of Regeneration	1	70	4	tors	weap	boot					scep		
+of Regrowth	1	17	4	scep	amul	circ							
+of Regrowth	1	55	4	belt	ring								
+of Revivification		38	4	scep	amul	circ							
+of Honor	1	47	4	jewl									
+of Vileness	1	9	3	mele							rod	orb	
+of Greed	1	1	4	ring	amul	circ							
+of Wealth	1	17	4	boot	glov	belt	amul	circ					
+of Greed	1	1	4	lcha									
+of Greed	1	7	4	lcha									
+of Greed	1	19	4	lcha									
+of Greed	1	1	4	mcha									
+of Greed	1	20	4	mcha									
+of Greed	1	1	4	scha									
+of Avarice	1	1	4	jewl									
+of Chance	1	12	4	boot	glov	ring	amul	circ					
+of Fortune	1	16	4	boot	glov	amul	circ						
+of Fortune		42	4	ring									
+of Luck		26	4	boot	amul	circ							
+of Fortune	1	31	3	scha									
+of Good Luck		47	2	scha									
+of Prosperity	1	26	2	jewl									
+of Energy	1	1	4	amul	orb	circ	wand	staf					
+of the Mind	1	7	4	amul	orb	circ	wand	staf					
+of Brilliance	1	13	3	amul	orb	circ	wand	staf					
+of Sorcery	1	21	3	amul	orb	circ	wand	staf					
+of Wizardry	1	31	3	amul	orb	circ	wand	staf					
+of Enlightenment		41	3	amul	orb	circ	wand	staf					
+of Energy	1	7	4	ring									
+of the Mind	1	13	3	ring									
+of Brilliance	1	21	3	ring									
+of Sorcery	1	31	3	ring									
+of Wizardry		41	3	ring									
+of Energy	1	4	3	helm	scep								
+of the Mind	1	10	3	helm	scep								
+of Brilliance	1	16	3	helm	scep								
+of Sorcery		26	3	helm	scep								
+of Knowledge	1	9	3	jewl									
+of the Bear	1	8	3	mele									
+of Light	1	6	1	armo	rod	ring	amul						
+of Radiance	1	15	1	rod	miss	ring	amul	helm					
+of the Sun	1	17	1	rod	miss	glov	ring	amul	helm				
+of the Jackal	1	1	3	tors	belt	amul	phlm	circ					
+of the Fox	1	7	3	tors	belt	amul	phlm	circ					
+of the Wolf	1	15	3	tors	belt	amul	phlm	circ					
+of the Tiger	1	20	3	tors	belt	amul	phlm	circ					
+of the Mammoth	1	25	3	tors	belt	amul	phlm	circ					
+of the Colosuss	1	30	3	tors	belt	amul	phlm	circ					
+of the Squid		40	3	tors	belt	amul	phlm	circ					
+of the Whale		50	3	tors	belt	amul	phlm	circ					
+of the Jackal	1	4	3	shld	pelt								
+of the Fox	1	11	3	shld	pelt								
+of the Wolf	1	27	3	shld	pelt								
+of the Tiger	1	43	3	shld	pelt								
+of the Mammoth	1	59	3	shld	pelt								
+of the Colosuss		75	3	shld	pelt								
+of the Jackal	1	8	3	club	hamm	mace	ring	helm					
+of the Fox	1	17	3	club	hamm	mace	ring	helm					
+of the Wolf	1	34	3	club	hamm	mace	ring	helm					
+of the Tiger	1	51	3	club	hamm	mace	ring	helm					
+of the Mammoth	1	68	3	club	hamm	mace	ring	helm					
+of Life	1	1	4	lcha									
+of Life	1	9	4	lcha									
+of Life	1	19	4	lcha									
+of Substinence	1	31	4	lcha									
+of Substinence	1	45	4	lcha									
+of Substinence	1	61	4	lcha									
+of Vita		77	4	lcha									
+of Vita		91	4	lcha									
+of Vita		110	4	lcha									
+of Life	1	1	4	mcha									
+of Life	1	12	4	mcha									
+of Substinence	1	26	4	mcha									
+of Substinence	1	42	4	mcha									
+of Vita		58	4	mcha									
+of Vita		74	4	mcha									
+of Life	1	1	4	scha									
+of Substinence	1	23	4	scha									
+of Vita		47	4	scha									
+of Spirit	1	1	4	jewl									
+of Hope		45	4	jewl									
+of the Leech	1	6	7	weap							orb		
+of the Locust	1	20	7	mele							orb		
+of the Lamprey	1	55	7	mele							orb		
+of the Leech	1	14	4	ring	circ								
+of the Locust	1	47	4	ring	circ								
+of the Lamprey	1	77	4	ring	circ								
+of the Leech	1	34	4	glov									
+of the Bat	1	7	7	weap							orb		
+of the Wraith	1	21	7	mele									
+of the Vampire	1	56	7	mele									
+of the Bat	1	15	4	amul	circ								
+of the Wraith	1	58	4	amul	circ								
+of the Vampire	1	78	4	amul	circ								
+of the Bat	1	35	4	glov									
+of Defiance	1	25	2	tors	shld	amul	circ						
+of Amelioration	1	18	3	tors	shld	amul	circ						
+of Remedy	1	7	3	armo	ring	amul	circ						
+of Simplicity	1	25	2	tors	weap	shld					rod	orb	
+of Ease	1	15	3	tors	weap	shld					rod	orb	
+of Freedom	1	1	3	jewl									
+of Strength	1	1	4	amul	belt	club	hamm	circ					
+of Might	1	10	3	amul	belt	club	hamm	circ					
+of the Ox	1	26	3	amul	belt	club	hamm	circ					
+of the Giant	1	42	3	amul	belt	club	hamm	circ					
+of the Titan	1	58	3	amul	belt	club	hamm	circ					
+of Atlus	1	71	3	amul	belt	club	hamm	circ					
+of Strength	1	5	4	ring	scep	mace	tors						
+of Might	1	21	3	ring	scep	mace	tors						
+of the Ox	1	38	3	ring	scep	mace	tors						
+of the Giant	1	55	3	ring	scep	mace	tors						
+of the Titan	1	74	3	ring	scep	mace	tors						
+of Strength	1	12	3	mele	glov	shld					blun		
+of Might	1	33	3	mele	glov	shld					blun		
+of the Ox	1	45	3	mele	glov	shld					blun		
+of the Giant	1	59	3	mele	glov						blun		
+of Strength	1	1	4	lcha									
+of Strength	1	3	4	mcha									
+of Strength	1	7	4	scha									
+of Strength	1	14	4	lcha									
+of Strength	1	18	4	mcha									
+of Strength	1	22	4	scha									
+of Virility	1	18	4	jewl									
+of Pacing	1	12	3	boot	circ								
+of Haste	1	22	4	boot	circ								
+of Speed	1	37	4	boot	circ								
+of Traveling		65	4	boot									
+of Acceleration		51	4	boot									
+of Inertia	1	19	4	lcha									
+of Inertia	1	24	4	mcha									
+of Inertia		35	4	scha									
+of Self-Repair	1	3	3	weap	armo						thro	miss	
+of Fast Repair	1	20	2	weap	armo						thro	miss	
+of Ages		50	1	weap	armo						thro	miss	
+of Replenishing	1	5	6	thro									
+of Propogation	1	24	5	thro									
+of the Kraken		20	1	tors	amul	pelt	phlm						
+of Memory		20	1	circ	amul	pelt							
+of the Elephant		37	2	circ	pelt								
+of Power		1	1	belt	amul								
+of Grace		1	1	helm	amul								
+of Grace and Power		1	1	amul									
+of the Yeti		1	1	tors	glov	amul							
+of the Phoenix		1	1	shld	helm	amul							
+of the Efreeti		1	1	glov	boot	ring							
+of the Cobra		1	1	belt	ring	amul							
+of the Elements		1	10	circ									
+of Firebolts	1	16	1	weap							miss		
+of Firebolts	1	6	1	weap							miss		
+of Firebolts	1	20	1	weap							miss		
+of Charged Shield	1	6	1	armo	ring	amul							
+of Charged Shield	1	16	1	armo	ring	amul							
+of Charged Shield	1	26	1	armo	ring	amul							
+of Icebolt	1	6	1	weap							miss		
+of Frozen Armor													
+of Static Field													
+of Telekinesis	1												
+of Frost Shield	1	12	1	armo	amul								
+of Ice Blast													
+of Blaze													
+of Fire Ball													
+of Nova	1	18	1	weap							miss		
+of Nova	1	28	1	weap							miss		
+of Nova Shield	1	18	1	armo	ring 								
+of Nova Shield	1	28	1	armo	ring 								
+of Nova Shield	1	38	1	armo	ring 								
+of Lightning	1	18	1	weap							miss		
+of Lightning		12	1	weap									
+of Shiver Armor													
+of Fire Wall													
+of Enchant													
+of Chain Lightning	1	25	1	weap	ring	amul					miss		
+of Chain Lightning	1	35	1	weap	ring	amul					miss		
+of Chain Lightning	1	45	1	weap	ring	amul					miss		
+of Teleport Shield		25	1	armo	ring	amul							
+of Teleport Shield		35	1	armo	ring	amul							
+of Teleport Shield		45	1	armo	ring	amul							
+of Glacial Spike													
+of Meteor													
+of Thunder Storm													
+of Energy Shield													
+of Blizzard													
+of Chilling Armor													
+of Hydra Shield	1	40	1	amul									
+of Frozen Orb													
+of Dawn		30	0										
+of Sunlight		30	0										
+of Magic Arrows	1	12	1	miss	abow								
+of Magic Arrows		35	1	glov									
+of Fire Arrows		13	1	miss	abow								
+of Fire Arrows	1	40	1	glov									
+of Inner Sight	1	18	1	amul	amaz	circ							
+of Inner Sight	1	50	1	glov									
+of Jabbing		24	1	spea	aspe								
+of Jabbing		50	1	glov									
+of Cold Arrows	1	15	1	miss	abow								
+of Cold Arrows	1	47	1	glov									
+of Multiple Shot	1	18	1	miss	abow								
+of Multiple Shot	1	63	1	glov									
+of Power Strike	1	12	1	spea	aspe								
+of Power Strike	1	55	1	glov									
+of Poison Jab		17	1	amul	circ								
+of Poison Jab		67	1	glov									
+of Exploding Arrows	1	30	1	miss	abow								
+of Exploding Arrows	1	69	1	glov									
+of Slow Missiles		33	1	amaz									
+of Slow Missiles		68	1	glov	amul								
+of Impaling Strike		24	1	spea	aspe								
+of Impaling Strike		59	1	glov									
+of Lightning Javelin		25	1	amul	circ								
+of Lightning Javelin		70	1	glov									
+of Ice Arrows	1	36	1	miss	abow								
+of Ice Arrows	1	72	1	glov									
+of Guided Arrows		34	1	miss	abow								
+of Guided Arrows		69	1	glov									
+of Charged Strike	1	33	1	spea	aspe								
+of Charged Strike	1	68	1	glov									
+of Plague Jab		35	1	amul	circ								
+of Plague Jab		71	1	glov									
+of Immolating Arrows		42	1	miss	abow								
+of Immolating Arrows		85	1	glov									
+of Fending		41	1	spea	aspe								
+of Fending		83	1	glov									
+of Freezing Arrows	1	50	1	miss	abow								
+of Freezing Arrows	1	94	1	glov									
+of Lightning Strike	1	47	1	spea	aspe								
+of Lightning Strike	1	90	1	glov									
+of Lightning Fury		49	1	amul	circ								
+of Lightning Fury		92	1	glov									
+of Fire Bolts	1	7	1	staf	orb								
+of Fire Bolts	1	14	1	swor	ring	circ							
+of Charged Bolts	1	7	1	staf	orb								
+of Charged Bolts	1	14	1	hamm	mace	scep	ring	circ					
+of Ice Bolts	1	7	1	staf	orb								
+of Ice Bolts	1	14	1	knif									
+of Frozen Armor		7	1	staf	orb								
+of Frozen Armor		14	1	knif	tors								
+of Static Field		12	1	staf	orb								
+of Static Field		24	1	hamm	mace	scep	ring	circ					
+of Telekinesis	1	12	1	staf	orb								
+of Telekinesis	1	24	1	hamm	mace	scep	ring	circ					
+of Frost Novas	1	12	1	staf	orb								
+of Frost Novas	1	24	1	knif	amul	circ							
+of Ice Blasts	1	12	1	staf	orb								
+of Ice Blasts	1	24	1	hamm	mace	scep	ring	circ					
+of Blazing		18	1	staf	orb								
+of Blazing		36	1	boot									
+of Fire Balls	1	18	1	staf	orb								
+of Fire Balls	1	36	1	spea	wand								
+of Novas	1	18	1	staf	orb								
+of Novas	1	36	1	shld									
+of Lightning	1	18	1	staf	orb								
+of Lightning	1	36	1	axe	hamm								
+of Shiver Armor		18	1	staf	orb								
+of Shiver Armor		36	1	knif	tors								
+of Fire Walls		24	1	staf	orb								
+of Fire Walls		48	1	pole									
+of Enchantment	1	24	1	staf	orb								
+of Enchantment	1	48	1	mele									
+of Chain Lightning	1	24	1	staf	orb								
+of Chain Lightning	1	48	1	spea									
+of Teleportation	1	24	1	staf	orb								
+of Teleportation	1	48	1	amul	circ								
+of Glacial Spikes	1	24	1	staf	orb								
+of Glacial Spikes	1	48	1	knif									
+of Meteors	1	30	1	staf	orb								
+of Meteors	1	60	1	knif	club								
+of Thunder Storm		30	1	staf	orb								
+of Thunder Storm		60	1	hamm	club								
+of Energy Shield		30	1	staf	orb								
+of Energy Shield		60	1	helm									
+of Blizzards	1	30	1	staf	orb								
+of Blizzards	1	60	1	knif									
+of Chilling Armor		30	1	staf	orb								
+of Chilling Armor		60	1	tors									
+of Hydras		36	1	staf	orb								
+of Hydras		72	1	club									
+of Frozen Orbs	1	36	1	staf	orb								
+of Frozen Orbs	1	72	1	knif									
+of Amplify Damage		7	1	wand	knif	head							
+of Amplify Damage		14	1	blun									
+of Teeth	1	7	1	wand	knif	head							
+of Teeth	1	14	1	swor									
+of Bone Armor		7	1	wand	knif	head							
+of Bone Armor		14	1	tors									
+of Raise Skeletons		7	1	wand	knif	head							
+of Raise Skeletons		14	1	amul	circ								
+of Dim Vision	1	12	1	wand	knif	head							
+of Dim Vision	1	24	1	ring	circ								
+of Weaken	1	12	1	wand	knif	head							
+of Weaken	1	24	1	glov									
+of Poison Dagger	1	12	1	knif	head								
+of Poison Dagger	1	24	1	glov	ring	circ							
+of Corpse Explosions		12	1	wand	knif	head							
+of Corpse Explosions		24	1	club									
+of Clay Golem Summoning		12	1	wand	knif	head							
+of Clay Golem Summoning		24	1	amul	circ								
+of Iron Maiden		18	1	wand	knif	head							
+of Iron Maiden		36	1	shld									
+of Terror	1	18	1	wand	knif	head							
+of Terror	1	36	1	shld									
+of Bone Walls		18	1	wand	knif	head							
+of Bone Walls		36	1	club	mace	scep							
+of Raise Skeletal Mages		18	1	wand	knif	head							
+of Raise Skeletal Mages		36	1	amul	circ								
+of Confusion	1	24	1	wand	knif	head							
+of Confusion	1	48	1	ring	circ								
+of Life Tap	1	24	1	wand	knif	head							
+of Life Tap	1	48	1	axe									
+of Poison Explosion		24	1	wand	knif	head							
+of Poison Explosion		48	1	blun									
+of Bone Spears	1	24	1	wand	knif	head							
+of Bone Spears	1	48	1	spea									
+of Blood Golem Summoning		24	1	wand	knif	head							
+of Blood Golem Summoning		48	1	axe									
+of Attraction	1	30	1	wand	knif	head							
+of Attraction	1	60	1	ring	amul	circ							
+of Decrepification		30	1	wand	knif	head							
+of Decrepification		60	1	shld									
+of Bone Imprisonment		30	1	wand	knif	head							
+of Bone Imprisonment		60	1	mace	scep								
+of Iron Golem Creation		30	1	wand	knif	head							
+of Iron Golem Creation		60	1	swor									
+of Lower Resistance	1	36	1	wand	knif	head							
+of Lower Resistance	1	72	1	staf									
+of Poison Novas	1	36	1	wand	knif	head							
+of Poison Novas	1	72	1	glov									
+of Bone Spirits	1	36	1	wand	knif	head							
+of Bone Spirits	1	72	1	amul	circ								
+of Fire Golem Summoning		36	1	wand	knif	head							
+of Fire Golem Summoning		72	1	hamm									
+of Revivification		36	1	wand	knif	head							
+of Revivification		72	1	pole									
+of Sacrifice	1	7	1	scep	ashd								
+of Sacrifice	1	14	1	mele							scep		
+of Holy Bolts	1	12	1	scep	ashd								
+of Holy Bolts	1	24	1	amul	circ								
+of Zeal	1	18	1	scep	ashd								
+of Zeal	1	36	1	mele							scep		
+of Vengeance	1	24	1	scep	ashd								
+of Vengeance	1	48	1	swor	axe								
+of Blessed Hammers	1	24	1	scep	ashd								
+of Blessed Hammers	1	48	1	hamm									
+of Conversion		30	1	scep	ashd								
+of Conversion		60	1	blun							scep		
+of Fist of the Heavens		36	1	scep	ashd								
+of Fist of the Heavens		72	1	glov									
+of Bashing	1	7	1	phlm									
+of Bashing	1	14	1	mele							staf	wand	orb
+of Howling		7	1	phlm									
+of Howling		14	1										
+of Potion Finding		7	1	phlm									
+of Potion Finding		14	1										
+of Taunting		12	1	phlm									
+of Taunting		24	1										
+of Shouting		12	1	phlm									
+of Shouting		24	1										
+of Stunning	1	18	1	phlm							staf	wand	orb
+of Stunning	1	36	1	mele									
+of Item Finding		18	1	phlm									
+of Item Finding		36	1										
+of Concentration	1	24	1	phlm									
+of Concentration	1	48	1	mele							staf	wand	orb
+of Battle Cry		24	1	phlm									
+of Battle Cry		48	1										
+of Battle Orders		30	1	phlm									
+of Battle Orders		60	1										
+of Grim Ward	1	30	1	phlm									
+of Grim Ward	1	60	1	amul									
+of War Cry		36	1	phlm									
+of War Cry		72	1										
+of Battle Command		36	1	phlm									
+of Battle Command		72	1										
+of Firestorms	1	7	1	club									
+of Firestorms	1	14	1	staf									
+of Molten Boulders		12	1	club									
+of Molten Boulders		24	1	mace									
+of Eruption	1	18	1	club									
+of Eruption	1	36	1	staf									
+of Cyclone Armor		18	1	club									
+of Cyclone Armor		36	1	tors									
+of Twister	1	24	1	club									
+of Twister	1	48	1	amul	circ								
+of Volcano	1	30	1	club									
+of Volcano	1	60	1	hamm									
+of Tornado	1	30	1	club									
+of Tornado	1	60	1	amul	circ								
+of Armageddon		36	1	club									
+of Armageddon		72	1	staf									
+of Hurricane		36	1	club									
+of Hurricane		72	1	amul	circ								
+of Damage Amplification	1	3	1	weap							orb		
+of the Icicle	1	37	2	jewl									
+of the Glacier		58	2	jewl									
+of Fire	1	36	2	jewl									
+of Burning	1	57	2	jewl									
+of Lightning	1	36	2	jewl									
+of Thunder	1	57	2	jewl									
+of Daring	1	19	3	jewl									
+of Daring	1	36	3	jewl									
+of Knowledge	1	24	3	jewl									
+of Knowledge	1	41	3	jewl									
+of Virility	1	33	4	jewl									
+of Virility	1	50	4	jewl									
+of Readiness	1	20	2	glov									
+of Craftsmanship	1	1	4	lcha									
+of Quality	1	41	4	lcha									
+of Maiming		71	4	lcha									
+of Craftsmanship	1	26	4	mcha									
+of Quality		56	4	mcha									
+of Craftsmanship	1	85	4	scha									
+of Blight	1	1	2	lcha									
+of Venom	1	6	1	lcha									
+of Pestilence	1	14	1	lcha									
+of Anthrax		21	1	lcha									
+of Blight	1	5	2	mcha									
+of Venom	1	13	1	mcha									
+of Pestilence	1	23	1	mcha									
+of Anthrax		33	1	mcha									
+of Blight	1	9	2	scha									
+of Venom	1	20	1	scha									
+of Pestilence	1	32	1	scha									
+of Anthrax		44	1	scha									
+of Frost	1	5	2	lcha									
+of the Icicle	1	8	1	lcha									
+of the Glacier	1	15	1	lcha									
+of Winter		23	1	lcha									
+of Frost	1	9	2	mcha									
+of the Icicle	1	15	1	mcha									
+of the Glacier	1	25	1	mcha									
+of Winter		35	1	mcha									
+of Frost	1	14	2	scha									
+of the Icicle	1	21	1	scha									
+of the Glacier	1	33	1	scha									
+of Winter		46	1	scha									
+of Flame	1	3	2	lcha									
+of Fire	1	8	1	lcha									
+of Burning	1	14	1	lcha									
+of Incineration		22	1	lcha									
+of Flame	1	7	2	mcha									
+of Fire	1	14	1	mcha									
+of Burning	1	24	1	mcha									
+of Incineration		34	1	mcha									
+of Flame	1	11	2	scha									
+of Fire	1	20	1	scha									
+of Burning	1	32	1	scha									
+of Incineration		45	1	scha									
+of Shock	1	4	2	lcha									
+of Lightning	1	7	1	lcha									
+of Thunder	1	15	1	lcha									
+of Storms		22	1	lcha									
+of Shock	1	7	2	mcha									
+of Lightning	1	14	1	mcha									
+of Thunder	1	24	1	mcha									
+of Storms		34	1	mcha									
+of Shock	1	12	2	scha									
+of Lightning	1	21	1	scha									
+of Thunder	1	33	1	scha									
+of Storms		45	1	scha									
+of Dexterity	1	1	4	boot	glov								
+of Dexterity	1	1	4	ring									
+of Strength	1	1	4	glov									
+of Strength	1	1	4	ring									
+of Thorns	1	1	4	tors	belt	shld							
+of Frost	1	1	4	weap							staf	wand	orb
+of Flame	1	1	4	weap							staf	wand	orb
+of Blight	1	1	4	weap							scep	staf	orb
+of Shock	1	1	4	weap							staf	wand	orb
+of Regeneration	1	1	3	amul	circ								
+of Energy	1	1	4	amul	orb	circ	wand	staf	helm	ring			
+of Light	1	1	4	ring	amul								
+of the Leech	1	24	2	amul									
+of the Locust	1	57	2	amul									
+of the Lamprey	1	85	2	amul									
+of the Bat	1	25	2	ring									
+of the Wraith	1	58	2	ring									
+of the Vampire	1	86	2	ring									
