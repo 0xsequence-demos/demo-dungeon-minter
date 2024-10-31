@@ -36,7 +36,7 @@ export default function WalletCollectibleModal(props: {
     setTimeout(() => {
       setActiveCollectible(undefined);
     }, 4000);
-  }, [collectibleRecipientWallet]);
+  }, [collectibleRecipientWallet, activeCollectible, setActiveCollectible]);
 
   return (
     <Modal color={getNormalizedTierColor(activeCollectible)} glow={true}>

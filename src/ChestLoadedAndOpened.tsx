@@ -37,7 +37,7 @@ export default function ChestLoadedAndOpenedModal(props: {
     const json = await res.json();
     setTxHash(json.txnHash);
     setMinting(false);
-  }, [address]);
+  }, [address, discoveredItems, setTxHash]);
 
   const discoveredItem = discoveredItems[0];
 

@@ -25,7 +25,6 @@ export function getDungeonGame() {
 
   scene.add(camera);
   camera.position.set(0, 0, 5);
-  camera.frustumCulled;
 
   const renderer = new WebGLRenderer();
   renderer.shadowMap.enabled = true;

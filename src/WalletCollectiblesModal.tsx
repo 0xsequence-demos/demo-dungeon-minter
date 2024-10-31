@@ -51,7 +51,7 @@ export default function WalletCollectiblesModal(props: {
             }),
         );
       });
-  }, [activeCollectible]);
+  }, [activeCollectible, address, setCollectedItems]);
 
   const onClickCopyAddressToClipboard = useCallback(() => {
     // Copy the address to the clipboard
@@ -65,7 +65,7 @@ export default function WalletCollectiblesModal(props: {
         console.error("Failed to copy the address: ", err);
         // Optionally, handle errors (e.g., display an error message)
       });
-  }, []);
+  }, [address]);
 
   return (
     <Modal>

@@ -30,51 +30,6 @@ export default function ItemsAndInventory(props: {
   >();
   const [chestOpened, setChestOpened] = useState(false);
 
-  const onApproach = useCallback((d: ChestData) => {
-    setColor(d.color);
-    if (!d.looted) {
-      generate();
-    }
-  }, []);
-  const onOpen = useCallback((d: ChestData) => {
-    setLoadingTreasure(true);
-    setChestOpened(true);
-    d.loot();
-  }, []);
-
-  const onAbandon = useCallback((d: ChestData) => {
-    if (abortGenerationController) abortGenerationController?.abort();
-    console.log("aborting signal");
-    setColor("#000000");
-    setChestOpened(false);
-    setLoadingTreasure(false);
-    d.loot();
-    setDiscoveredItems([]);
-  }, []);
-
-  const onEachChestData = useCallback((chestData: ChestData) => {
-    chestData.approachSignal.listen(onApproach);
-    chestData.openSignal.listen(onOpen);
-    chestData.abandonSignal.listen(onAbandon);
-  }, []);
-
-  useEffect(() => {
-    if (address) {
-      const game = getDungeonGame();
-
-      game.listenForEachChestData(onEachChestData);
-      return () => {
-        game.stopListeningForEachChestData(onEachChestData);
-        for (const chestData of game.chestDatas) {
-          chestData.approachSignal.stopListening(onApproach);
-          chestData.openSignal.stopListening(onOpen);
-          chestData.abandonSignal.stopListening(onAbandon);
-        }
-      };
-    }
-    // }
-  }, [address]);
-
   const generate = useCallback(async () => {
     const newController = new AbortController();
     setAbortGenerationController(newController);
@@ -108,7 +63,62 @@ export default function ItemsAndInventory(props: {
       // alert('generation service is erroring')
       console.log(err);
     }
+  }, [address]);
+
+  const onApproach = useCallback(
+    (d: ChestData) => {
+      setColor(d.color);
+      if (!d.looted) {
+        generate();
+      }
+    },
+    [generate],
+  );
+
+  const onOpen = useCallback((d: ChestData) => {
+    setLoadingTreasure(true);
+    setChestOpened(true);
+    d.loot();
   }, []);
+
+  const onAbandon = useCallback(
+    (d: ChestData) => {
+      if (abortGenerationController) abortGenerationController?.abort();
+      console.log("aborting signal");
+      setColor("#000000");
+      setChestOpened(false);
+      setLoadingTreasure(false);
+      d.loot();
+      setDiscoveredItems([]);
+    },
+    [abortGenerationController],
+  );
+
+  const onEachChestData = useCallback(
+    (chestData: ChestData) => {
+      chestData.approachSignal.listen(onApproach);
+      chestData.openSignal.listen(onOpen);
+      chestData.abandonSignal.listen(onAbandon);
+    },
+    [onAbandon, onApproach, onOpen],
+  );
+
+  useEffect(() => {
+    if (address) {
+      const game = getDungeonGame();
+
+      game.listenForEachChestData(onEachChestData);
+      return () => {
+        game.stopListeningForEachChestData(onEachChestData);
+        for (const chestData of game.chestDatas) {
+          chestData.approachSignal.stopListening(onApproach);
+          chestData.openSignal.stopListening(onOpen);
+          chestData.abandonSignal.stopListening(onAbandon);
+        }
+      };
+    }
+    // }
+  }, [address, onAbandon, onApproach, onOpen, onEachChestData]);
 
   const onCloseDiscoveredItems = useCallback(() => {
     setLoadingTreasure(false);

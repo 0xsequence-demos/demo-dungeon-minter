@@ -9,7 +9,7 @@ export default function IntroPage(props: {
   const { setIsLoggingIn, isMobile } = props;
   const showLoginScreen = useCallback(() => {
     setIsLoggingIn(true);
-  }, []);
+  }, [setIsLoggingIn]);
 
   return (
     <>
@@ -39,6 +39,7 @@ export default function IntroPage(props: {
               <a
                 className="no-link"
                 href="https://docs.sequence.xyz/guides/treasure-chest-guide"
+                rel="noreferrer"
                 target="_blank"
               >
                 Read build guide

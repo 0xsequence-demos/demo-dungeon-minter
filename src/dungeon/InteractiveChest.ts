@@ -321,7 +321,7 @@ export class InteractiveChest {
           try {
             window.navigator.vibrate(10);
           } catch (e) {
-            //
+            console.log(e);
           }
         }
         let foundNextOne = false;
