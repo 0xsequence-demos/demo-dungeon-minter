@@ -39,6 +39,7 @@ export default function App() {
   }, []);
 
   const signOutConfiguration = useCallback(() => {
+    localStorage.clear();
     setIsLoggingIn(false);
     setAddress("");
     location.reload(); // requirement to reload because 'loadingTreasure' & 'exploring' is not reactive
