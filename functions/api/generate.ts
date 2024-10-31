@@ -79,9 +79,9 @@ const upload = async (
         decimals: 0,
         attributes,
       },
-    }
-    console.log('jwt', env.JWT_ACCESS_KEY)
-    console.log('tokenCreationData', JSON.stringify(tokenCreationData))
+    };
+    console.log("jwt", env.JWT_ACCESS_KEY);
+    console.log("tokenCreationData", JSON.stringify(tokenCreationData));
     await collectionsService.createToken(tokenCreationData);
   } catch (err) {
     console.log("error creating token");

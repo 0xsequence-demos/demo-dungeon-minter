@@ -19,6 +19,14 @@ iframe {
   font-size: 25px;
   line-height: 1.1;
 }
+
+.collectible-basic-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 340px;
+  justify-content: center;
+}
 .play-image {
   margin-top: 13px;
   margin-left: -130px;
@@ -74,10 +82,6 @@ iframe {
   transform: translateY(-50%); /* Adjust vertical centering */
 }
 
-.cancel-generation {
-  margin-top: -20px;
-}
-
 .cancel-open-wallet {
   margin-top: -20px;
 }
@@ -127,7 +131,7 @@ span.mint-generation:hover + .play-image-mint {
   text-align: center;
 }
 
-.box-generation {
+.modal-holder {
   position: fixed; /* Fix position relative to the viewport */
   top: 0; /* Start from the top edge of the viewport */
   left: 0; /* Start from the left edge of the viewport */
@@ -140,6 +144,20 @@ span.mint-generation:hover + .play-image-mint {
   z-index: 1000; /* High z-index to ensure it's on top of other content */
   color: white;
   font-family: "ChiKareGo2", monospace;
+}
+
+.modal {
+  width: 420px;
+  height: 600px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px;
+  border-width: 3px;
+  border-style: dashed;
+  border-color: white;
 }
 
 .title {
@@ -188,32 +206,6 @@ span.mint-generation:hover + .play-image-mint {
   background-color: #555;
 }
 
-.dashed-box-login-box {
-  width: 340px;
-  height: 210px;
-  background-color: black;
-  display: flex; /* Use flexbox to align children side by side */
-  justify-content: space-around; /* Space between the child elements */
-  align-items: center; /* Center items vertically */
-  flex-direction: row; /* Align children horizontally */
-  border: 3px dashed #555; /* Adjust border width and color as needed */
-  padding: 10px; /* Adjust border width and color as needed */
-}
-
-.dashed-greeting-mobile {
-  width: 100%;
-  min-width: 100px;
-  font-size: 10px !important;
-  height: 70px;
-  background-color: black;
-  display: flex; /* Use flexbox to align children side by side */
-  justify-content: space-around; /* Space between the child elements */
-  align-items: center; /* Center items vertically */
-  flex-direction: row; /* Align children horizontally */
-  border: 3px dashed #555; /* Adjust border width and color as needed */
-  padding: 10px; /* Adjust border width and color as needed */
-}
-
 .dashed-greeting {
   width: 100%;
   min-width: 550px;
@@ -227,6 +219,11 @@ span.mint-generation:hover + .play-image-mint {
   flex-direction: row; /* Align children horizontally */
   border: 3px dashed #555; /* Adjust border width and color as needed */
   padding: 10px; /* Adjust border width and color as needed */
+}
+
+.dashed-greeting.mobile {
+  min-width: 100px;
+  font-size: 10px !important;
 }
 
 .dashed-box-google,
@@ -256,7 +253,7 @@ span.mint-generation:hover + .play-image-mint {
   width: 110px;
 }
 
-.send-collectible-button {
+.modal-button {
   font-family: "ChiKareGo2";
   font-size: 25px;
   height: 40px;
@@ -281,17 +278,8 @@ span.mint-generation:hover + .play-image-mint {
   width: 100px;
 }
 
-.dashed-box-generation-box {
-  width: 340px;
-  height: 340px;
-  background-color: black;
-  display: flex; /* Use flexbox to align children side by side */
-  justify-content: center; /* Align items to the center */
-  align-items: center; /* Center items vertically */
-  flex-direction: column; /* Align children vertically for better control */
-  /* border: 2px dashed grey; Styled border */
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+.close-button {
+  margin: 10px;
 }
 
 .progress-container {
@@ -317,23 +305,23 @@ span.mint-generation:hover + .play-image-mint {
 
 .scrollable-wallet {
   width: 500px;
-  max-height: 200px;
+  max-height: 300px;
   overflow-y: auto; /* This makes the list scrollable when the content exceeds 150px */
 }
 
-.scrollable-item {
-  padding: 40px;
+ul.attributes {
+  margin: 0px;
   padding-left: 30px;
   padding-right: 0px;
   width: 230px;
-  height: 100px !important;
+  min-height: 80px;
   max-height: 300px;
   overflow-y: auto; /* This makes the list scrollable when the content exceeds 150px */
 }
 
 .transfer-to-address-input {
   height: 25px;
-  margin-top: -40px;
+  margin-top: 10px;
   width: 150px;
 }
 
@@ -358,7 +346,4 @@ button:focus {
   position: absolute;
   border: 0px;
   color: transparent;
-}
-svg {
-  display: none;
 }

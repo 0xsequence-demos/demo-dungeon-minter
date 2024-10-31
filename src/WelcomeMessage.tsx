@@ -28,7 +28,7 @@ export function WelcomeMessage(props: { isMobile: boolean }) {
         }}
       >
         <div
-          className={isMobile ? "dashed-greeting-mobile" : "dashed-greeting"}
+          className={`dashed-greeting ${isMobile ? "mobile" : ""}`}
           onClick={() => {
             setWelcomeMessageVisibility(false);
           }}

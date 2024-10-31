@@ -2,10 +2,11 @@ import { useCallback, useEffect, useState } from "react";
 import ChestLoadedAndOpenedModal from "./ChestLoadedAndOpened";
 import LoadingTreasureModal from "./LoadingTreasureModal";
 import OpenWalletButton from "./OpenWalletButton";
-import WalletInventoryModal from "./WalletInventoryModal";
+import WalletCollectibleModal from "./WalletCollectibleModal";
 import { Collectible } from "./Collectible";
 import { ChestData } from "./dungeon/ChestData";
 import { getDungeonGame } from "./dungeon/entry";
+import WalletCollectiblesModal from "./WalletCollectiblesModal";
 
 export default function ItemsAndInventory(props: {
   address: string;
@@ -21,21 +22,24 @@ export default function ItemsAndInventory(props: {
   const [txHash, setTxHash] = useState("");
   const [loadingTreasure, setLoadingTreasure] = useState(false);
 
-  const [collectibleViewable, setCollectibleViewable] = useState<
+  const [activeCollectible, setActiveCollectible] = useState<
     Collectible | undefined
   >();
   const [abortGenerationController, setAbortGenerationController] = useState<
     AbortController | undefined
   >();
-  const [loaded, setLoaded] = useState(false);
   const [chestOpened, setChestOpened] = useState(false);
 
   const onApproach = useCallback((d: ChestData) => {
     setColor(d.color);
-    generate();
+    if (!d.looted) {
+      generate();
+    }
   }, []);
-  const onOpen = useCallback(() => {
+  const onOpen = useCallback((d: ChestData) => {
+    setLoadingTreasure(true);
     setChestOpened(true);
+    d.loot();
   }, []);
 
   const onAbandon = useCallback((d: ChestData) => {
@@ -43,6 +47,7 @@ export default function ItemsAndInventory(props: {
     console.log("aborting signal");
     setColor("#000000");
     setChestOpened(false);
+    setLoadingTreasure(false);
     d.loot();
     setDiscoveredItems([]);
   }, []);
@@ -71,7 +76,6 @@ export default function ItemsAndInventory(props: {
   }, [address]);
 
   const generate = useCallback(async () => {
-    console.log("generating");
     const newController = new AbortController();
     setAbortGenerationController(newController);
 
@@ -97,8 +101,6 @@ export default function ItemsAndInventory(props: {
 
         setLoadingTreasure(false);
 
-        setLoaded(true);
-
         setDiscoveredItems([json]);
         setTxHash("");
       }
@@ -108,18 +110,30 @@ export default function ItemsAndInventory(props: {
     }
   }, []);
 
+  const onCloseDiscoveredItems = useCallback(() => {
+    setLoadingTreasure(false);
+    setDiscoveredItems([]);
+    setTxHash("");
+    setChestOpened(false);
+  }, []);
+
   return (
     <>
       <OpenWalletButton isMobile={isMobile} setOpenWallet={setOpenWallet} />
       {openWallet && (
-        <WalletInventoryModal
-          color={color}
-          collectibleViewable={collectibleViewable}
+        <WalletCollectiblesModal
           address={address}
-          setCollectibleViewable={setCollectibleViewable}
+          setActiveCollectible={setActiveCollectible}
           collectedItems={collectedItems}
           setCollectedItems={setCollectedItems}
           setOpenWallet={setOpenWallet}
+          activeCollectible={activeCollectible}
+        />
+      )}
+      {activeCollectible && (
+        <WalletCollectibleModal
+          activeCollectible={activeCollectible}
+          setActiveCollectible={setActiveCollectible}
         />
       )}
       {loadingTreasure && (
@@ -129,13 +143,13 @@ export default function ItemsAndInventory(props: {
           abortGenerationController={abortGenerationController}
         />
       )}
-      {loaded && chestOpened && (
+      {discoveredItems.length > 0 && chestOpened && (
         <ChestLoadedAndOpenedModal
-          color={color}
           address={address}
           txHash={txHash}
           setTxHash={setTxHash}
           discoveredItems={discoveredItems}
+          onClose={onCloseDiscoveredItems}
         />
       )}
     </>

@@ -2,21 +2,21 @@ import { Dispatch, SetStateAction, useCallback, useState } from "react";
 import { Collectible } from "./Collectible";
 import { getDungeonGame } from "./dungeon/entry";
 import PlayImage from "./assets/play.svg?react";
-
-const tiers = ["Rubbish", "Common", "Magic", "Rare", "Legendary"];
+import Modal from "./Modal";
+import CollectibleBasicInfo from "./CollectibleBasicInfo";
+import AttributeList from "./AttributeList";
+import { getNormalizedTierColor } from "./getNormalizedTierColor";
 
 export default function ChestLoadedAndOpenedModal(props: {
-  color: string;
   address: string;
   txHash: string;
   setTxHash: Dispatch<SetStateAction<string>>;
   discoveredItems: Collectible[];
+  onClose: () => void;
 }) {
-  const { color, address, txHash, setTxHash, discoveredItems } = props;
+  const { address, onClose, txHash, setTxHash, discoveredItems } = props;
 
   const [minting, setMinting] = useState(false);
-
-  console.log(discoveredItems);
 
   const mint = useCallback(async () => {
     setMinting(true);
@@ -35,113 +35,44 @@ export default function ChestLoadedAndOpenedModal(props: {
       body: JSON.stringify(data),
     });
     const json = await res.json();
-    console.log(json);
     setTxHash(json.txnHash);
     setMinting(false);
-  }, []);
+  }, [address]);
+
+  const discoveredItem = discoveredItems[0];
 
   return (
-    <div
-      className="box-generation"
-      style={{
-        backgroundSize: "150%",
-        backgroundPosition: "center",
-        backgroundImage: `radial-gradient(circle, ${color}B3 0%, transparent 70%)`,
-      }}
-    >
-      <div
-        style={{
-          width: "340px",
-          height: "550px",
-          paddingTop: "20px",
-          backgroundColor: "black",
-          display: "flex" /* Use flexbox to align children side by side */,
-          justifyContent: "center" /* Align items to the center */,
-          alignItems: "center" /* Center items vertically */,
-          flexDirection:
-            "column" /* Align children vertically for better control */,
-          padding: "10px",
-          boxShadow: `0px 0px 450px 450px ${color}70`,
-          borderWidth: `3px`,
-          borderStyle: `dashed`,
-          borderColor: `${color}`,
+    <Modal glow={true} color={getNormalizedTierColor(discoveredItem)}>
+      <CollectibleBasicInfo item={discoveredItem} />
+      <hr className="half" />
+      <AttributeList item={discoveredItem} />
+      {!minting && txHash == "" && (
+        <button className="modal-button" onClick={mint}>
+          Mint to wallet
+        </button>
+      )}
+      {minting && <p className="content">Mint pending...</p>}
+      {txHash && (
+        <p
+          onClick={() => window.open(`https://nova.arbiscan.io/tx/${txHash}`)}
+          style={{ color: "orange", cursor: "pointer" }}
+        >{`see minted hash: ${txHash.slice(0, 4)}... on explorer`}</p>
+      )}
+      <p
+        className="content"
+        onClick={() => {
+          onClose();
+          const party = getDungeonGame().party;
+          if (party) {
+            party.stepBack();
+          }
         }}
       >
-        {discoveredItems.map((item, index) => {
-          console.log(item);
-          const tier =
-            tiers[
-              parseInt(
-                item.attributes.find((attr) => attr.trait_type === "rarity")!
-                  .value,
-              )
-            ];
-
-          return (
-            <div key={index} data-tier={tier}>
-              <div className="view" data-tier={tier} style={{ scale: "0.5" }}>
-                <img style={{ width: "298px" }} src={item.image} />
-              </div>
-              <p
-                className={`content`}
-                style={{
-                  marginLeft: "40px",
-                  marginTop: "-50px",
-                  fontSize: "20px !important",
-                }}
-              >
-                {item.name}
-              </p>
-              <h2 className={`name_${tier}`}>
-                {tier} {item.type}
-              </h2>
-              <hr className="half" />
-              <ul className="scrollable-list">
-                {item.attributes.map((attr) => (
-                  <li style={{ color: "white" }} className={item.category}>
-                    {attr.trait_type} - {attr.value}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
-        {!minting && txHash == "" && (
-          <p
-            className="content"
-            style={{ position: "relative", marginTop: "-10px" }}
-            onClick={() => {
-              mint();
-            }}
-          >
-            <span className="mint-generation">Mint to wallet</span>
-            <PlayImage className="play-image-mint" />
-          </p>
-        )}
-        {minting && <p className="content">Mint pending...</p>}
-        {txHash && (
-          <p
-            onClick={() => window.open(`https://nova.arbiscan.io/tx/${txHash}`)}
-            style={{ color: "orange", cursor: "pointer" }}
-          >{`see minted hash: ${txHash.slice(0, 4)}... on explorer`}</p>
-        )}
-        <p
-          className="content"
-          style={{ position: "relative", marginTop: "-17px" }}
-          onClick={() => {
-            setTxHash("");
-            const party = getDungeonGame().party;
-            if (party) {
-              party.stepBack();
-            }
-          }}
-        >
-          <span className="cancel-generation">
-            {txHash != "" ? "Close" : "Cancel"}
-          </span>
-          <PlayImage className="play-image-cancel" />
-        </p>
-      </div>
-    </div>
+        <span className="cancel-generation">
+          {txHash != "" ? "Close" : "Cancel"}
+        </span>
+        <PlayImage className="play-image-cancel" />
+      </p>
+    </Modal>
   );
 }
